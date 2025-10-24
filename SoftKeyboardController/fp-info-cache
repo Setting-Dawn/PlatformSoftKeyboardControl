@@ -1,4 +1,4 @@
-26713617659988976
+26720659720891074
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -70580,6 +70580,20 @@ Yellow 5381 Series LED
 0
 2
 2
+ME507F24
+ESP32_NodeMCU_KeeYees
+
+
+0
+38
+38
+ME507F24
+FireBeetle-ESP32
+DFRobot FireBeetle, the older ESP32 version.  Not the Feather-like newer versions.
+ESP32 DFRobot
+0
+36
+36
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet
@@ -97257,6 +97271,20 @@ rotary encoder illuminated switch vertical
 0
 9
 8
+SamacSys_Parts
+NE555DR
+D (R-PDSO-G8)
+Integrated Circuit
+0
+8
+8
+SamacSys_Parts
+SOP50P640X110-39N
+PCA9956BTWY
+Integrated Circuit
+0
+39
+39
 Sensor
 ASAIR_AM2302_P2.54mm_Lead2.75mm_TabDown
 Temperature and humidity module, http://akizukidenshi.com/download/ds/aosong/AM2302.pdf
