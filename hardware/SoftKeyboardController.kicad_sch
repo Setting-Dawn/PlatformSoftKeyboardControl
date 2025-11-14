@@ -12750,7 +12750,7 @@
 				)
 			)
 		)
-		(property "Value" "470Ω"
+		(property "Value" "1kΩ"
 			(at 183.896 199.898 90)
 			(effects
 				(font
@@ -15316,7 +15316,7 @@
 				)
 			)
 		)
-		(property "Value" "470Ω"
+		(property "Value" "1kΩ"
 			(at 184.404 180.848 90)
 			(effects
 				(font
@@ -15514,13 +15514,12 @@
 				)
 			)
 		)
-		(property "Value" "470Ω"
+		(property "Value" "1kΩ"
 			(at 184.404 191.77 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
@@ -16260,7 +16259,7 @@
 				)
 			)
 		)
-		(property "Value" "470Ω"
+		(property "Value" "1kΩ"
 			(at 184.404 211.328 90)
 			(effects
 				(font
