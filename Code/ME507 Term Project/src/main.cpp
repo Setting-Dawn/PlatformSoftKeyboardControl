@@ -1,5 +1,6 @@
 
 #include <Arduino.h>
+#include "PrintStream.h"
 #include "ADC128D818.h"
 #include "CD74HC4067SM.h"
 #include "PCA9956.h"
@@ -33,6 +34,32 @@ void task_ReadMaterial(void* p_params) {
     CD74HC4067SM Multiplex (s0_PIN,s1_PIN,s2_PIN,s3_PIN,MultiEnable_PIN);
     PCA9956 CurrCtrl (&Wire);
     CurrCtrl.init(PCA9956_ADDRESS,0xFF); // Initialize current control address and max brightnes
+}
+
+void task_comm(void* p_params) {
+    const uint8_t valueCount = 208;
+    uint8_t state = 0;
+    for (;;)
+    {
+        switch (state)
+        {
+            case 1: //Send datasize
+                Serial << "Sending count: " << valueCount << endl;
+                state = 2;
+
+            case 2: //Wait for confirm
+                vTaskDelay(10); //
+                state = 3;
+            
+            case 3: //Send data
+                for (uint8_t n = 0; n <208;n++) {
+                    Serial << data.get() << endl;
+                }
+        }
+        Serial.readln
+    }
+
+
 }
 
 void setup() {
