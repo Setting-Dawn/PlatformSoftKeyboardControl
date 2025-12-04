@@ -1,0 +1,35 @@
+\doxysection{motorcontrol.\+h}
+\hypertarget{motorcontrol_8h_source}{}\label{motorcontrol_8h_source}\index{lib/motorcontrol.h@{lib/motorcontrol.h}}
+\mbox{\hyperlink{motorcontrol_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ MOTORCONTROL\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ MOTORCONTROL\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MOTORCONTROL\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ Motor\ Class}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_motor_a4c14dccff2a265772b13fa1a1220d55c}{Motor}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ uint8\_t\ pin1;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ uint8\_t\ pin2;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ speed;\ \textcolor{comment}{//\ Speed\ value\ from\ -\/255\ to\ 255}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_motor_a4c14dccff2a265772b13fa1a1220d55c}{Motor}}(uint8\_t\ p1,\ uint8\_t\ p2);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_ac33814c8814d6b576531149ee945516d}{init}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_motor_a4d03ea62bd9f5579d4fbe16d10462962}{getSpeed}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_motor_a015fd5308d4d27e5dcf7f9ea3d5c03f6}{stop}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_motor_acab2c51ea71c99cc1ae48325d4bfab68}{setSpeed}}(\textcolor{keywordtype}{int}\ spd);}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+
+\end{DoxyCode}

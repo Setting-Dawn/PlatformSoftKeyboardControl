@@ -6,6 +6,10 @@
 #include "ADC128D818.h"
 #include "CD74HC4067SM.h"
 #include "PCA9956.h"
+#include "EITwebhost.h"
+#include "taskshare.h"
+#include "taskqueue.h"
+#include "shares.h" 
 
 // LED pin
 const uint8_t LED_PIN = 2;
@@ -32,25 +36,21 @@ const uint8_t MOTOR_X_2 = 30;
 const uint8_t MOTOR_Y_1 = 28;
 const uint8_t MOTOR_Y_2 = 27;
 
-// Assign Wifi access
-const char* ssid = "Soft Keyboard";   // SSID, network name seen on LAN lists
-const char* password = "Access Code";   // ESP32 WiFi password (min. 8 characters)
 
-/* Put IP Address details */
-IPAddress local_ip (192, 168, 5, 1); // Address of ESP32 on its own network
-IPAddress gateway (192, 168, 5, 1);  // The ESP32 acts as its own gateway
-IPAddress subnet (255, 255, 255, 0); // Network mask; just leave this as is
-
-/** @brief   The web server object for this project.
- *  @details This server is responsible for responding to HTTP requests from
- *           other computers, replying with useful information.
- *
- *           It's kind of clumsy to have this object as a global, but that's
- *           the way Arduino keeps things simple to program, without the user
- *           having to write custom classes or other intermediate-level 
- *           structures. 
-*/
-WebServer server (80);
+// A share which holds whether the external program needs to initialize
+extern Share<bool> initializeVFLG;
+// A share which holds whether the external program should read voltages
+extern Share<bool> readVFLG;
+// A share which holds whether the external program has communicated how the connections are defined
+extern Share<bool> reMapCompleteFLG;
+// A share which holds how the adc1 connections are defined
+extern Share<uint8_t> adc1PinMap[8];
+// A share which holds how the adc2 connections are defined
+extern Share<uint8_t> adc2PinMap[8];
+// A share which holds how the current connections are defined
+extern Share<uint8_t> currPinMap[16];
+// A share which holds whether the external program has communicated how the connections are defined
+extern Share<double> publishDeltaV[208];
 
 /*! @brief function to cycle the built-in LED in a set patern to aid debugging
 * @details Blinks a pre-set desired morse code message to crashes externally diagnosable.
@@ -95,163 +95,48 @@ void heartbeat(void* p_params) {
 
 void task_ReadMaterial(void* p_params) {
     ADC128D818 ADC_1 (ADC_1ADDRESS);
+    ADC_1.begin();
     ADC128D818 ADC_2 (ADC_2ADDRESS);
+    ADC_2.begin();
     CD74HC4067SM Multiplex (s0_PIN,s1_PIN,s2_PIN,s3_PIN,MultiEnable_PIN);
     PCA9956 CurrCtrl (&Wire);
     CurrCtrl.init(PCA9956_ADDRESS,0xFF); // Initialize current control address and max brightnes
-}
+    uint8_t currPinIndex;
+    uint8_t GND_PinIndex;
+    uint8_t adc1Mapping[8];
+    uint8_t adc2Mapping[8];
+    uint8_t currMapping[16];
+    double cycleMeas[16] = {0};
+    double measure[208] = {0};
 
-/** @brief   Get the WiFi running so we can serve some web pages.
- */
-void setup_wifi(void) {
-    Serial << "Setting up WiFi access point...";
-    WiFi.mode (WIFI_AP);
-    WiFi.softAPConfig (local_ip, gateway, subnet);
-    WiFi.softAP (ssid, password);
-    Serial << "done." << endl;
-}
+    uint8_t state = 0;
+    for (;;) {
+        switch (state){
+            case 0: // Idle until Signal from External Computer
+                if (reMapCompleteFLG.get()) {
+                    adc1PinMap.get(adc1Mapping);
+                    adc2PinMap.get(adc2Mapping);
+                    uint8_t currTemp[16] = currPinMap.get();
+                    for (uint8_t n = 0;n<16;n++) {
+                        currMapping[n] = currTemp[n];
+                    }
+                    state = 1;
+                }
+            case 1:
+                for (uint8_t n = 0;n <16;n++) {
+                    currPinIndex = (n + 1) % 16;
+                    GND_PinIndex = n;
+                    for (uint8_t i = 0;i<8;i++) {
+                        cycleMeas[adc1Mapping[i]] = ADC_1.readConverted(i);
+                        cycleMeas[adc2Mapping[i]] = ADC_2.readConverted(i);
+                    }
+                    measure[n*13] = *cycleMeas;
 
-/** @brief   Put a web page header into an HTML string. 
- *  @details This header may be modified if the developer wants some actual
- *           @a style for her or his web page. It is intended to be a common
- *           header (and stylle) for each of the pages served by this server.
- *  @param   a_string A reference to a string to which the header is added; the
- *           string must have been created in each function that calls this one
- *  @param   page_title The title of the page
-*/
-void HTML_header (String& a_string, const char* page_title)
-{
-    a_string += "<!DOCTYPE html> <html>\n";
-    a_string += "<head><meta name=\"viewport\" content=\"width=device-width,";
-    a_string += " initial-scale=1.0, user-scalable=no\">\n<title> ";
-    a_string += page_title;
-    a_string += "</title>\n";
-    a_string += "<style>html { font-family: Helvetica; display: inline-block;";
-    a_string += " margin: 0px auto; text-align: center;}\n";
-    a_string += "body{margin-top: 50px;} h1 {color: #4444AA;margin: 50px auto 30px;}\n";
-    a_string += "p {font-size: 24px;color: #222222;margin-bottom: 10px;}\n";
-    a_string += "</style>\n</head>\n";
-}
+        }
 
-
-/** @brief   Callback function that responds to HTTP requests without a subpage
- *           name.
- *  @details When another computer contacts this ESP32 through TCP/IP port 80
- *           (the insecure Web port) with a request for the main web page, this
- *           callback function is run. It sends the main web page's text to the
- *           requesting machine.
- */
-void handle_DocumentRoot ()
-{
-    Serial << "HTTP request from client #" << server.client () << endl;
-
-    String a_str;
-    HTML_header (a_str, "ESP32 Web Server Test");
-    a_str += "<body>\n<div id=\"webpage\">\n";
-    a_str += "<h1>ESP32 EIT Reading Home Page</h1>\n";
-    a_str += "<p><p> <a href=\"/data\">Show some data in CSV format</a>\n";
-    a_str += "</div>\n</body>\n</html>\n";
-
-    server.send (200, "text/html", a_str); 
-}
-
-/** @brief   Respond to a webpage request with arguments for the x,y setpoints
- *  @details When another computer contacts this ESP32 through TCP/IP port 80
- *           with a url requesting /set? arguments, this
- *           callback function is run. It provides the ESP32 with the requested float values. the main web page's text to the
- *           requesting machine.
- */
-void handleSetValues() {
-    // Expecting: /set?val1=123&val2=456
-
-    if (!server.hasArg("x") || !server.hasArg("y")) {
-        server.send(400, "text/plain", "Missing x or y");
-        return;
+        }
     }
-
-    String val1Str = server.arg("x");
-    String val2Str = server.arg("y");
-
-    float value1 = val1Str.toFloat();
-    float value2 = val2Str.toFloat();
-
-    Serial.print("Got x = ");
-    Serial.print(value1);
-    Serial.print(", y = ");
-    Serial.println(value2);
-
-    // Respond to the client
-    String response = "OK. Received x=" + String(value1) + " y=" + String(value2);
-    server.send(200, "text/plain", response);
 }
-
-/** @brief   Respond to a webpage request with arguments for communication via flags
- *  @details When another computer contacts this ESP32 through TCP/IP port 80
- *           with a url requesting /flag? arguments, this
- *           callback function is run. This allows the client PC to communicate about what information has been received.
- */
-void handleFlags() {
-    bool value;
-
-    if (server.hasArg("initializeFLG")) {
-        String val = server.arg("initializeFLG");
-        Serial << "Got arg: " << "initializeFLG";
-        Serial << "with val: " << val << endl;
-        value = bool(val);
-
-        // Respond to the client
-        String response = "OK. Received initializeFLG=" + value;
-        server.send(200, "text/plain", response);
-    }
-    if (server.hasArg("readFLG")) {
-        server.send(400, "text/plain", "Flag is Read-Only");
-        return;
-    };
-
-}
-
-/** @brief   Respond to a request for an HTTP page that doesn't exist.
- *  @details This function produces the Error 404, Page Not Found error. 
- */
-void handle_NotFound (void)
-{
-    server.send (404, "text/plain", "Not found");
-}
-
-
-/** @brief   Show some simulated data when asked by the web server.
- *  @details The contrived data is sent in a relatively efficient Comma
- *           Separated Variable (CSV) format which is easily read by Matlab(tm)
- *           and Python and spreadsheets.
- */
-
-void handle_data (void)
-{
-    // Page will consist of one line of comma separated voltage values
-    String csv_str = "Voltage Readings,";
-
-    // Create some fake data and put it into a String object.
-    //PLACEHOLDER FOR PULLING FROM QUEUE
-    for (uint8_t index = 0; index < 208; index++)
-    {
-        csv_str += index;
-        csv_str += ",";
-        csv_str += String (sin (index / 5.4321), 3); // 3 decimal places
-    }
-    csv_str += "\n";
-
-    // Page will also consist of lines of comma separated flag labels and bool values
-    csv_str += "initializeFLG,";
-    csv_str += "True"; // PLACEHOLDER FOR PULLING FROM SHARE
-    csv_str += "\n";
-    csv_str += "readFLG,";
-    csv_str += "False"; // PLACEHOLDER FOR PULLING FROM SHARE
-    csv_str += "\n";
-
-    // Send the CSV file as plain text so it can be easily interpretted
-    server.send (200, "text/plain", csv_str);
-}
-
 
 /** @brief   Task which sets up and runs a web server.
  *  @details After setup, function @c handleClient() must be run periodically
@@ -292,7 +177,7 @@ void setup() {
     Serial << "Would you like to play a game? [y/n]" << endl;
 
     // Call function which gets the WiFi working
-    setup_wifi ();
+    setup_wifi();
     
     // Set up the pin for the blue LED on the ESP32 board
     pinMode (LED_PIN, OUTPUT);

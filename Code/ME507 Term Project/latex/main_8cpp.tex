@@ -1,0 +1,257 @@
+\doxysection{src/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include "{}Print\+Stream.\+h"{}}\newline
+{\ttfamily \#include $<$Wi\+Fi.\+h$>$}\newline
+{\ttfamily \#include $<$Web\+Server.\+h$>$}\newline
+{\ttfamily \#include "{}ADC128\+D818.\+h"{}}\newline
+{\ttfamily \#include "{}CD74\+HC4067\+SM.\+h"{}}\newline
+{\ttfamily \#include "{}PCA9956.\+h"{}}\newline
+{\ttfamily \#include "{}EITwebhost.\+h"{}}\newline
+{\ttfamily \#include "{}taskshare.\+h"{}}\newline
+{\ttfamily \#include "{}taskqueue.\+h"{}}\newline
+{\ttfamily \#include "{}shares.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Share$<$ bool $>$ \mbox{\hyperlink{main_8cpp_a95419a57c6601adc5a12558638453dff}{initialize\+VFLG}} ("{}Initialize\+V0"{})
+\item 
+Share$<$ bool $>$ \mbox{\hyperlink{main_8cpp_adb3985c4e0dc89bde6f73ad5152e78e4}{read\+VFLG}} ("{}Read V"{})
+\item 
+Share$<$ bool $>$ \mbox{\hyperlink{main_8cpp_a3bebe6f26de131e7c10e97f4793890f8}{re\+Map\+Complete\+FLG}} ("{}Remapping"{})
+\item 
+Share$<$ uint8\+\_\+t\mbox{[}16\mbox{]}$>$ \mbox{\hyperlink{main_8cpp_a1a55b95f47c8ccb9ffa3811910e75571}{adc\+Pin\+Map}} ("{}ADC Map"{})
+\item 
+Share$<$ uint8\+\_\+t\mbox{[}16\mbox{]}$>$ \mbox{\hyperlink{main_8cpp_ad8759c0b8bc82f32cc834925d03fc287}{curr\+Pin\+Map}} ("{}Current Controller Map"{})
+\item 
+void \mbox{\hyperlink{main_8cpp_a698da69d055e91c13c7a6cdc7fb73fbd}{heartbeat}} (void \texorpdfstring{$\ast$}{*}p\+\_\+params)
+\begin{DoxyCompactList}\small\item\em function to cycle the built-\/in LED in a set patern to aid debugging \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_af65c7f4495d4dc7c29d355d2d3871be4}{task\+\_\+\+Read\+Material}} (void \texorpdfstring{$\ast$}{*}p\+\_\+params)
+\item 
+void \mbox{\hyperlink{main_8cpp_a577f28c6d870b5b9f1c4510d8195094a}{task\+\_\+webserver}} (void \texorpdfstring{$\ast$}{*}p\+\_\+params)
+\begin{DoxyCompactList}\small\item\em Task which sets up and runs a web server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\item 
+void \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a5046d5397ff8775579ff977503a3d07d}{LED\+\_\+\+PIN}} = 2
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a9e384041fab2b2e8797505c609b8d99c}{s0\+\_\+\+PIN}} = 26
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_aee5c3166ce3fa80f79805587f049c8c4}{s1\+\_\+\+PIN}} = 25
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a02c801e8ca7815dec62bf55ca86512bc}{s2\+\_\+\+PIN}} = 33
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a33f0388f0631792d35e717cc687e6051}{s3\+\_\+\+PIN}} = 32
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a3323d05cd41da7f205db662a3e8c0f59}{Multi\+Enable\+\_\+\+PIN}} = 35
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a9eb336ce22cd3b5df6e7b5c7df0460a3}{ADC\+\_\+1\+ADDRESS}} = 0x1D
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a41a404f2f5b85d9ddfc16560b818ec46}{ADC\+\_\+2\+ADDRESS}} = 0x1F
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a24dd1f95a4290b15c52e8bc664bc7902}{PCA9956\+\_\+\+ADDRESS}} = 0x01
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a566d7c2454523ac248584826e3ca4429}{FAULT\+\_\+\+PIN}} = 4
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a2e26ef332a4774cd96b62609ac0636b2}{NSLEEP\+\_\+\+PIN}} = 2
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a8d45cddd80fc11848525c1b6f1eece09}{MOTOR\+\_\+\+X\+\_\+1}} = 31
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a0a4d96bbd6f5d1cb3445c0996713bd1c}{MOTOR\+\_\+\+X\+\_\+2}} = 30
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_acef6adb2d5286d2bba66e563e26a2caf}{MOTOR\+\_\+\+Y\+\_\+1}} = 28
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_aef19dd885c9ea291981f3af66871d8e3}{MOTOR\+\_\+\+Y\+\_\+2}} = 27
+\item 
+Share$<$ double\mbox{[}208\mbox{]}$>$ \mbox{\hyperlink{main_8cpp_a00a5c56e6d6c6218545ed7db25fa75d7}{publish\+DeltaV}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{main_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a1a55b95f47c8ccb9ffa3811910e75571}\index{main.cpp@{main.cpp}!adcPinMap@{adcPinMap}}
+\index{adcPinMap@{adcPinMap}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{adcPinMap()}{adcPinMap()}}
+{\footnotesize\ttfamily \label{main_8cpp_a1a55b95f47c8ccb9ffa3811910e75571} 
+Share$<$ uint8\+\_\+t\mbox{[}16\mbox{]}$>$ adc\+Pin\+Map (\begin{DoxyParamCaption}\item[{"{}ADC Map"{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_ad8759c0b8bc82f32cc834925d03fc287}\index{main.cpp@{main.cpp}!currPinMap@{currPinMap}}
+\index{currPinMap@{currPinMap}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{currPinMap()}{currPinMap()}}
+{\footnotesize\ttfamily \label{main_8cpp_ad8759c0b8bc82f32cc834925d03fc287} 
+Share$<$ uint8\+\_\+t\mbox{[}16\mbox{]}$>$ curr\+Pin\+Map (\begin{DoxyParamCaption}\item[{"{}Current Controller Map"{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a698da69d055e91c13c7a6cdc7fb73fbd}\index{main.cpp@{main.cpp}!heartbeat@{heartbeat}}
+\index{heartbeat@{heartbeat}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{heartbeat()}{heartbeat()}}
+{\footnotesize\ttfamily \label{main_8cpp_a698da69d055e91c13c7a6cdc7fb73fbd} 
+void heartbeat (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+params}{}\end{DoxyParamCaption})}
+
+
+
+function to cycle the built-\/in LED in a set patern to aid debugging 
+
+Blinks a pre-\/set desired morse code message to crashes externally diagnosable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+params} & unused void pointer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_a95419a57c6601adc5a12558638453dff}\index{main.cpp@{main.cpp}!initializeVFLG@{initializeVFLG}}
+\index{initializeVFLG@{initializeVFLG}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{initializeVFLG()}{initializeVFLG()}}
+{\footnotesize\ttfamily \label{main_8cpp_a95419a57c6601adc5a12558638453dff} 
+Share$<$ bool $>$ initialize\+VFLG (\begin{DoxyParamCaption}\item[{"{}Initialize\+V0"{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_afe461d27b9c48d5921c00d521181f12f}\index{main.cpp@{main.cpp}!loop@{loop}}
+\index{loop@{loop}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily \label{main_8cpp_afe461d27b9c48d5921c00d521181f12f} 
+void loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_adb3985c4e0dc89bde6f73ad5152e78e4}\index{main.cpp@{main.cpp}!readVFLG@{readVFLG}}
+\index{readVFLG@{readVFLG}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{readVFLG()}{readVFLG()}}
+{\footnotesize\ttfamily \label{main_8cpp_adb3985c4e0dc89bde6f73ad5152e78e4} 
+Share$<$ bool $>$ read\+VFLG (\begin{DoxyParamCaption}\item[{"{}Read V"{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a3bebe6f26de131e7c10e97f4793890f8}\index{main.cpp@{main.cpp}!reMapCompleteFLG@{reMapCompleteFLG}}
+\index{reMapCompleteFLG@{reMapCompleteFLG}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{reMapCompleteFLG()}{reMapCompleteFLG()}}
+{\footnotesize\ttfamily \label{main_8cpp_a3bebe6f26de131e7c10e97f4793890f8} 
+Share$<$ bool $>$ re\+Map\+Complete\+FLG (\begin{DoxyParamCaption}\item[{"{}Remapping"{}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}\index{main.cpp@{main.cpp}!setup@{setup}}
+\index{setup@{setup}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily \label{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d} 
+void setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_af65c7f4495d4dc7c29d355d2d3871be4}\index{main.cpp@{main.cpp}!task\_ReadMaterial@{task\_ReadMaterial}}
+\index{task\_ReadMaterial@{task\_ReadMaterial}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{task\_ReadMaterial()}{task\_ReadMaterial()}}
+{\footnotesize\ttfamily \label{main_8cpp_af65c7f4495d4dc7c29d355d2d3871be4} 
+void task\+\_\+\+Read\+Material (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+params}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a577f28c6d870b5b9f1c4510d8195094a}\index{main.cpp@{main.cpp}!task\_webserver@{task\_webserver}}
+\index{task\_webserver@{task\_webserver}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{task\_webserver()}{task\_webserver()}}
+{\footnotesize\ttfamily \label{main_8cpp_a577f28c6d870b5b9f1c4510d8195094a} 
+void task\+\_\+webserver (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+params}{}\end{DoxyParamCaption})}
+
+
+
+Task which sets up and runs a web server. 
+
+After setup, function {\ttfamily handle\+Client()} must be run periodically to check for page requests from web clients. One could run this task as the lowest priority task with a short or no delay, as there generally isn\textquotesingle{}t much rush in replying to web queries. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+params} & Pointer to unused parameters \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-var-members}
+\Hypertarget{main_8cpp_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8cpp_a9eb336ce22cd3b5df6e7b5c7df0460a3}\index{main.cpp@{main.cpp}!ADC\_1ADDRESS@{ADC\_1ADDRESS}}
+\index{ADC\_1ADDRESS@{ADC\_1ADDRESS}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{ADC\_1ADDRESS}{ADC\_1ADDRESS}}
+{\footnotesize\ttfamily \label{main_8cpp_a9eb336ce22cd3b5df6e7b5c7df0460a3} 
+const uint8\+\_\+t ADC\+\_\+1\+ADDRESS = 0x1D}
+
+\Hypertarget{main_8cpp_a41a404f2f5b85d9ddfc16560b818ec46}\index{main.cpp@{main.cpp}!ADC\_2ADDRESS@{ADC\_2ADDRESS}}
+\index{ADC\_2ADDRESS@{ADC\_2ADDRESS}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{ADC\_2ADDRESS}{ADC\_2ADDRESS}}
+{\footnotesize\ttfamily \label{main_8cpp_a41a404f2f5b85d9ddfc16560b818ec46} 
+const uint8\+\_\+t ADC\+\_\+2\+ADDRESS = 0x1F}
+
+\Hypertarget{main_8cpp_a566d7c2454523ac248584826e3ca4429}\index{main.cpp@{main.cpp}!FAULT\_PIN@{FAULT\_PIN}}
+\index{FAULT\_PIN@{FAULT\_PIN}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{FAULT\_PIN}{FAULT\_PIN}}
+{\footnotesize\ttfamily \label{main_8cpp_a566d7c2454523ac248584826e3ca4429} 
+const uint8\+\_\+t FAULT\+\_\+\+PIN = 4}
+
+\Hypertarget{main_8cpp_a5046d5397ff8775579ff977503a3d07d}\index{main.cpp@{main.cpp}!LED\_PIN@{LED\_PIN}}
+\index{LED\_PIN@{LED\_PIN}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{LED\_PIN}{LED\_PIN}}
+{\footnotesize\ttfamily \label{main_8cpp_a5046d5397ff8775579ff977503a3d07d} 
+const uint8\+\_\+t LED\+\_\+\+PIN = 2}
+
+\Hypertarget{main_8cpp_a8d45cddd80fc11848525c1b6f1eece09}\index{main.cpp@{main.cpp}!MOTOR\_X\_1@{MOTOR\_X\_1}}
+\index{MOTOR\_X\_1@{MOTOR\_X\_1}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{MOTOR\_X\_1}{MOTOR\_X\_1}}
+{\footnotesize\ttfamily \label{main_8cpp_a8d45cddd80fc11848525c1b6f1eece09} 
+const uint8\+\_\+t MOTOR\+\_\+\+X\+\_\+1 = 31}
+
+\Hypertarget{main_8cpp_a0a4d96bbd6f5d1cb3445c0996713bd1c}\index{main.cpp@{main.cpp}!MOTOR\_X\_2@{MOTOR\_X\_2}}
+\index{MOTOR\_X\_2@{MOTOR\_X\_2}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{MOTOR\_X\_2}{MOTOR\_X\_2}}
+{\footnotesize\ttfamily \label{main_8cpp_a0a4d96bbd6f5d1cb3445c0996713bd1c} 
+const uint8\+\_\+t MOTOR\+\_\+\+X\+\_\+2 = 30}
+
+\Hypertarget{main_8cpp_acef6adb2d5286d2bba66e563e26a2caf}\index{main.cpp@{main.cpp}!MOTOR\_Y\_1@{MOTOR\_Y\_1}}
+\index{MOTOR\_Y\_1@{MOTOR\_Y\_1}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{MOTOR\_Y\_1}{MOTOR\_Y\_1}}
+{\footnotesize\ttfamily \label{main_8cpp_acef6adb2d5286d2bba66e563e26a2caf} 
+const uint8\+\_\+t MOTOR\+\_\+\+Y\+\_\+1 = 28}
+
+\Hypertarget{main_8cpp_aef19dd885c9ea291981f3af66871d8e3}\index{main.cpp@{main.cpp}!MOTOR\_Y\_2@{MOTOR\_Y\_2}}
+\index{MOTOR\_Y\_2@{MOTOR\_Y\_2}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{MOTOR\_Y\_2}{MOTOR\_Y\_2}}
+{\footnotesize\ttfamily \label{main_8cpp_aef19dd885c9ea291981f3af66871d8e3} 
+const uint8\+\_\+t MOTOR\+\_\+\+Y\+\_\+2 = 27}
+
+\Hypertarget{main_8cpp_a3323d05cd41da7f205db662a3e8c0f59}\index{main.cpp@{main.cpp}!MultiEnable\_PIN@{MultiEnable\_PIN}}
+\index{MultiEnable\_PIN@{MultiEnable\_PIN}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{MultiEnable\_PIN}{MultiEnable\_PIN}}
+{\footnotesize\ttfamily \label{main_8cpp_a3323d05cd41da7f205db662a3e8c0f59} 
+const uint8\+\_\+t Multi\+Enable\+\_\+\+PIN = 35}
+
+\Hypertarget{main_8cpp_a2e26ef332a4774cd96b62609ac0636b2}\index{main.cpp@{main.cpp}!NSLEEP\_PIN@{NSLEEP\_PIN}}
+\index{NSLEEP\_PIN@{NSLEEP\_PIN}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{NSLEEP\_PIN}{NSLEEP\_PIN}}
+{\footnotesize\ttfamily \label{main_8cpp_a2e26ef332a4774cd96b62609ac0636b2} 
+const uint8\+\_\+t NSLEEP\+\_\+\+PIN = 2}
+
+\Hypertarget{main_8cpp_a24dd1f95a4290b15c52e8bc664bc7902}\index{main.cpp@{main.cpp}!PCA9956\_ADDRESS@{PCA9956\_ADDRESS}}
+\index{PCA9956\_ADDRESS@{PCA9956\_ADDRESS}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{PCA9956\_ADDRESS}{PCA9956\_ADDRESS}}
+{\footnotesize\ttfamily \label{main_8cpp_a24dd1f95a4290b15c52e8bc664bc7902} 
+const uint8\+\_\+t PCA9956\+\_\+\+ADDRESS = 0x01}
+
+\Hypertarget{main_8cpp_a00a5c56e6d6c6218545ed7db25fa75d7}\index{main.cpp@{main.cpp}!publishDeltaV@{publishDeltaV}}
+\index{publishDeltaV@{publishDeltaV}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{publishDeltaV}{publishDeltaV}}
+{\footnotesize\ttfamily \label{main_8cpp_a00a5c56e6d6c6218545ed7db25fa75d7} 
+Share$<$double\mbox{[}208\mbox{]}$>$ publish\+DeltaV\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{main_8cpp_a9e384041fab2b2e8797505c609b8d99c}\index{main.cpp@{main.cpp}!s0\_PIN@{s0\_PIN}}
+\index{s0\_PIN@{s0\_PIN}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{s0\_PIN}{s0\_PIN}}
+{\footnotesize\ttfamily \label{main_8cpp_a9e384041fab2b2e8797505c609b8d99c} 
+const uint8\+\_\+t s0\+\_\+\+PIN = 26}
+
+\Hypertarget{main_8cpp_aee5c3166ce3fa80f79805587f049c8c4}\index{main.cpp@{main.cpp}!s1\_PIN@{s1\_PIN}}
+\index{s1\_PIN@{s1\_PIN}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{s1\_PIN}{s1\_PIN}}
+{\footnotesize\ttfamily \label{main_8cpp_aee5c3166ce3fa80f79805587f049c8c4} 
+const uint8\+\_\+t s1\+\_\+\+PIN = 25}
+
+\Hypertarget{main_8cpp_a02c801e8ca7815dec62bf55ca86512bc}\index{main.cpp@{main.cpp}!s2\_PIN@{s2\_PIN}}
+\index{s2\_PIN@{s2\_PIN}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{s2\_PIN}{s2\_PIN}}
+{\footnotesize\ttfamily \label{main_8cpp_a02c801e8ca7815dec62bf55ca86512bc} 
+const uint8\+\_\+t s2\+\_\+\+PIN = 33}
+
+\Hypertarget{main_8cpp_a33f0388f0631792d35e717cc687e6051}\index{main.cpp@{main.cpp}!s3\_PIN@{s3\_PIN}}
+\index{s3\_PIN@{s3\_PIN}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{s3\_PIN}{s3\_PIN}}
+{\footnotesize\ttfamily \label{main_8cpp_a33f0388f0631792d35e717cc687e6051} 
+const uint8\+\_\+t s3\+\_\+\+PIN = 32}
+

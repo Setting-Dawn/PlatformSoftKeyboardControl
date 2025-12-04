@@ -1,3 +1,11 @@
+/*!
+ * @file CD74HC4067SM.h
+ * @author Setting-Dawn
+ * @brief Header file for CD74HC4067SM multiplexer class.
+ * @version 1.0.0
+ * @date 2025-NOV-12
+ */
+
 #ifndef __CD74HC4067SM_H__
 #define __CD74HC4067SM_H__
 
@@ -21,4 +29,4 @@ class CD74HC4067SM {
         void disable(void);
 };
 
-#endif
+#endif //__CD74HC4067SM_H__

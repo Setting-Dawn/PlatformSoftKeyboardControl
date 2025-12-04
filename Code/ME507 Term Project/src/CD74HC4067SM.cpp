@@ -1,6 +1,14 @@
+/*!
+ * @file CD74HC4067SM.cpp
+ * @author Setting-Dawn
+ * @brief Implementation of CD74HC4067SM multiplexer class.
+ * @version 1.0.0
+ * @date 2025-NOV-12
+ */
+
 #include "CD74HC4067SM.h"
 
-/*! @brief Initializes a CD74HC4067SM chip object
+/*! @brief Initializes a CD74HC4067SM multiplexer object
 * @details Assigns the pins and manages useful functions for a
 * CD74HC4067SM 1:16 multiplexer chip
 * @param Spin0 the Arduino pin used to control the s0 pin

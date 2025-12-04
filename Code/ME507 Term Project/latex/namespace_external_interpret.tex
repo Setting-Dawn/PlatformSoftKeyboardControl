@@ -1,0 +1,412 @@
+\doxysection{External\+Interpret Namespace Reference}
+\hypertarget{namespace_external_interpret}{}\label{namespace_external_interpret}\index{ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_external_interpret_a1464ff739f97e7d495e65b377a3d6e5c}{setup}} (\mbox{\hyperlink{namespace_external_interpret_a6727cc0caecc168f5757eb583b559c11}{n\+\_\+el}}, BL\+\_\+corner, TR\+\_\+corner)
+\item 
+\mbox{\hyperlink{namespace_external_interpret_abf93d8f23ce3f3d486861c37e83588f5}{sim\+EIT}} (\mbox{\hyperlink{namespace_external_interpret_a21036413e1ab1eece3fb7dd402eca4f6}{mesh\+\_\+obj}}, \mbox{\hyperlink{namespace_external_interpret_a2ac0a3058200d0eefd396e87eaa7e8ff}{protocol\+\_\+obj}}, list \mbox{\hyperlink{namespace_external_interpret_a99c50173b6626596cb2f7ae124ace067}{anomaly\+List}})
+\item 
+\mbox{\hyperlink{namespace_external_interpret_a952defe325119fb25f27f76e9dd4c25b}{initialize\+EIT}} (\mbox{\hyperlink{namespace_external_interpret_a21036413e1ab1eece3fb7dd402eca4f6}{mesh\+\_\+obj}}, \mbox{\hyperlink{namespace_external_interpret_a2ac0a3058200d0eefd396e87eaa7e8ff}{protocol\+\_\+obj}})
+\item 
+\mbox{\hyperlink{namespace_external_interpret_a562eca74adebe639a32daf1e86fc0fb8}{analyze}} (\mbox{\hyperlink{namespace_external_interpret_a267b916b867b91b3e88fcce06100a176}{pts}}, \mbox{\hyperlink{namespace_external_interpret_a892291818f05578b2770d132c881159b}{tri}}, \mbox{\hyperlink{namespace_external_interpret_aed2bb2e402991f59c8f36b151a8a97c4}{v0}}, v, \mbox{\hyperlink{namespace_external_interpret_a57d21975cbc7f89ede0113445d9f1ab1}{eit}})
+\item 
+\mbox{\hyperlink{namespace_external_interpret_ab8d586a2ce3b44ec9f2b2c87ffc3ca99}{read\+\_\+data\+\_\+from\+\_\+esp}} ()
+\item 
+\mbox{\hyperlink{namespace_external_interpret_a97a04a5f52116c64029719b455533e2a}{find\+Centroid}} (\mbox{\hyperlink{namespace_external_interpret_adaf3be80530d46c75c533e5ceb10f68c}{x}}, \mbox{\hyperlink{namespace_external_interpret_ae377a6c22f94e56bfa21a211f3b26058}{y}}, \mbox{\hyperlink{namespace_external_interpret_ab9d5edff23e594c3a3ff6816f9488b4d}{ds\+\_\+n}})
+\item 
+\mbox{\hyperlink{namespace_external_interpret_afe4ff1a3c46b9e8713e23573d1d44fa0}{send\+\_\+values}} (\mbox{\hyperlink{namespace_external_interpret_ac544cc575fe5f8b42e484ea7d5f57177}{xbar}}, \mbox{\hyperlink{namespace_external_interpret_aca73a63d9b2eda64bb90f4de4b034816}{ybar}})
+\item 
+\mbox{\hyperlink{namespace_external_interpret_a3462c8b2e622683b488963ba646a7ce8}{send\+\_\+flg}} (flag\+Name, value)
+\item 
+\mbox{\hyperlink{namespace_external_interpret_af9a100ab9de4dd6d163afc203ec733a4}{plot\+EITGraphs}} (\mbox{\hyperlink{namespace_external_interpret_a21036413e1ab1eece3fb7dd402eca4f6}{mesh\+\_\+obj}}, \mbox{\hyperlink{namespace_external_interpret_a892291818f05578b2770d132c881159b}{tri}}, \mbox{\hyperlink{namespace_external_interpret_adaf3be80530d46c75c533e5ceb10f68c}{x}}, \mbox{\hyperlink{namespace_external_interpret_ae377a6c22f94e56bfa21a211f3b26058}{y}}, \mbox{\hyperlink{namespace_external_interpret_ab9d5edff23e594c3a3ff6816f9488b4d}{ds\+\_\+n}}, obj1=None, obj2=None)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespace_external_interpret_a1f93506b734f10178a9a884edf8305c9}{ESP32\+\_\+\+IP}} = "{}192.\+168.\+5.\+1"{}
+\item 
+int \mbox{\hyperlink{namespace_external_interpret_a6727cc0caecc168f5757eb583b559c11}{n\+\_\+el}} = 16
+\item 
+list \mbox{\hyperlink{namespace_external_interpret_ae94bbc1668117faa95fb75340b1ff48d}{b0}} = \mbox{[}-\/1.\+0,-\/1.\+0\mbox{]}
+\item 
+list \mbox{\hyperlink{namespace_external_interpret_a58858fcb5976f90730e920826522c137}{b1}} = \mbox{[}1.\+0,1.\+0\mbox{]}
+\item 
+\mbox{\hyperlink{namespace_external_interpret_a21036413e1ab1eece3fb7dd402eca4f6}{mesh\+\_\+obj}}
+\item 
+\mbox{\hyperlink{namespace_external_interpret_a2ac0a3058200d0eefd396e87eaa7e8ff}{protocol\+\_\+obj}}
+\item 
+list \mbox{\hyperlink{namespace_external_interpret_a99c50173b6626596cb2f7ae124ace067}{anomaly\+List}}
+\item 
+\mbox{\hyperlink{namespace_external_interpret_a37b749119aef737f19889c9f974b5e12}{delta\+\_\+perm}}
+\item 
+\mbox{\hyperlink{namespace_external_interpret_aed2bb2e402991f59c8f36b151a8a97c4}{v0}}
+\item 
+\mbox{\hyperlink{namespace_external_interpret_a1f9be8146f1d132d55e57353d0ea6685}{v1}}
+\item 
+\mbox{\hyperlink{namespace_external_interpret_a267b916b867b91b3e88fcce06100a176}{pts}} = mesh\+\_\+obj.\+node
+\item 
+\mbox{\hyperlink{namespace_external_interpret_a892291818f05578b2770d132c881159b}{tri}} = mesh\+\_\+obj.\+element
+\item 
+\mbox{\hyperlink{namespace_external_interpret_adaf3be80530d46c75c533e5ceb10f68c}{x}}
+\item 
+\mbox{\hyperlink{namespace_external_interpret_ae377a6c22f94e56bfa21a211f3b26058}{y}}
+\item 
+\mbox{\hyperlink{namespace_external_interpret_a57d21975cbc7f89ede0113445d9f1ab1}{eit}} = \mbox{\hyperlink{namespace_external_interpret_a952defe325119fb25f27f76e9dd4c25b}{initialize\+EIT}}(\mbox{\hyperlink{namespace_external_interpret_a21036413e1ab1eece3fb7dd402eca4f6}{mesh\+\_\+obj}},\mbox{\hyperlink{namespace_external_interpret_a2ac0a3058200d0eefd396e87eaa7e8ff}{protocol\+\_\+obj}})
+\item 
+\mbox{\hyperlink{namespace_external_interpret_ab9d5edff23e594c3a3ff6816f9488b4d}{ds\+\_\+n}} = \mbox{\hyperlink{namespace_external_interpret_a562eca74adebe639a32daf1e86fc0fb8}{analyze}}(\mbox{\hyperlink{namespace_external_interpret_a267b916b867b91b3e88fcce06100a176}{pts}}, \mbox{\hyperlink{namespace_external_interpret_a892291818f05578b2770d132c881159b}{tri}}, \mbox{\hyperlink{namespace_external_interpret_aed2bb2e402991f59c8f36b151a8a97c4}{v0}}, \mbox{\hyperlink{namespace_external_interpret_a1f9be8146f1d132d55e57353d0ea6685}{v1}}, \mbox{\hyperlink{namespace_external_interpret_a57d21975cbc7f89ede0113445d9f1ab1}{eit}})
+\item 
+\mbox{\hyperlink{namespace_external_interpret_ac544cc575fe5f8b42e484ea7d5f57177}{xbar}}
+\item 
+\mbox{\hyperlink{namespace_external_interpret_aca73a63d9b2eda64bb90f4de4b034816}{ybar}}
+\item 
+\mbox{\hyperlink{namespace_external_interpret_a5f554c2ebde51201af1ca6ee8e2a4ccb}{figure1}}
+\item 
+\mbox{\hyperlink{namespace_external_interpret_a0c9c9ac108bcf5a026f4ae738b61972a}{figure2}}
+\item 
+list \mbox{\hyperlink{namespace_external_interpret_adf33f48c76b76fb09bda863a73c90c63}{voltages}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespace_external_interpret_ad8efd1b1610cf487c386f4a946ff9ea2}{oldV}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespace_external_interpret_a967d128b2fcb9c7ee8fac9c3746f3743}{read\+Values}}
+\item 
+\mbox{\hyperlink{namespace_external_interpret_a577e8b16e5b356cb61a801c597b43555}{flags}}
+\item 
+\mbox{\hyperlink{namespace_external_interpret_a345fcc490fe55a940116c223370f05a1}{V0}} = \mbox{\hyperlink{namespace_external_interpret_a967d128b2fcb9c7ee8fac9c3746f3743}{read\+Values}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{namespace_external_interpret_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespace_external_interpret_a562eca74adebe639a32daf1e86fc0fb8}\index{ExternalInterpret@{ExternalInterpret}!analyze@{analyze}}
+\index{analyze@{analyze}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{analyze()}{analyze()}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a562eca74adebe639a32daf1e86fc0fb8} 
+External\+Interpret.\+analyze (\begin{DoxyParamCaption}\item[{}]{pts}{, }\item[{}]{tri}{, }\item[{}]{v0}{, }\item[{}]{v}{, }\item[{}]{eit}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}solve inverse EIT problem
+
+Parameters
+----------
+pts
+    nodes in the mesh
+tri
+    elements of the eit mesh
+v0
+    baseline voltages
+v1
+    measured voltages
+eit
+    eit object used for analysis
+
+Returns
+-------
+ds_n
+    normalized voltage deltas for all points
+\end{DoxyVerb}
+ \Hypertarget{namespace_external_interpret_a97a04a5f52116c64029719b455533e2a}\index{ExternalInterpret@{ExternalInterpret}!findCentroid@{findCentroid}}
+\index{findCentroid@{findCentroid}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{findCentroid()}{findCentroid()}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a97a04a5f52116c64029719b455533e2a} 
+External\+Interpret.\+find\+Centroid (\begin{DoxyParamCaption}\item[{}]{x}{, }\item[{}]{y}{, }\item[{}]{ds\+\_\+n}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}finds centroid of any major anomalies detected in the analysis
+
+Parameters
+----------
+x
+    x values
+y
+    y values
+ds_n
+    voltage differences from eit analysis
+
+Returns
+-------
+xbar
+    centroid for x values
+ybar
+    centroid for y values
+\end{DoxyVerb}
+ \Hypertarget{namespace_external_interpret_a952defe325119fb25f27f76e9dd4c25b}\index{ExternalInterpret@{ExternalInterpret}!initializeEIT@{initializeEIT}}
+\index{initializeEIT@{initializeEIT}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{initializeEIT()}{initializeEIT()}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a952defe325119fb25f27f76e9dd4c25b} 
+External\+Interpret.\+initialize\+EIT (\begin{DoxyParamCaption}\item[{}]{mesh\+\_\+obj}{, }\item[{}]{protocol\+\_\+obj}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize EIT inverse problem
+
+Parameters
+----------
+mesh_obj : mesh_obj
+    mesh used by the EIT analysis
+protocol_obj : protocol_obj
+    protocol the EIT analysis will use
+
+Returns
+-------
+eit
+    JAC object that is used to analyze the mesh
+\end{DoxyVerb}
+ \Hypertarget{namespace_external_interpret_af9a100ab9de4dd6d163afc203ec733a4}\index{ExternalInterpret@{ExternalInterpret}!plotEITGraphs@{plotEITGraphs}}
+\index{plotEITGraphs@{plotEITGraphs}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{plotEITGraphs()}{plotEITGraphs()}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_af9a100ab9de4dd6d163afc203ec733a4} 
+External\+Interpret.\+plot\+EITGraphs (\begin{DoxyParamCaption}\item[{}]{mesh\+\_\+obj}{, }\item[{}]{tri}{, }\item[{}]{x}{, }\item[{}]{y}{, }\item[{}]{ds\+\_\+n}{, }\item[{}]{obj1}{ = {\ttfamily None}, }\item[{}]{obj2}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_external_interpret_ab8d586a2ce3b44ec9f2b2c87ffc3ca99}\index{ExternalInterpret@{ExternalInterpret}!read\_data\_from\_esp@{read\_data\_from\_esp}}
+\index{read\_data\_from\_esp@{read\_data\_from\_esp}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{read\_data\_from\_esp()}{read\_data\_from\_esp()}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_ab8d586a2ce3b44ec9f2b2c87ffc3ca99} 
+External\+Interpret.\+read\+\_\+data\+\_\+from\+\_\+esp (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}read data from the ESP
+
+Parameters
+----------
+none
+
+Returns
+-------
+values
+    list of all voltages recorded by esp32
+\end{DoxyVerb}
+ \Hypertarget{namespace_external_interpret_a3462c8b2e622683b488963ba646a7ce8}\index{ExternalInterpret@{ExternalInterpret}!send\_flg@{send\_flg}}
+\index{send\_flg@{send\_flg}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{send\_flg()}{send\_flg()}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a3462c8b2e622683b488963ba646a7ce8} 
+External\+Interpret.\+send\+\_\+flg (\begin{DoxyParamCaption}\item[{}]{flag\+Name}{, }\item[{}]{value}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_external_interpret_afe4ff1a3c46b9e8713e23573d1d44fa0}\index{ExternalInterpret@{ExternalInterpret}!send\_values@{send\_values}}
+\index{send\_values@{send\_values}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{send\_values()}{send\_values()}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_afe4ff1a3c46b9e8713e23573d1d44fa0} 
+External\+Interpret.\+send\+\_\+values (\begin{DoxyParamCaption}\item[{}]{xbar}{, }\item[{}]{ybar}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}finds centroid of any major anomalies detected in the analysis
+
+Parameters
+----------
+xbar
+    x values
+ybar
+    y values
+ds_n
+    voltage differences from eit analysis
+
+Returns
+-------
+none
+\end{DoxyVerb}
+ \Hypertarget{namespace_external_interpret_a1464ff739f97e7d495e65b377a3d6e5c}\index{ExternalInterpret@{ExternalInterpret}!setup@{setup}}
+\index{setup@{setup}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a1464ff739f97e7d495e65b377a3d6e5c} 
+External\+Interpret.\+setup (\begin{DoxyParamCaption}\item[{}]{n\+\_\+el}{, }\item[{}]{BL\+\_\+corner}{, }\item[{}]{TR\+\_\+corner}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Place n_el electrodes equally spaced on the perimeter of a square.
+
+Parameters
+----------
+n_el : int
+    Number of electrodes
+BL_corner : list
+    bottom left corner coords of square
+TR_corner : list
+    top right corner coords of square
+
+Returns
+-------
+mesh_obj
+    EIT mesh object
+protocol_obj
+    EIT protocol settings
+\end{DoxyVerb}
+ \Hypertarget{namespace_external_interpret_abf93d8f23ce3f3d486861c37e83588f5}\index{ExternalInterpret@{ExternalInterpret}!simEIT@{simEIT}}
+\index{simEIT@{simEIT}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{simEIT()}{simEIT()}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_abf93d8f23ce3f3d486861c37e83588f5} 
+External\+Interpret.\+sim\+EIT (\begin{DoxyParamCaption}\item[{}]{mesh\+\_\+obj}{, }\item[{}]{protocol\+\_\+obj}{, }\item[{list}]{anomaly\+List}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Simulate an artificial EIT forward problem with anolalies
+
+Parameters
+----------
+mesh_obj : mesh_obj
+    mesh used by the EIT analysis
+protocol_obj : protocol_obj
+    protocol the EIT analysis will use
+anomalyList : list
+    list of anomaly_type objects to be included in the forward problem
+
+Returns
+-------
+delta_perm
+    EIT mesh object
+v0
+    baseline voltage readings
+v1
+    voltage readings with included anomalies
+\end{DoxyVerb}
+ 
+
+\label{doc-var-members}
+\Hypertarget{namespace_external_interpret_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespace_external_interpret_a99c50173b6626596cb2f7ae124ace067}\index{ExternalInterpret@{ExternalInterpret}!anomalyList@{anomalyList}}
+\index{anomalyList@{anomalyList}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{anomalyList}{anomalyList}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a99c50173b6626596cb2f7ae124ace067} 
+list External\+Interpret.\+anomaly\+List}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ [PyEITAnomaly\_Circle(center=[0.25,\ 0.5],\ r=.2,\ perm=5000.0),}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ \ \ \ \ PyEITAnomaly\_Circle(center=[-\/0.25,\ -\/0.5],\ r=.2,\ perm=500.0)]}
+
+\end{DoxyCode}
+\Hypertarget{namespace_external_interpret_ae94bbc1668117faa95fb75340b1ff48d}\index{ExternalInterpret@{ExternalInterpret}!b0@{b0}}
+\index{b0@{b0}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{b0}{b0}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_ae94bbc1668117faa95fb75340b1ff48d} 
+list External\+Interpret.\+b0 = \mbox{[}-\/1.\+0,-\/1.\+0\mbox{]}}
+
+\Hypertarget{namespace_external_interpret_a58858fcb5976f90730e920826522c137}\index{ExternalInterpret@{ExternalInterpret}!b1@{b1}}
+\index{b1@{b1}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{b1}{b1}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a58858fcb5976f90730e920826522c137} 
+list External\+Interpret.\+b1 = \mbox{[}1.\+0,1.\+0\mbox{]}}
+
+\Hypertarget{namespace_external_interpret_a37b749119aef737f19889c9f974b5e12}\index{ExternalInterpret@{ExternalInterpret}!delta\_perm@{delta\_perm}}
+\index{delta\_perm@{delta\_perm}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{delta\_perm}{delta\_perm}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a37b749119aef737f19889c9f974b5e12} 
+External\+Interpret.\+delta\+\_\+perm}
+
+\Hypertarget{namespace_external_interpret_ab9d5edff23e594c3a3ff6816f9488b4d}\index{ExternalInterpret@{ExternalInterpret}!ds\_n@{ds\_n}}
+\index{ds\_n@{ds\_n}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{ds\_n}{ds\_n}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_ab9d5edff23e594c3a3ff6816f9488b4d} 
+External\+Interpret.\+ds\+\_\+n = \mbox{\hyperlink{namespace_external_interpret_a562eca74adebe639a32daf1e86fc0fb8}{analyze}}(\mbox{\hyperlink{namespace_external_interpret_a267b916b867b91b3e88fcce06100a176}{pts}}, \mbox{\hyperlink{namespace_external_interpret_a892291818f05578b2770d132c881159b}{tri}}, \mbox{\hyperlink{namespace_external_interpret_aed2bb2e402991f59c8f36b151a8a97c4}{v0}}, \mbox{\hyperlink{namespace_external_interpret_a1f9be8146f1d132d55e57353d0ea6685}{v1}}, \mbox{\hyperlink{namespace_external_interpret_a57d21975cbc7f89ede0113445d9f1ab1}{eit}})}
+
+\Hypertarget{namespace_external_interpret_a57d21975cbc7f89ede0113445d9f1ab1}\index{ExternalInterpret@{ExternalInterpret}!eit@{eit}}
+\index{eit@{eit}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{eit}{eit}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a57d21975cbc7f89ede0113445d9f1ab1} 
+External\+Interpret.\+eit = \mbox{\hyperlink{namespace_external_interpret_a952defe325119fb25f27f76e9dd4c25b}{initialize\+EIT}}(\mbox{\hyperlink{namespace_external_interpret_a21036413e1ab1eece3fb7dd402eca4f6}{mesh\+\_\+obj}},\mbox{\hyperlink{namespace_external_interpret_a2ac0a3058200d0eefd396e87eaa7e8ff}{protocol\+\_\+obj}})}
+
+\Hypertarget{namespace_external_interpret_a1f93506b734f10178a9a884edf8305c9}\index{ExternalInterpret@{ExternalInterpret}!ESP32\_IP@{ESP32\_IP}}
+\index{ESP32\_IP@{ESP32\_IP}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{ESP32\_IP}{ESP32\_IP}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a1f93506b734f10178a9a884edf8305c9} 
+str External\+Interpret.\+ESP32\+\_\+\+IP = "{}192.\+168.\+5.\+1"{}}
+
+\Hypertarget{namespace_external_interpret_a5f554c2ebde51201af1ca6ee8e2a4ccb}\index{ExternalInterpret@{ExternalInterpret}!figure1@{figure1}}
+\index{figure1@{figure1}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{figure1}{figure1}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a5f554c2ebde51201af1ca6ee8e2a4ccb} 
+External\+Interpret.\+figure1}
+
+\Hypertarget{namespace_external_interpret_a0c9c9ac108bcf5a026f4ae738b61972a}\index{ExternalInterpret@{ExternalInterpret}!figure2@{figure2}}
+\index{figure2@{figure2}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{figure2}{figure2}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a0c9c9ac108bcf5a026f4ae738b61972a} 
+External\+Interpret.\+figure2}
+
+\Hypertarget{namespace_external_interpret_a577e8b16e5b356cb61a801c597b43555}\index{ExternalInterpret@{ExternalInterpret}!flags@{flags}}
+\index{flags@{flags}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a577e8b16e5b356cb61a801c597b43555} 
+External\+Interpret.\+flags}
+
+\Hypertarget{namespace_external_interpret_a21036413e1ab1eece3fb7dd402eca4f6}\index{ExternalInterpret@{ExternalInterpret}!mesh\_obj@{mesh\_obj}}
+\index{mesh\_obj@{mesh\_obj}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{mesh\_obj}{mesh\_obj}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a21036413e1ab1eece3fb7dd402eca4f6} 
+External\+Interpret.\+mesh\+\_\+obj}
+
+\Hypertarget{namespace_external_interpret_a6727cc0caecc168f5757eb583b559c11}\index{ExternalInterpret@{ExternalInterpret}!n\_el@{n\_el}}
+\index{n\_el@{n\_el}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{n\_el}{n\_el}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a6727cc0caecc168f5757eb583b559c11} 
+int External\+Interpret.\+n\+\_\+el = 16}
+
+\Hypertarget{namespace_external_interpret_ad8efd1b1610cf487c386f4a946ff9ea2}\index{ExternalInterpret@{ExternalInterpret}!oldV@{oldV}}
+\index{oldV@{oldV}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{oldV}{oldV}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_ad8efd1b1610cf487c386f4a946ff9ea2} 
+list External\+Interpret.\+oldV = \mbox{[}$\,$\mbox{]}}
+
+\Hypertarget{namespace_external_interpret_a2ac0a3058200d0eefd396e87eaa7e8ff}\index{ExternalInterpret@{ExternalInterpret}!protocol\_obj@{protocol\_obj}}
+\index{protocol\_obj@{protocol\_obj}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{protocol\_obj}{protocol\_obj}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a2ac0a3058200d0eefd396e87eaa7e8ff} 
+External\+Interpret.\+protocol\+\_\+obj}
+
+\Hypertarget{namespace_external_interpret_a267b916b867b91b3e88fcce06100a176}\index{ExternalInterpret@{ExternalInterpret}!pts@{pts}}
+\index{pts@{pts}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{pts}{pts}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a267b916b867b91b3e88fcce06100a176} 
+External\+Interpret.\+pts = mesh\+\_\+obj.\+node}
+
+\Hypertarget{namespace_external_interpret_a967d128b2fcb9c7ee8fac9c3746f3743}\index{ExternalInterpret@{ExternalInterpret}!readValues@{readValues}}
+\index{readValues@{readValues}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{readValues}{readValues}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a967d128b2fcb9c7ee8fac9c3746f3743} 
+External\+Interpret.\+read\+Values}
+
+\Hypertarget{namespace_external_interpret_a892291818f05578b2770d132c881159b}\index{ExternalInterpret@{ExternalInterpret}!tri@{tri}}
+\index{tri@{tri}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{tri}{tri}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a892291818f05578b2770d132c881159b} 
+External\+Interpret.\+tri = mesh\+\_\+obj.\+element}
+
+\Hypertarget{namespace_external_interpret_a345fcc490fe55a940116c223370f05a1}\index{ExternalInterpret@{ExternalInterpret}!V0@{V0}}
+\index{V0@{V0}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{V0}{V0}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a345fcc490fe55a940116c223370f05a1} 
+External\+Interpret.\+V0 = \mbox{\hyperlink{namespace_external_interpret_a967d128b2fcb9c7ee8fac9c3746f3743}{read\+Values}}}
+
+\Hypertarget{namespace_external_interpret_aed2bb2e402991f59c8f36b151a8a97c4}\index{ExternalInterpret@{ExternalInterpret}!v0@{v0}}
+\index{v0@{v0}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{v0}{v0}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_aed2bb2e402991f59c8f36b151a8a97c4} 
+External\+Interpret.\+v0}
+
+\Hypertarget{namespace_external_interpret_a1f9be8146f1d132d55e57353d0ea6685}\index{ExternalInterpret@{ExternalInterpret}!v1@{v1}}
+\index{v1@{v1}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{v1}{v1}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_a1f9be8146f1d132d55e57353d0ea6685} 
+External\+Interpret.\+v1}
+
+\Hypertarget{namespace_external_interpret_adf33f48c76b76fb09bda863a73c90c63}\index{ExternalInterpret@{ExternalInterpret}!voltages@{voltages}}
+\index{voltages@{voltages}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{voltages}{voltages}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_adf33f48c76b76fb09bda863a73c90c63} 
+External\+Interpret.\+voltages = \mbox{[}$\,$\mbox{]}}
+
+\Hypertarget{namespace_external_interpret_adaf3be80530d46c75c533e5ceb10f68c}\index{ExternalInterpret@{ExternalInterpret}!x@{x}}
+\index{x@{x}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_adaf3be80530d46c75c533e5ceb10f68c} 
+External\+Interpret.\+x}
+
+\Hypertarget{namespace_external_interpret_ac544cc575fe5f8b42e484ea7d5f57177}\index{ExternalInterpret@{ExternalInterpret}!xbar@{xbar}}
+\index{xbar@{xbar}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{xbar}{xbar}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_ac544cc575fe5f8b42e484ea7d5f57177} 
+External\+Interpret.\+xbar}
+
+\Hypertarget{namespace_external_interpret_ae377a6c22f94e56bfa21a211f3b26058}\index{ExternalInterpret@{ExternalInterpret}!y@{y}}
+\index{y@{y}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_ae377a6c22f94e56bfa21a211f3b26058} 
+External\+Interpret.\+y}
+
+\Hypertarget{namespace_external_interpret_aca73a63d9b2eda64bb90f4de4b034816}\index{ExternalInterpret@{ExternalInterpret}!ybar@{ybar}}
+\index{ybar@{ybar}!ExternalInterpret@{ExternalInterpret}}
+\doxysubsubsection{\texorpdfstring{ybar}{ybar}}
+{\footnotesize\ttfamily \label{namespace_external_interpret_aca73a63d9b2eda64bb90f4de4b034816} 
+External\+Interpret.\+ybar}
+

@@ -1,0 +1,101 @@
+\doxysection{CD74\+HC4067\+SM Class Reference}
+\hypertarget{class_c_d74_h_c4067_s_m}{}\label{class_c_d74_h_c4067_s_m}\index{CD74HC4067SM@{CD74HC4067SM}}
+
+
+{\ttfamily \#include $<$CD74\+HC4067\+SM.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_d74_h_c4067_s_m_a469e103557d6cc30f8e807497d2ca032}{CD74\+HC4067\+SM}} (uint8\+\_\+t SPin0, uint8\+\_\+t SPin1, uint8\+\_\+t SPin2, uint8\+\_\+t SPin3, uint8\+\_\+t enable\+Pin)
+\begin{DoxyCompactList}\small\item\em Initializes a \doxylink{class_c_d74_h_c4067_s_m}{CD74\+HC4067\+SM} multiplexer object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_d74_h_c4067_s_m_a806eafd77dc5825a43b46c866c35a0a5}{switch\+Pin}} (uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em switches connection to chosen pin value \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_d74_h_c4067_s_m_ae168b240503e0f939cdb9901d7bf8eba}{enable}} (void)
+\begin{DoxyCompactList}\small\item\em Turns on pass-\/through. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_d74_h_c4067_s_m_a106c16aa566a58359be743f8edac6db2}{disable}} (void)
+\begin{DoxyCompactList}\small\item\em Turns off pass-\/through. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_d74_h_c4067_s_m_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_c_d74_h_c4067_s_m_a469e103557d6cc30f8e807497d2ca032}\index{CD74HC4067SM@{CD74HC4067SM}!CD74HC4067SM@{CD74HC4067SM}}
+\index{CD74HC4067SM@{CD74HC4067SM}!CD74HC4067SM@{CD74HC4067SM}}
+\doxysubsubsection{\texorpdfstring{CD74HC4067SM()}{CD74HC4067SM()}}
+{\footnotesize\ttfamily \label{class_c_d74_h_c4067_s_m_a469e103557d6cc30f8e807497d2ca032} 
+CD74\+HC4067\+SM\+::\+CD74\+HC4067\+SM (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{SPin0}{, }\item[{uint8\+\_\+t}]{SPin1}{, }\item[{uint8\+\_\+t}]{SPin2}{, }\item[{uint8\+\_\+t}]{SPin3}{, }\item[{uint8\+\_\+t}]{enable\+Pin}{}\end{DoxyParamCaption})}
+
+
+
+Initializes a \doxylink{class_c_d74_h_c4067_s_m}{CD74\+HC4067\+SM} multiplexer object. 
+
+Assigns the pins and manages useful functions for a \doxylink{class_c_d74_h_c4067_s_m}{CD74\+HC4067\+SM} 1\+:16 multiplexer chip 
+\begin{DoxyParams}{Parameters}
+{\em Spin0} & the Arduino pin used to control the s0 pin \\
+\hline
+{\em Spin1} & the Arduino pin used to control the s1 pin \\
+\hline
+{\em Spin2} & the Arduino pin used to control the s2 pin \\
+\hline
+{\em Spin3} & the Arduino pin used to control the s3 pin \\
+\hline
+{\em enable\+Pin} & the Arduino pin used to control !E pin \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_d74_h_c4067_s_m_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_d74_h_c4067_s_m_a106c16aa566a58359be743f8edac6db2}\index{CD74HC4067SM@{CD74HC4067SM}!disable@{disable}}
+\index{disable@{disable}!CD74HC4067SM@{CD74HC4067SM}}
+\doxysubsubsection{\texorpdfstring{disable()}{disable()}}
+{\footnotesize\ttfamily \label{class_c_d74_h_c4067_s_m_a106c16aa566a58359be743f8edac6db2} 
+void CD74\+HC4067\+SM\+::disable (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Turns off pass-\/through. 
+
+sets the not\+Enable pin HIGH to set to no channels 
+\begin{DoxyParams}{Parameters}
+{\em void} & no input is used \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_c_d74_h_c4067_s_m_ae168b240503e0f939cdb9901d7bf8eba}\index{CD74HC4067SM@{CD74HC4067SM}!enable@{enable}}
+\index{enable@{enable}!CD74HC4067SM@{CD74HC4067SM}}
+\doxysubsubsection{\texorpdfstring{enable()}{enable()}}
+{\footnotesize\ttfamily \label{class_c_d74_h_c4067_s_m_ae168b240503e0f939cdb9901d7bf8eba} 
+void CD74\+HC4067\+SM\+::enable (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Turns on pass-\/through. 
+
+sets the not\+Enable pin LOW to enable the use of the selected channel 
+\begin{DoxyParams}{Parameters}
+{\em void} & no input is used \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_c_d74_h_c4067_s_m_a806eafd77dc5825a43b46c866c35a0a5}\index{CD74HC4067SM@{CD74HC4067SM}!switchPin@{switchPin}}
+\index{switchPin@{switchPin}!CD74HC4067SM@{CD74HC4067SM}}
+\doxysubsubsection{\texorpdfstring{switchPin()}{switchPin()}}
+{\footnotesize\ttfamily \label{class_c_d74_h_c4067_s_m_a806eafd77dc5825a43b46c866c35a0a5} 
+void CD74\+HC4067\+SM\+::switch\+Pin (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+switches connection to chosen pin value 
+
+enables the set of s-\/pins to represent the binary of the chosen pin which closes the selected circuit to the chip output 
+\begin{DoxyParams}{Parameters}
+{\em pin} & the 0-\/15 value of the desired channel \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_c_d74_h_c4067_s_m_8h}{CD74\+HC4067\+SM.\+h}}\item 
+src/\mbox{\hyperlink{_c_d74_h_c4067_s_m_8cpp}{CD74\+HC4067\+SM.\+cpp}}\end{DoxyCompactItemize}

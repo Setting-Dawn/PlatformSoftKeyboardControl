@@ -1,0 +1,94 @@
+\doxysection{include/shares.h File Reference}
+\hypertarget{shares_8h}{}\label{shares_8h}\index{include/shares.h@{include/shares.h}}
+{\ttfamily \#include "{}taskqueue.\+h"{}}\newline
+{\ttfamily \#include "{}taskshare.\+h"{}}\newline
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Share$<$ bool $>$ \mbox{\hyperlink{shares_8h_a015a121748bfeb795768eb309fca72ab}{initialize\+VFLG}}
+\item 
+Share$<$ bool $>$ \mbox{\hyperlink{shares_8h_a65a8bc308ef2bc93456de1ad3b0a7d3e}{read\+VFLG}}
+\item 
+Share$<$ bool $>$ \mbox{\hyperlink{shares_8h_a1df8f4dca2679761fd6d7676281b4d65}{re\+Map\+Complete\+FLG}}
+\item 
+Share$<$ uint8\+\_\+t\mbox{[}8\mbox{]}$>$ \mbox{\hyperlink{shares_8h_a18e4f1ac1289b476b0cdc33506cde8af}{adc1\+Pin\+Map}}
+\item 
+Share$<$ uint8\+\_\+t\mbox{[}8\mbox{]}$>$ \mbox{\hyperlink{shares_8h_ae5825333aba2f7650fc212cd1cd056a2}{adc2\+Pin\+Map}}
+\item 
+Share$<$ uint8\+\_\+t\mbox{[}16\mbox{]}$>$ \mbox{\hyperlink{shares_8h_a82bebdb2ea8d275468d5f0459fb0bd8a}{curr\+Pin\+Map}}
+\item 
+Share$<$ double\mbox{[}208\mbox{]}$>$ \mbox{\hyperlink{shares_8h_a00a5c56e6d6c6218545ed7db25fa75d7}{publish\+DeltaV}}
+\item 
+Queue$<$ uint16\+\_\+t $>$ \mbox{\hyperlink{shares_8h_a416ff4a954c7a8dbdfb9a263038bd672}{data\+\_\+queue}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Shares and Queues used in Soft Keyboard ME507 Project
+
+\begin{DoxyAuthor}{Author}
+Setting-\/\+Dawn 
+
+JR Ridgely 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2021-\/Oct-\/23 Original file by JR Ridgely 
+
+2021-\/Dec-\/04 Setting-\/\+Dawn rewrote example shares and queues to be project specific 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+(c) 2021 by JR Ridgely, released under the LGPL 3.\+0. 
+\end{DoxyCopyright}
+
+
+\label{doc-var-members}
+\Hypertarget{shares_8h_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{shares_8h_a18e4f1ac1289b476b0cdc33506cde8af}\index{shares.h@{shares.h}!adc1PinMap@{adc1PinMap}}
+\index{adc1PinMap@{adc1PinMap}!shares.h@{shares.h}}
+\doxysubsubsection{\texorpdfstring{adc1PinMap}{adc1PinMap}}
+{\footnotesize\ttfamily \label{shares_8h_a18e4f1ac1289b476b0cdc33506cde8af} 
+Share$<$uint8\+\_\+t\mbox{[}8\mbox{]}$>$ adc1\+Pin\+Map\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{shares_8h_ae5825333aba2f7650fc212cd1cd056a2}\index{shares.h@{shares.h}!adc2PinMap@{adc2PinMap}}
+\index{adc2PinMap@{adc2PinMap}!shares.h@{shares.h}}
+\doxysubsubsection{\texorpdfstring{adc2PinMap}{adc2PinMap}}
+{\footnotesize\ttfamily \label{shares_8h_ae5825333aba2f7650fc212cd1cd056a2} 
+Share$<$uint8\+\_\+t\mbox{[}8\mbox{]}$>$ adc2\+Pin\+Map\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{shares_8h_a82bebdb2ea8d275468d5f0459fb0bd8a}\index{shares.h@{shares.h}!currPinMap@{currPinMap}}
+\index{currPinMap@{currPinMap}!shares.h@{shares.h}}
+\doxysubsubsection{\texorpdfstring{currPinMap}{currPinMap}}
+{\footnotesize\ttfamily \label{shares_8h_a82bebdb2ea8d275468d5f0459fb0bd8a} 
+Share$<$uint8\+\_\+t\mbox{[}16\mbox{]}$>$ curr\+Pin\+Map\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{shares_8h_a416ff4a954c7a8dbdfb9a263038bd672}\index{shares.h@{shares.h}!data\_queue@{data\_queue}}
+\index{data\_queue@{data\_queue}!shares.h@{shares.h}}
+\doxysubsubsection{\texorpdfstring{data\_queue}{data\_queue}}
+{\footnotesize\ttfamily \label{shares_8h_a416ff4a954c7a8dbdfb9a263038bd672} 
+Queue$<$uint16\+\_\+t$>$ data\+\_\+queue\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{shares_8h_a015a121748bfeb795768eb309fca72ab}\index{shares.h@{shares.h}!initializeVFLG@{initializeVFLG}}
+\index{initializeVFLG@{initializeVFLG}!shares.h@{shares.h}}
+\doxysubsubsection{\texorpdfstring{initializeVFLG}{initializeVFLG}}
+{\footnotesize\ttfamily \label{shares_8h_a015a121748bfeb795768eb309fca72ab} 
+Share$<$bool$>$ initialize\+VFLG\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{shares_8h_a00a5c56e6d6c6218545ed7db25fa75d7}\index{shares.h@{shares.h}!publishDeltaV@{publishDeltaV}}
+\index{publishDeltaV@{publishDeltaV}!shares.h@{shares.h}}
+\doxysubsubsection{\texorpdfstring{publishDeltaV}{publishDeltaV}}
+{\footnotesize\ttfamily \label{shares_8h_a00a5c56e6d6c6218545ed7db25fa75d7} 
+Share$<$double\mbox{[}208\mbox{]}$>$ publish\+DeltaV\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{shares_8h_a65a8bc308ef2bc93456de1ad3b0a7d3e}\index{shares.h@{shares.h}!readVFLG@{readVFLG}}
+\index{readVFLG@{readVFLG}!shares.h@{shares.h}}
+\doxysubsubsection{\texorpdfstring{readVFLG}{readVFLG}}
+{\footnotesize\ttfamily \label{shares_8h_a65a8bc308ef2bc93456de1ad3b0a7d3e} 
+Share$<$bool$>$ read\+VFLG\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{shares_8h_a1df8f4dca2679761fd6d7676281b4d65}\index{shares.h@{shares.h}!reMapCompleteFLG@{reMapCompleteFLG}}
+\index{reMapCompleteFLG@{reMapCompleteFLG}!shares.h@{shares.h}}
+\doxysubsubsection{\texorpdfstring{reMapCompleteFLG}{reMapCompleteFLG}}
+{\footnotesize\ttfamily \label{shares_8h_a1df8f4dca2679761fd6d7676281b4d65} 
+Share$<$bool$>$ re\+Map\+Complete\+FLG\hspace{0.3cm}{\ttfamily [extern]}}
+

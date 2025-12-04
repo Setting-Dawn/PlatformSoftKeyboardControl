@@ -1,0 +1,190 @@
+\doxysection{src/\+EITwebhost.cpp File Reference}
+\hypertarget{_e_i_twebhost_8cpp}{}\label{_e_i_twebhost_8cpp}\index{src/EITwebhost.cpp@{src/EITwebhost.cpp}}
+{\ttfamily \#include "{}EITwebhost.\+h"{}}\newline
+{\ttfamily \#include "{}shares.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+IPAddress \mbox{\hyperlink{_e_i_twebhost_8cpp_a4bb2f6790489d53e1530b1f3bfdb043f}{local\+\_\+ip}} (192, 168, 5, 1)
+\item 
+IPAddress \mbox{\hyperlink{_e_i_twebhost_8cpp_a7f5e4435988c442ffce0ac2f1a53d866}{gateway}} (192, 168, 5, 1)
+\item 
+IPAddress \mbox{\hyperlink{_e_i_twebhost_8cpp_a89cf134ada28d8ce0192d9fcbc83614a}{subnet}} (255, 255, 255, 0)
+\item 
+Web\+Server \mbox{\hyperlink{_e_i_twebhost_8cpp_a48f3f185be3ea2d153c347a157b38d42}{server}} (80)
+\begin{DoxyCompactList}\small\item\em The web server object for this project. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_e_i_twebhost_8cpp_a2db7e734a3678bd61b7b9556caf2d933}{setup\+\_\+wifi}} (void)
+\begin{DoxyCompactList}\small\item\em Get the Wi\+Fi running so we can serve some web pages. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_e_i_twebhost_8cpp_a56d51c0dcf49cb5bc93d901581d3fed2}{HTML\+\_\+header}} (String \&a\+\_\+string, const char \texorpdfstring{$\ast$}{*}page\+\_\+title)
+\begin{DoxyCompactList}\small\item\em Put a web page header into an HTML string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_e_i_twebhost_8cpp_ab25b75a0fc1cc2eb45e7afa0f57b4a6a}{handle\+\_\+\+Document\+Root}} ()
+\begin{DoxyCompactList}\small\item\em Callback function that responds to HTTP requests without a subpage name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_e_i_twebhost_8cpp_a87f2f72dc45d631f5aa2765ceda168f1}{handle\+Set\+Values}} ()
+\begin{DoxyCompactList}\small\item\em Respond to a webpage request with arguments for the x,y setpoints. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_e_i_twebhost_8cpp_a495df95bd2d447534b63b3a1b2dea3fc}{handle\+Flags}} ()
+\begin{DoxyCompactList}\small\item\em Respond to a webpage request with arguments for communication via flags. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_e_i_twebhost_8cpp_ac0b9ea1d435271c3832076b57b803da7}{handle\+\_\+\+Not\+Found}} (void)
+\begin{DoxyCompactList}\small\item\em Respond to a request for an HTTP page that doesn\textquotesingle{}t exist. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_e_i_twebhost_8cpp_af09803090bb3db6e9dbbacb1683d0fe7}{handle\+\_\+data}} (void)
+\begin{DoxyCompactList}\small\item\em Return data when requested. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_e_i_twebhost_8cpp_a587ba0cb07f02913598610049a3bbb79}{ssid}} = "{}Soft Keyboard"{}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_e_i_twebhost_8cpp_aa4a2ebcb494493f648ae1e6975672575}{password}} = "{}Access Code"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This library allows the Softkeyboard project to host values and communicate with an external program to determine tilt position.
+
+\begin{DoxyAuthor}{Author}
+Setting-\/\+Dawn Based on an example for Cal\+Poly SLO\textquotesingle{}s ME 507 course by JR Ridgely 
+
+JR Ridgely subsequently based on an examples by A. Sinha at {\ttfamily \href{https://github.com/hippyaki/WebServers-on-ESP32-Codes}{\texttt{https\+://github.\+com/hippyaki/\+Web\+Servers-\/on-\/\+ESP32-\/\+Codes}}} 
+
+A. Sinha 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/Mar-\/28 Original stuff by Sinha 
+
+2022-\/Nov-\/04 Modified for ME507 use by Ridgely 
+
+2025-\/Dec-\/03 Modified for Softkeyboard project by Setting-\/\+Dawn 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+2022 by the authors, released under the MIT License. 
+\end{DoxyCopyright}
+
+
+\label{doc-func-members}
+\Hypertarget{_e_i_twebhost_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_e_i_twebhost_8cpp_a7f5e4435988c442ffce0ac2f1a53d866}\index{EITwebhost.cpp@{EITwebhost.cpp}!gateway@{gateway}}
+\index{gateway@{gateway}!EITwebhost.cpp@{EITwebhost.cpp}}
+\doxysubsubsection{\texorpdfstring{gateway()}{gateway()}}
+{\footnotesize\ttfamily \label{_e_i_twebhost_8cpp_a7f5e4435988c442ffce0ac2f1a53d866} 
+IPAddress gateway (\begin{DoxyParamCaption}\item[{192}]{}{, }\item[{168}]{}{, }\item[{5}]{}{, }\item[{1}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_e_i_twebhost_8cpp_af09803090bb3db6e9dbbacb1683d0fe7}\index{EITwebhost.cpp@{EITwebhost.cpp}!handle\_data@{handle\_data}}
+\index{handle\_data@{handle\_data}!EITwebhost.cpp@{EITwebhost.cpp}}
+\doxysubsubsection{\texorpdfstring{handle\_data()}{handle\_data()}}
+{\footnotesize\ttfamily \label{_e_i_twebhost_8cpp_af09803090bb3db6e9dbbacb1683d0fe7} 
+void handle\+\_\+data (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Return data when requested. 
+
+The measured data is sent in comma seperated value (CSV) format which is easily read by Matlab(tm), Python, and spreadsheets. \Hypertarget{_e_i_twebhost_8cpp_ab25b75a0fc1cc2eb45e7afa0f57b4a6a}\index{EITwebhost.cpp@{EITwebhost.cpp}!handle\_DocumentRoot@{handle\_DocumentRoot}}
+\index{handle\_DocumentRoot@{handle\_DocumentRoot}!EITwebhost.cpp@{EITwebhost.cpp}}
+\doxysubsubsection{\texorpdfstring{handle\_DocumentRoot()}{handle\_DocumentRoot()}}
+{\footnotesize\ttfamily \label{_e_i_twebhost_8cpp_ab25b75a0fc1cc2eb45e7afa0f57b4a6a} 
+void handle\+\_\+\+Document\+Root (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Callback function that responds to HTTP requests without a subpage name. 
+
+When another computer contacts this ESP32 through TCP/\+IP port 80 (the insecure Web port) with a request for the main web page, this callback function is run. It sends the main web page\textquotesingle{}s text to the requesting machine. \Hypertarget{_e_i_twebhost_8cpp_ac0b9ea1d435271c3832076b57b803da7}\index{EITwebhost.cpp@{EITwebhost.cpp}!handle\_NotFound@{handle\_NotFound}}
+\index{handle\_NotFound@{handle\_NotFound}!EITwebhost.cpp@{EITwebhost.cpp}}
+\doxysubsubsection{\texorpdfstring{handle\_NotFound()}{handle\_NotFound()}}
+{\footnotesize\ttfamily \label{_e_i_twebhost_8cpp_ac0b9ea1d435271c3832076b57b803da7} 
+void handle\+\_\+\+Not\+Found (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Respond to a request for an HTTP page that doesn\textquotesingle{}t exist. 
+
+This function produces the Error 404, Page Not Found error. \Hypertarget{_e_i_twebhost_8cpp_a495df95bd2d447534b63b3a1b2dea3fc}\index{EITwebhost.cpp@{EITwebhost.cpp}!handleFlags@{handleFlags}}
+\index{handleFlags@{handleFlags}!EITwebhost.cpp@{EITwebhost.cpp}}
+\doxysubsubsection{\texorpdfstring{handleFlags()}{handleFlags()}}
+{\footnotesize\ttfamily \label{_e_i_twebhost_8cpp_a495df95bd2d447534b63b3a1b2dea3fc} 
+void handle\+Flags (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Respond to a webpage request with arguments for communication via flags. 
+
+When another computer contacts this ESP32 through TCP/\+IP port 80 with a url requesting /flag? arguments, this callback function is run. This allows the client PC to communicate about what information has been received. \Hypertarget{_e_i_twebhost_8cpp_a87f2f72dc45d631f5aa2765ceda168f1}\index{EITwebhost.cpp@{EITwebhost.cpp}!handleSetValues@{handleSetValues}}
+\index{handleSetValues@{handleSetValues}!EITwebhost.cpp@{EITwebhost.cpp}}
+\doxysubsubsection{\texorpdfstring{handleSetValues()}{handleSetValues()}}
+{\footnotesize\ttfamily \label{_e_i_twebhost_8cpp_a87f2f72dc45d631f5aa2765ceda168f1} 
+void handle\+Set\+Values (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Respond to a webpage request with arguments for the x,y setpoints. 
+
+When another computer contacts this ESP32 through TCP/\+IP port 80 with a url requesting /set? arguments, this callback function is run. It provides the ESP32 with the requested float values. the main web page\textquotesingle{}s text to the requesting machine. \Hypertarget{_e_i_twebhost_8cpp_a56d51c0dcf49cb5bc93d901581d3fed2}\index{EITwebhost.cpp@{EITwebhost.cpp}!HTML\_header@{HTML\_header}}
+\index{HTML\_header@{HTML\_header}!EITwebhost.cpp@{EITwebhost.cpp}}
+\doxysubsubsection{\texorpdfstring{HTML\_header()}{HTML\_header()}}
+{\footnotesize\ttfamily \label{_e_i_twebhost_8cpp_a56d51c0dcf49cb5bc93d901581d3fed2} 
+void HTML\+\_\+header (\begin{DoxyParamCaption}\item[{String \&}]{a\+\_\+string}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{page\+\_\+title}{}\end{DoxyParamCaption})}
+
+
+
+Put a web page header into an HTML string. 
+
+This header may be modified if the developer wants some actual {\itshape style} for her or his web page. It is intended to be a common header (and stylle) for each of the pages served by this server. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+string} & A reference to a string to which the header is added; the string must have been created in each function that calls this one \\
+\hline
+{\em page\+\_\+title} & The title of the page \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_e_i_twebhost_8cpp_a4bb2f6790489d53e1530b1f3bfdb043f}\index{EITwebhost.cpp@{EITwebhost.cpp}!local\_ip@{local\_ip}}
+\index{local\_ip@{local\_ip}!EITwebhost.cpp@{EITwebhost.cpp}}
+\doxysubsubsection{\texorpdfstring{local\_ip()}{local\_ip()}}
+{\footnotesize\ttfamily \label{_e_i_twebhost_8cpp_a4bb2f6790489d53e1530b1f3bfdb043f} 
+IPAddress local\+\_\+ip (\begin{DoxyParamCaption}\item[{192}]{}{, }\item[{168}]{}{, }\item[{5}]{}{, }\item[{1}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_e_i_twebhost_8cpp_a48f3f185be3ea2d153c347a157b38d42}\index{EITwebhost.cpp@{EITwebhost.cpp}!server@{server}}
+\index{server@{server}!EITwebhost.cpp@{EITwebhost.cpp}}
+\doxysubsubsection{\texorpdfstring{server()}{server()}}
+{\footnotesize\ttfamily \label{_e_i_twebhost_8cpp_a48f3f185be3ea2d153c347a157b38d42} 
+Web\+Server server (\begin{DoxyParamCaption}\item[{80}]{}{}\end{DoxyParamCaption})}
+
+
+
+The web server object for this project. 
+
+This server is responsible for responding to HTTP requests from other computers, replying with useful information.
+
+It\textquotesingle{}s kind of clumsy to have this object as a global, but that\textquotesingle{}s the way Arduino keeps things simple to program, without the user having to write custom classes or other intermediate-\/level structures. \Hypertarget{_e_i_twebhost_8cpp_a2db7e734a3678bd61b7b9556caf2d933}\index{EITwebhost.cpp@{EITwebhost.cpp}!setup\_wifi@{setup\_wifi}}
+\index{setup\_wifi@{setup\_wifi}!EITwebhost.cpp@{EITwebhost.cpp}}
+\doxysubsubsection{\texorpdfstring{setup\_wifi()}{setup\_wifi()}}
+{\footnotesize\ttfamily \label{_e_i_twebhost_8cpp_a2db7e734a3678bd61b7b9556caf2d933} 
+void setup\+\_\+wifi (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Get the Wi\+Fi running so we can serve some web pages. 
+
+\Hypertarget{_e_i_twebhost_8cpp_a89cf134ada28d8ce0192d9fcbc83614a}\index{EITwebhost.cpp@{EITwebhost.cpp}!subnet@{subnet}}
+\index{subnet@{subnet}!EITwebhost.cpp@{EITwebhost.cpp}}
+\doxysubsubsection{\texorpdfstring{subnet()}{subnet()}}
+{\footnotesize\ttfamily \label{_e_i_twebhost_8cpp_a89cf134ada28d8ce0192d9fcbc83614a} 
+IPAddress subnet (\begin{DoxyParamCaption}\item[{255}]{}{, }\item[{255}]{}{, }\item[{255}]{}{, }\item[{0}]{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-var-members}
+\Hypertarget{_e_i_twebhost_8cpp_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{_e_i_twebhost_8cpp_aa4a2ebcb494493f648ae1e6975672575}\index{EITwebhost.cpp@{EITwebhost.cpp}!password@{password}}
+\index{password@{password}!EITwebhost.cpp@{EITwebhost.cpp}}
+\doxysubsubsection{\texorpdfstring{password}{password}}
+{\footnotesize\ttfamily \label{_e_i_twebhost_8cpp_aa4a2ebcb494493f648ae1e6975672575} 
+const char\texorpdfstring{$\ast$}{*} password = "{}Access Code"{}}
+
+\Hypertarget{_e_i_twebhost_8cpp_a587ba0cb07f02913598610049a3bbb79}\index{EITwebhost.cpp@{EITwebhost.cpp}!ssid@{ssid}}
+\index{ssid@{ssid}!EITwebhost.cpp@{EITwebhost.cpp}}
+\doxysubsubsection{\texorpdfstring{ssid}{ssid}}
+{\footnotesize\ttfamily \label{_e_i_twebhost_8cpp_a587ba0cb07f02913598610049a3bbb79} 
+const char\texorpdfstring{$\ast$}{*} ssid = "{}Soft Keyboard"{}}
+
