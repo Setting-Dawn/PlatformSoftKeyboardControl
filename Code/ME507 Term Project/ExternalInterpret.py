@@ -155,34 +155,6 @@ def analyze(pts, tri, v0, v, eit):
 #             return v2
 #     pass
 
-def read_flags_from_esp():
-    """read communication flags from the ESP
-    
-    Parameters
-    ----------
-    none
-    
-    Returns
-    -------
-    flags
-        dictionary of all flags
-    """
-    url = f"http://{ESP32_IP}/flags"
-    resp = requests.get(url, timeout=.5)
-    resp.raise_for_status()  # raise if error
-    text = resp.text
-    print(text)
-    lines = text.splitlines()
-
-    flags = dict()
-    
-    for line in lines:
-        strings = line.split(",")
-        flags[strings[0]] = strings[1]
-        
-    return flags
-
-
 def read_data_from_esp():
     """read data from the ESP
     
@@ -196,7 +168,7 @@ def read_data_from_esp():
         list of all voltages recorded by esp32
     """
     url = f"http://{ESP32_IP}/data"
-    resp = requests.get(url, timeout=.5)
+    resp = requests.get(url, timeout=1)
     resp.raise_for_status()  # raise if error
 
     # resp.text is a single string with CSV content
@@ -207,7 +179,13 @@ def read_data_from_esp():
     print(values)
     values = [float(x) for x in values[1:]] # First string is a label
 
-    return values
+    # Read Flags
+    flags = dict()
+    for line in lines[1:]:
+        flag = line.split(",")
+        flags[flag[0]] = bool(flag[1])
+
+    return values,flags
 
 def findCentroid(x, y, ds_n):
     """finds centroid of any major anomalies detected in the analysis
@@ -265,8 +243,8 @@ def send_values(xbar, ybar):
     """
     url = f"http://{ESP32_IP}/set"
     params = {
-        "val1": xbar,
-        "val2": ybar
+        "x": xbar,
+        "y": ybar
     }
 
     try:
@@ -319,8 +297,6 @@ def plotEITGraphs(mesh_obj, tri, x, y, ds_n,obj1=None,obj2=None):
 
     # plot EIT reconstruction
     
-
-
     # Plot the surface  
     if obj2 == None:
         fig2, axes2 = plt.subplots(subplot_kw={"projection": "3d"})
@@ -363,18 +339,23 @@ figure1, figure2 = plotEITGraphs(mesh_obj, tri, x, y, ds_n)
 
 voltages = []
 oldV = []
+
 while True:
-    flags = read_flags_from_esp()
+    try:
+        readValues,flags = read_data_from_esp()
+    except:
+        time.sleep(0.25)
+        continue
 
     if flags["initializeFLG"]:
-        V0 = read_data_from_esp()
+        V0 = readValues
         oldV = V0
         print(f"Gathered {len(V0)} baseline data points")
         send_flg("initializeFLG",False)
         continue
 
     elif flags["readFLG"]:
-        voltages = read_data_from_esp()
+        voltages = readValues
         if voltages == oldV:
             continue
         print(f"Gathered {len(voltages)} data points")
@@ -390,6 +371,7 @@ while True:
 
     else:
         time.sleep(0.1)
+    continue
 
     # surfplot.remove()
     # fig.canvas.draw()

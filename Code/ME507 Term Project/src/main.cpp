@@ -101,6 +101,15 @@ void task_ReadMaterial(void* p_params) {
     CurrCtrl.init(PCA9956_ADDRESS,0xFF); // Initialize current control address and max brightnes
 }
 
+/** @brief   Get the WiFi running so we can serve some web pages.
+ */
+void setup_wifi(void) {
+    Serial << "Setting up WiFi access point...";
+    WiFi.mode (WIFI_AP);
+    WiFi.softAPConfig (local_ip, gateway, subnet);
+    WiFi.softAP (ssid, password);
+    Serial << "done." << endl;
+}
 
 /** @brief   Put a web page header into an HTML string. 
  *  @details This header may be modified if the developer wants some actual
@@ -139,11 +148,8 @@ void handle_DocumentRoot ()
     String a_str;
     HTML_header (a_str, "ESP32 Web Server Test");
     a_str += "<body>\n<div id=\"webpage\">\n";
-    a_str += "<h1>Test Main Page</h1>\n";
-    a_str += "...or is it Main Test Page?\n";
-    a_str += "<p><p> <a href=\"/toggle\">Toggle LED</a>\n";
+    a_str += "<h1>ESP32 EIT Reading Home Page</h1>\n";
     a_str += "<p><p> <a href=\"/data\">Show some data in CSV format</a>\n";
-    a_str += "<p><p> <a href=\"/flag\">Show communication flags in CSV format</a>\n";
     a_str += "</div>\n</body>\n</html>\n";
 
     server.send (200, "text/html", a_str); 
@@ -156,27 +162,27 @@ void handle_DocumentRoot ()
  *           requesting machine.
  */
 void handleSetValues() {
-  // Expecting: /set?val1=123&val2=456
+    // Expecting: /set?val1=123&val2=456
 
-  if (!server.hasArg("val1") || !server.hasArg("val2")) {
-    server.send(400, "text/plain", "Missing val1 or val2");
-    return;
-  }
+    if (!server.hasArg("x") || !server.hasArg("y")) {
+        server.send(400, "text/plain", "Missing x or y");
+        return;
+    }
 
-  String val1Str = server.arg("val1");
-  String val2Str = server.arg("val2");
+    String val1Str = server.arg("x");
+    String val2Str = server.arg("y");
 
-  float value1 = val1Str.toFloat();
-  float value2 = val2Str.toFloat();
+    float value1 = val1Str.toFloat();
+    float value2 = val2Str.toFloat();
 
-  Serial.print("Got val1 = ");
-  Serial.print(value1);
-  Serial.print(", val2 = ");
-  Serial.println(value2);
+    Serial.print("Got x = ");
+    Serial.print(value1);
+    Serial.print(", y = ");
+    Serial.println(value2);
 
-  // Respond to the client
-  String response = "OK. Received val1=" + String(value1) + " val2=" + String(value2);
-  server.send(200, "text/plain", response);
+    // Respond to the client
+    String response = "OK. Received x=" + String(value1) + " y=" + String(value2);
+    server.send(200, "text/plain", response);
 }
 
 /** @brief   Respond to a webpage request with arguments for communication via flags
@@ -185,34 +191,20 @@ void handleSetValues() {
  *           callback function is run. This allows the client PC to communicate about what information has been received.
  */
 void handleFlags() {
-    // Expecting: /flag?arg=val
-
-    
-    // Page will consist of one line of comma separated voltage values
-    String csv_str = "flag,value";
-    
-    csv_str += "initializeFLG";
-    csv_str += "True"; // PLACEHOLDER FOR PULLING FROM SHARE
-    csv_str += "readFLG";
-    csv_str += "False"; // PLACEHOLDER FOR PULLING FROM SHARE
-
-    // Send the CSV file as plain text so it can be easily interpretted
-    server.send (200, "text/plain", csv_str);
-
     bool value;
 
     if (server.hasArg("initializeFLG")) {
         String val = server.arg("initializeFLG");
         Serial << "Got arg: " << "initializeFLG";
-        Serial << "with val: " << val;
+        Serial << "with val: " << val << endl;
         value = bool(val);
 
         // Respond to the client
         String response = "OK. Received initializeFLG=" + value;
         server.send(200, "text/plain", response);
     }
-    else if (server.hasArg("readFLG")) {
-        server.send(400, "text/plain", "Missing val1 or val2");
+    if (server.hasArg("readFLG")) {
+        server.send(400, "text/plain", "Flag is Read-Only");
         return;
     };
 
@@ -240,15 +232,23 @@ void handle_data (void)
 
     // Create some fake data and put it into a String object.
     //PLACEHOLDER FOR PULLING FROM QUEUE
-    for (uint8_t index = 0; index < 20; index++)
+    for (uint8_t index = 0; index < 208; index++)
     {
         csv_str += index;
         csv_str += ",";
-        csv_str += String (sin (index / 5.4321), 3);       // 3 decimal places
-        csv_str += "\n";
+        csv_str += String (sin (index / 5.4321), 3); // 3 decimal places
     }
+    csv_str += "\n";
 
-    // Send the CSV file as plain text so it can be easily saved as a file
+    // Page will also consist of lines of comma separated flag labels and bool values
+    csv_str += "initializeFLG,";
+    csv_str += "True"; // PLACEHOLDER FOR PULLING FROM SHARE
+    csv_str += "\n";
+    csv_str += "readFLG,";
+    csv_str += "False"; // PLACEHOLDER FOR PULLING FROM SHARE
+    csv_str += "\n";
+
+    // Send the CSV file as plain text so it can be easily interpretted
     server.send (200, "text/plain", csv_str);
 }
 
@@ -266,10 +266,9 @@ void task_webserver (void* p_params)
     // is accessed as a global object because not only this function but also
     // the page handling functions referenced below need access to the server
     server.on ("/", handle_DocumentRoot);
-    server.on ("/toggle", handle_Toggle_LED);
     server.on ("/data", handle_data);
     server.on ("/set", handleSetValues);
-    server.on ("/flag", handleSetFlags);
+    server.on ("/flags", handleFlags);
     server.onNotFound (handle_NotFound);
 
     // Get the web server running
@@ -280,18 +279,8 @@ void task_webserver (void* p_params)
     {
         // The web server must be periodically run to watch for page requests
         server.handleClient ();
-        vTaskDelay (500);
+        vTaskDelay (100);
     }
-}
-
-/** @brief   Get the WiFi running so we can serve some web pages.
- */
-void setup_wifi(void) {
-    Serial << "Setting up WiFi access point...";
-    WiFi.mode (WIFI_AP);
-    WiFi.softAPConfig (local_ip, gateway, subnet);
-    WiFi.softAP (ssid, password);
-    Serial << "done." << endl;
 }
 
 void setup() {
@@ -310,10 +299,10 @@ void setup() {
     digitalWrite (LED_PIN, LOW);
 
     // Task which produces the blinking LED
-    xTaskCreate (heartbeat, "Pulse", 1024, NULL, 11, NULL);
+    xTaskCreate (heartbeat, "Pulse", 1024, NULL, 2, NULL);
 
     // Task which runs the web server.
-    xTaskCreate (task_webserver, "Web Server", 8192, NULL, 2, NULL);
+    xTaskCreate (task_webserver, "Web Server", 8192, NULL, 11, NULL);
 }
 
 void loop() {
