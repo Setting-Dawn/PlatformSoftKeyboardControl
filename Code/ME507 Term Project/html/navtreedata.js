@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "My Project", "index.html", [
+<<<<<<< Updated upstream
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -33,6 +34,8 @@ var NAVTREE =
         [ "Variables", "namespacemembers_vars.html", null ]
       ] ]
     ] ],
+=======
+>>>>>>> Stashed changes
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -45,8 +48,12 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
+<<<<<<< Updated upstream
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ]
+=======
+        [ "Functions", "globals_func.html", null ]
+>>>>>>> Stashed changes
       ] ]
     ] ]
   ] ]
@@ -54,7 +61,11 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
+<<<<<<< Updated upstream
 "_c_d74_h_c4067_s_m_8cpp.html"
+=======
+"_c_d74_h_c4067_s_m_8h_source.html"
+>>>>>>> Stashed changes
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

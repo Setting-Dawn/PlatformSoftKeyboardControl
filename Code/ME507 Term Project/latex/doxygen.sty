@@ -3,6 +3,7 @@
 
 % Packages used by this style file
 \RequirePackage{alltt}
+<<<<<<< Updated upstream
 \RequirePackage{array}
 \RequirePackage{calc}
 \RequirePackage{float}
@@ -45,6 +46,16 @@
       }
   }
 \ExplSyntaxOff
+=======
+%%\RequirePackage{array} %% moved to refman.tex due to workaround for LaTex 2019 version and unmaintained tabu package
+\RequirePackage{calc}
+\RequirePackage{float}
+%%\RequirePackage{ifthen} %% moved to refman.tex due to workaround for LaTex 2019 version and unmaintained tabu package
+\RequirePackage{verbatim}
+\RequirePackage[table]{xcolor}
+\RequirePackage{longtable_doxygen}
+\RequirePackage{tabu_doxygen}
+>>>>>>> Stashed changes
 \RequirePackage{fancyvrb}
 \RequirePackage{tabularx}
 \RequirePackage{multicol}
@@ -380,6 +391,7 @@
   \end{DoxyDesc}%
 }
 
+<<<<<<< Updated upstream
 % define a theme for the DoxyTable environment (without caption)
 \NewTblrTheme{DoxyTableBareTheme}{
     \DefTblrTemplate{firsthead}{default}{}%
@@ -520,6 +532,61 @@
 
 \NewDocumentCommand{\tf}{m}{%
   \hspace{-\tabcolsep}\bfseries #1%
+=======
+% Used by parameter lists
+\newenvironment{DoxyParams}[2][]{%
+    \tabulinesep=1mm%
+    \par%
+    \ifthenelse{\equal{#1}{}}%
+      {\begin{longtabu*}spread 0pt [l]{|X[-1,l]|X[-1,l]|}}% name + description
+    {\ifthenelse{\equal{#1}{1}}%
+      {\begin{longtabu*}spread 0pt [l]{|X[-1,l]|X[-1,l]|X[-1,l]|}}% in/out + name + desc
+      {\begin{longtabu*}spread 0pt [l]{|X[-1,l]|X[-1,l]|X[-1,l]|X[-1,l]|}}% in/out + type + name + desc
+    }
+    \multicolumn{2}{l}{\hspace{-6pt}\bfseries\fontseries{bc}\selectfont\color{darkgray} #2}\\[1ex]%
+    \hline%
+    \endfirsthead%
+    \multicolumn{2}{l}{\hspace{-6pt}\bfseries\fontseries{bc}\selectfont\color{darkgray} #2}\\[1ex]%
+    \hline%
+    \endhead%
+}{%
+    \end{longtabu*}%
+    \vspace{6pt}%
+}
+
+% Used for fields of simple structs
+\newenvironment{DoxyFields}[1]{%
+    \tabulinesep=1mm%
+    \par%
+    \begin{longtabu*}spread 0pt [l]{|X[-1,r]|X[-1,l]|X[-1,l]|}%
+    \multicolumn{3}{l}{\hspace{-6pt}\bfseries\fontseries{bc}\selectfont\color{darkgray} #1}\\[1ex]%
+    \hline%
+    \endfirsthead%
+    \multicolumn{3}{l}{\hspace{-6pt}\bfseries\fontseries{bc}\selectfont\color{darkgray} #1}\\[1ex]%
+    \hline%
+    \endhead%
+}{%
+    \end{longtabu*}%
+    \vspace{6pt}%
+}
+
+% Used for fields simple class style enums
+\newenvironment{DoxyEnumFields}[2][]{%
+    \tabulinesep=1mm%
+    \par%
+    \ifthenelse{\equal{#1}{2}}%
+      {\begin{longtabu*}spread 0pt [l]{|X[-1,r]|X[-1,l]|}}%
+      {\begin{longtabu*}spread 0pt [l]{|X[-1,l]|X[-1,r]|X[-1,l]|}}% with init value
+    \multicolumn{2}{l}{\hspace{-6pt}\bfseries\fontseries{bc}\selectfont\color{darkgray} #2}\\[1ex]%
+    \hline%
+    \endfirsthead%
+    \multicolumn{2}{l}{\hspace{-6pt}\bfseries\fontseries{bc}\selectfont\color{darkgray} #2}\\[1ex]%
+    \hline%
+    \endhead%
+}{%
+    \end{longtabu*}%
+    \vspace{6pt}%
+>>>>>>> Stashed changes
 }
 
 % Used for parameters within a detailed function description
@@ -529,6 +596,7 @@
 }
 
 % Used by return value lists
+<<<<<<< Updated upstream
 \NewDocumentEnvironment{DoxyRetVals}{m +b}{%
   \par
   \DoxyParamTable{2}{r}{#1}{#2}
@@ -545,6 +613,54 @@
   \par
   \DoxyParamTable{2}{r}{#1}{#2}
 }{}
+=======
+\newenvironment{DoxyRetVals}[1]{%
+    \tabulinesep=1mm%
+    \par%
+    \begin{longtabu*}spread 0pt [l]{|X[-1,r]|X[-1,l]|}%
+    \multicolumn{2}{l}{\hspace{-6pt}\bfseries\fontseries{bc}\selectfont\color{darkgray} #1}\\[1ex]%
+    \hline%
+    \endfirsthead%
+    \multicolumn{2}{l}{\hspace{-6pt}\bfseries\fontseries{bc}\selectfont\color{darkgray} #1}\\[1ex]%
+    \hline%
+    \endhead%
+}{%
+    \end{longtabu*}%
+    \vspace{6pt}%
+}
+
+% Used by exception lists
+\newenvironment{DoxyExceptions}[1]{%
+    \tabulinesep=1mm%
+    \par%
+    \begin{longtabu*}spread 0pt [l]{|X[-1,r]|X[-1,l]|}%
+    \multicolumn{2}{l}{\hspace{-6pt}\bfseries\fontseries{bc}\selectfont\color{darkgray} #1}\\[1ex]%
+    \hline%
+    \endfirsthead%
+    \multicolumn{2}{l}{\hspace{-6pt}\bfseries\fontseries{bc}\selectfont\color{darkgray} #1}\\[1ex]%
+    \hline%
+    \endhead%
+}{%
+    \end{longtabu*}%
+    \vspace{6pt}%
+}
+
+% Used by template parameter lists
+\newenvironment{DoxyTemplParams}[1]{%
+    \tabulinesep=1mm%
+    \par%
+    \begin{longtabu*}spread 0pt [l]{|X[-1,r]|X[-1,l]|}%
+    \multicolumn{2}{l}{\hspace{-6pt}\bfseries\fontseries{bc}\selectfont\color{darkgray} #1}\\[1ex]%
+    \hline%
+    \endfirsthead%
+    \multicolumn{2}{l}{\hspace{-6pt}\bfseries\fontseries{bc}\selectfont\color{darkgray} #1}\\[1ex]%
+    \hline%
+    \endhead%
+}{%
+    \end{longtabu*}%
+    \vspace{6pt}%
+}
+>>>>>>> Stashed changes
 
 % Used for member lists
 \newenvironment{DoxyCompactItemize}{%
@@ -608,6 +724,17 @@
 
 % Used by tables
 \newcommand{\PBS}[1]{\let\temp=\\#1\let\\=\temp}%
+<<<<<<< Updated upstream
+=======
+\newenvironment{TabularC}[1]%
+{\tabulinesep=1mm
+\begin{longtabu*}spread 0pt [c]{*#1{|X[-1]}|}}%
+{\end{longtabu*}\par}%
+
+\newenvironment{TabularNC}[1]%
+{\begin{tabu}spread 0pt [l]{*#1{|X[-1]}|}}%
+{\end{tabu}\par}%
+>>>>>>> Stashed changes
 
 % Used for member group headers
 \newenvironment{Indent}{%

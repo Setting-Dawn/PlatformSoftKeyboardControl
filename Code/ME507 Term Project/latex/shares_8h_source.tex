@@ -11,6 +11,7 @@
 \DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}taskshare.h"{}}}
 \DoxyCodeLine{00016\ }
 \DoxyCodeLine{00017\ \textcolor{comment}{//\ A\ share\ which\ holds\ whether\ the\ external\ program\ needs\ to\ initialize}}
+<<<<<<< Updated upstream
 \DoxyCodeLine{00018\ \textcolor{keyword}{extern}\ Share<bool>\ \mbox{\hyperlink{shares_8h_a015a121748bfeb795768eb309fca72ab}{initializeVFLG}};}
 \DoxyCodeLine{00019\ \textcolor{comment}{//\ A\ share\ which\ holds\ whether\ the\ external\ program\ should\ read\ voltages}}
 \DoxyCodeLine{00020\ \textcolor{keyword}{extern}\ Share<bool>\ \mbox{\hyperlink{shares_8h_a65a8bc308ef2bc93456de1ad3b0a7d3e}{readVFLG}};}
@@ -29,5 +30,22 @@
 \DoxyCodeLine{00033\ \textcolor{keyword}{extern}\ Queue<uint16\_t>\ \mbox{\hyperlink{shares_8h_a416ff4a954c7a8dbdfb9a263038bd672}{data\_queue}};}
 \DoxyCodeLine{00034\ }
 \DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_SHARES\_H\_}}
+=======
+\DoxyCodeLine{00018\ \textcolor{keyword}{extern}\ Share<bool>\ initializeVFLG;}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ A\ share\ which\ holds\ whether\ the\ external\ program\ should\ read\ voltages}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{extern}\ Share<bool>\ readVFLG;}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ A\ share\ which\ holds\ whether\ the\ external\ program\ has\ communicated\ how\ the\ connections\ are\ defined}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{extern}\ Share<bool>\ reMapCompleteFLG;}
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ A\ share\ which\ holds\ how\ the\ connections\ are\ defined\ for\ adc1}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{extern}\ Share<uint8\_t>\ adc1PinMap[8];}
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ A\ share\ which\ holds\ how\ the\ connections\ are\ defined\ for\ adc2}}
+\DoxyCodeLine{00026\ \textcolor{keyword}{extern}\ Share<uint8\_t>\ adc2PinMap[8];}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ A\ share\ which\ holds\ how\ the\ current\ connections\ are\ defined}}
+\DoxyCodeLine{00028\ \textcolor{keyword}{extern}\ Share<uint8\_t>\ currPinMap[16];}
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ A\ share\ which\ holds\ whether\ the\ external\ program\ has\ communicated\ how\ the\ connections\ are\ defined}}
+\DoxyCodeLine{00030\ \textcolor{keyword}{extern}\ Share<double>\ publishDeltaV[208];}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_SHARES\_H\_}}
+>>>>>>> Stashed changes
 
 \end{DoxyCode}

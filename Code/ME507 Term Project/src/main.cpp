@@ -26,7 +26,7 @@ const uint8_t ADC_1ADDRESS = 0x1D;
 const uint8_t ADC_2ADDRESS = 0x1F;
 
 // PCA9956BTWY Addresses
-const uint8_t PCA9956_ADDRESS = 0x01;
+const uint8_t PCA9956_ADDRESS = 0x70;
 
 // Motor control pins
 const uint8_t FAULT_PIN = 4;
@@ -35,7 +35,6 @@ const uint8_t MOTOR_X_1 = 31;
 const uint8_t MOTOR_X_2 = 30;
 const uint8_t MOTOR_Y_1 = 28;
 const uint8_t MOTOR_Y_2 = 27;
-
 
 // A share which holds whether the external program needs to initialize
 Share<bool> initializeVFLG ("Measure V0");

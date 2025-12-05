@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 /* The standard CSS for doxygen 1.15.0*/
+=======
+/* The standard CSS for doxygen 1.14.0*/
+>>>>>>> Stashed changes
 
 html {
 /* page base colors */
@@ -158,7 +162,10 @@ html {
 --fragment-lineno-link-hover-fg-color: #4665A2;
 --fragment-lineno-link-hover-bg-color: #C8C8C8;
 --fragment-copy-ok-color: #2EC82E;
+<<<<<<< Updated upstream
 --fragment-highlight-filter: -3;
+=======
+>>>>>>> Stashed changes
 --tooltip-foreground-color: black;
 --tooltip-background-color: rgba(255,255,255,0.8);
 --tooltip-arrow-background-color: white;
@@ -361,7 +368,10 @@ html {
 --fragment-lineno-link-hover-fg-color: #8E96A1;
 --fragment-lineno-link-hover-bg-color: #505050;
 --fragment-copy-ok-color: #0EA80E;
+<<<<<<< Updated upstream
 --fragment-highlight-filter: 5;
+=======
+>>>>>>> Stashed changes
 --tooltip-foreground-color: #C9D1D9;
 --tooltip-background-color: #202020;
 --tooltip-arrow-background-color: #202020;
@@ -746,7 +756,10 @@ pre.fragment {
 span.tt {
         white-space: pre;
 	font-family: var(--font-family-monospace);
+<<<<<<< Updated upstream
 	background-color: var(--fragment-background-color);
+=======
+>>>>>>> Stashed changes
 }
 
 .clipboard {
@@ -1917,10 +1930,13 @@ dl.warning dt, dl.attention dt, dl.important dt {
 	color: var(--warning-color-hl);
 }
 
+<<<<<<< Updated upstream
 dl.warning .tt, dl.attention .tt, dl.important .tt {
 	background-color: hsl(from var(--warning-color-bg) h s calc(l + var(--fragment-highlight-filter)));
 }
 
+=======
+>>>>>>> Stashed changes
 dl.note, dl.remark {
 	background: var(--note-color-bg);
 	border-left: 8px solid var(--note-color-hl);
@@ -1931,10 +1947,13 @@ dl.note dt, dl.remark dt {
 	color: var(--note-color-hl);
 }
 
+<<<<<<< Updated upstream
 dl.note .tt, dl.remark .tt {
 	background-color: hsl(from var(--note-color-bg) h s calc(l + var(--fragment-highlight-filter)));
 }
 
+=======
+>>>>>>> Stashed changes
 dl.todo {
 	background: var(--todo-color-bg);
 	border-left: 8px solid var(--todo-color-hl);
@@ -1945,10 +1964,13 @@ dl.todo dt {
 	color: var(--todo-color-hl);
 }
 
+<<<<<<< Updated upstream
 dl.todo .tt {
 	background-color: hsl(from var(--todo-color-bg) h s calc(l + var(--fragment-highlight-filter)));
 }
 
+=======
+>>>>>>> Stashed changes
 dl.test {
 	background: var(--test-color-bg);
 	border-left: 8px solid var(--test-color-hl);
@@ -1959,10 +1981,13 @@ dl.test dt {
 	color: var(--test-color-hl);
 }
 
+<<<<<<< Updated upstream
 dl.test .tt {
 	background-color: hsl(from var(--test-color-bg) h s calc(l + var(--fragment-highlight-filter)));
 }
 
+=======
+>>>>>>> Stashed changes
 dl.bug dt a {
 	color: var(--bug-color-hl) !important;
 }
@@ -1977,10 +2002,13 @@ dl.bug dt a {
 	color: var(--bug-color-hl) !important;
 }
 
+<<<<<<< Updated upstream
 dl.bug .tt {
 	background-color: hsl(from var(--bug-color-bg) h s calc(l + var(--fragment-highlight-filter)));
 }
 
+=======
+>>>>>>> Stashed changes
 dl.deprecated {
 	background: var(--deprecated-color-bg);
 	border-left: 8px solid var(--deprecated-color-hl);
@@ -1991,11 +2019,20 @@ dl.deprecated dt a {
 	color: var(--deprecated-color-hl) !important;
 }
 
+<<<<<<< Updated upstream
 dl.deprecated .tt {
 	background-color: hsl(from var(--deprecated-color-bg) h s calc(l + var(--fragment-highlight-filter)));
 }
 
 
+=======
+dl.note dd, dl.warning dd, dl.pre dd, dl.post dd,
+dl.remark dd, dl.attention dd, dl.important dd, dl.invariant dd,
+dl.bug dd, dl.deprecated dd, dl.todo dd, dl.test dd {
+	margin-inline-start: 0px;
+}
+
+>>>>>>> Stashed changes
 dl.invariant, dl.pre, dl.post {
 	background: var(--invariant-color-bg);
 	border-left: 8px solid var(--invariant-color-hl);
@@ -2006,6 +2043,7 @@ dl.invariant dt, dl.pre dt, dl.post dt {
 	color: var(--invariant-color-hl);
 }
 
+<<<<<<< Updated upstream
 dl.invariant .tt, dl.pre .tt, dl.post .tt {
 	background-color: hsl(from var(--invariant-color-bg) h s calc(l + var(--fragment-highlight-filter)));
 }
@@ -2016,6 +2054,8 @@ dl.bug dd, dl.deprecated dd, dl.todo dd, dl.test dd {
 	margin-inline-start: 0px;
 }
 
+=======
+>>>>>>> Stashed changes
 
 #projectrow
 {
