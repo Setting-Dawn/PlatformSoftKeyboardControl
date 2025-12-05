@@ -332,39 +332,44 @@ static void taskIMU(void *pvParameters)
  * The system will halt if the IMU cannot be detected.
  */
 
+// Multiplexer control pins
+const uint8_t s0_PIN = 26;
+const uint8_t s1_PIN = 25;
+const uint8_t s2_PIN = 33;
+const uint8_t s3_PIN = 32;
+const uint8_t MultiEnable_PIN = 35;
+
+// ADC I2C Addresses
+const uint8_t ADC_1ADDRESS = 0x1D;
+const uint8_t ADC_2ADDRESS = 0x1F;
+
+// PCA9956BTWY Addresses
+const uint8_t PCA9956_ADDRESS = 0x01;
+
+// Motor control pins
+
+const uint8_t FAULT_PIN = 4;
+const uint8_t NSLEEP_PIN = 2;
+const uint8_t MOTOR_X_1 = 31;
+const uint8_t MOTOR_X_2 = 30;
+const uint8_t MOTOR_Y_1 = 28;
+const uint8_t MOTOR_Y_2 = 27;
+
+void task_ReadMaterial(void* p_params) {
+    ADC128D818 ADC_1 (ADC_1ADDRESS);
+    ADC128D818 ADC_2 (ADC_2ADDRESS);
+    CD74HC4067SM Multiplex (s0_PIN,s1_PIN,s2_PIN,s3_PIN,MultiEnable_PIN);
+    PCA9956 CurrCtrl (&Wire);
+    CurrCtrl.init(PCA9956_ADDRESS,0xFF); // Initialize current control address and max brightnes
+}
+
+
 void setup() {
     // put your setup code here, to run once:
     Serial.begin(115200);
     delay(1000);
     Serial.println("Hello World!");
 
-     Serial.println();
-    Serial.println(F("ESP32 + BNO055 Orientation Reader (FreeRTOS Task)"));
-    Serial.println(F(" - Place system in desired horizontal pose to set baseline"));
-    Serial.println(F(" - Send 'z' over serial to re-zero horizontal at any time"));
-    Serial.println();
-
-    initI2CBus();
-
-    if (!initIMU()) {
-        // Fatal error: IMU not found. Stop here.
-        while (true) {
-            delay(1000);
-        }
-    }
-
-    printCalibrationStatus();
-
-    // Create the IMU task pinned to a specific core.
-    xTaskCreatePinnedToCore(
-        taskIMU,                 ///< Task function.
-        "IMU_Task",              ///< Name (for debugging).
-        IMU_TASK_STACK_SIZE,     ///< Stack size in words.
-        nullptr,                 ///< Task parameter.
-        IMU_TASK_PRIORITY,       ///< Task priority.
-        nullptr,                 ///< Task handle (not used).
-        IMU_TASK_CORE            ///< Core ID.
-    );
 }
 
 void loop() {
