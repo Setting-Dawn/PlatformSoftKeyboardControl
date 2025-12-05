@@ -9,7 +9,7 @@
 #include "EITwebhost.h"
 #include "taskshare.h"
 #include "taskqueue.h"
-#include "shares.h" 
+#include "shares.h"
 
 // LED pin
 const uint8_t LED_PIN = 2;
@@ -38,19 +38,12 @@ const uint8_t MOTOR_Y_2 = 27;
 
 
 // A share which holds whether the external program needs to initialize
-extern Share<bool> initializeVFLG;
+Share<bool> initializeVFLG ("Measure V0");
 // A share which holds whether the external program should read voltages
-extern Share<bool> readVFLG;
+Share<bool> readVFLG ("Read V");
 // A share which holds whether the external program has communicated how the connections are defined
-extern Share<bool> reMapCompleteFLG;
-// A share which holds how the adc1 connections are defined
-extern Share<uint8_t> adc1PinMap[8];
-// A share which holds how the adc2 connections are defined
-extern Share<uint8_t> adc2PinMap[8];
-// A share which holds how the current connections are defined
-extern Share<uint8_t> currPinMap[16];
-// A share which holds whether the external program has communicated how the connections are defined
-extern Share<double> publishDeltaV[208];
+double publishDeltaV[208] = {0};
+Mutex DeltaVMutex;
 
 /*! @brief function to cycle the built-in LED in a set patern to aid debugging
 * @details Blinks a pre-set desired morse code message to crashes externally diagnosable.
@@ -94,47 +87,48 @@ void heartbeat(void* p_params) {
 }
 
 void task_ReadMaterial(void* p_params) {
+    Serial << "Starting Read Material Task" << endl;
     ADC128D818 ADC_1 (ADC_1ADDRESS);
     ADC_1.begin();
     ADC128D818 ADC_2 (ADC_2ADDRESS);
     ADC_2.begin();
     CD74HC4067SM Multiplex (s0_PIN,s1_PIN,s2_PIN,s3_PIN,MultiEnable_PIN);
     PCA9956 CurrCtrl (&Wire);
-    CurrCtrl.init(PCA9956_ADDRESS,0xFF); // Initialize current control address and max brightnes
+    CurrCtrl.init(PCA9956_ADDRESS,0x7F,false); // Initialize current control address and max brightnes
+
+    const uint8_t maxCurrent = 0x7F;
+
     uint8_t currPinIndex;
     uint8_t GND_PinIndex;
-    uint8_t adc1Mapping[8];
-    uint8_t adc2Mapping[8];
-    uint8_t currMapping[16];
-    double cycleMeas[16] = {0};
     double measure[208] = {0};
+    double cycleVals[16];
+    double skipCycleVals[14];
+    Serial << "Finished initializing Read Material Task" << endl;
 
     uint8_t state = 0;
     for (;;) {
-        switch (state){
-            case 0: // Idle until Signal from External Computer
-                if (reMapCompleteFLG.get()) {
-                    adc1PinMap.get(adc1Mapping);
-                    adc2PinMap.get(adc2Mapping);
-                    uint8_t currTemp[16] = currPinMap.get();
-                    for (uint8_t n = 0;n<16;n++) {
-                        currMapping[n] = currTemp[n];
-                    }
-                    state = 1;
-                }
-            case 1:
-                for (uint8_t n = 0;n <16;n++) {
-                    currPinIndex = (n + 1) % 16;
-                    GND_PinIndex = n;
-                    for (uint8_t i = 0;i<8;i++) {
-                        cycleMeas[adc1Mapping[i]] = ADC_1.readConverted(i);
-                        cycleMeas[adc2Mapping[i]] = ADC_2.readConverted(i);
-                    }
-                    measure[n*13] = *cycleMeas;
+        for (uint8_t n = 0;n <16;n++) {
+            currPinIndex = (n + 1) % 16;
+            Multiplex.switchPin(n);
+            CurrCtrl.setLEDCurrent(currPinIndex,maxCurrent);
+            vTaskDelay(1);
 
+            for (uint8_t i=0;i<8;i++) {
+                cycleVals[i] = ADC_1.readConverted(7-i);
+                cycleVals[8+i] = ADC_1.readConverted(7-i);
+            };
+            for (uint8_t i=0;i<14;i++) {
+                skipCycleVals[i] = cycleVals[(i+n) % 16];
+            };
+            for (uint8_t i=0;i<13;i++) {
+                measure[n*13+i] = skipCycleVals[i+1] - skipCycleVals[i];
+            };
         }
-
+        DeltaVMutex.take();
+        for (uint8_t n=0;n<208;n++) {
+            publishDeltaV[n] = measure[n];
         }
+        DeltaVMutex.give();
     }
 }
 
@@ -176,6 +170,9 @@ void setup() {
     delay(1000);
     Serial << "Would you like to play a game? [y/n]" << endl;
 
+    initializeVFLG.put(false);
+    readVFLG.put(false);
+
     // Call function which gets the WiFi working
     setup_wifi();
     
@@ -185,6 +182,9 @@ void setup() {
 
     // Task which produces the blinking LED
     xTaskCreate (heartbeat, "Pulse", 1024, NULL, 2, NULL);
+
+    // Task which produces the blinking LED
+    xTaskCreate (task_ReadMaterial, "EIT", 8192, NULL, 7, NULL);
 
     // Task which runs the web server.
     xTaskCreate (task_webserver, "Web Server", 8192, NULL, 11, NULL);

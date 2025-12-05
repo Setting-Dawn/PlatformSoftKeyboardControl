@@ -144,54 +144,54 @@ void handleFlags() {
         server.send(400, "text/plain", "Flag is Read-Only");
         return;
     }
-    if (server.hasArg("adc1Map") && server.hasArg("adc2Map") && server.hasArg("currMap")) {
-        String data_str = server.arg("adc1Map");
-        // Parse comma-separated values
-        uint8_t values[16] = {0};
-        int index = 0;
-        int start = 0;
+    // if (server.hasArg("adc1Map") && server.hasArg("adc2Map") && server.hasArg("currMap")) {
+    //     String data_str = server.arg("adc1Map");
+    //     // Parse comma-separated values
+    //     uint8_t values[16] = {0};
+    //     int index = 0;
+    //     int start = 0;
         
-        for (int i = 0; i <= data_str.length(); i++) {
-            if (data_str[i] == ',' || i == data_str.length()) {
-                values[index++] = atoi(data_str.substring(start, i).c_str());
-                start = i + 1;
-            }
-        }
-        adc1PinMap.put(values);
+    //     for (int i = 0; i <= data_str.length(); i++) {
+    //         if (data_str[i] == ',' || i == data_str.length()) {
+    //             values[index++] = atoi(data_str.substring(start, i).c_str());
+    //             start = i + 1;
+    //         }
+    //     }
+    //     adc1PinMap.put(values);
 
-        data_str = server.arg("adc2Map");
-        // Parse comma-separated values
-        values[16] = {0};
-        index = 0;
-        start = 0;
+    //     data_str = server.arg("adc2Map");
+    //     // Parse comma-separated values
+    //     values[16] = {0};
+    //     index = 0;
+    //     start = 0;
         
-        for (int i = 0; i <= data_str.length(); i++) {
-            if (data_str[i] == ',' || i == data_str.length()) {
-                values[index++] = atoi(data_str.substring(start, i).c_str());
-                start = i + 1;
-            }
-        }
-        adc2PinMap.put(values);
+    //     for (int i = 0; i <= data_str.length(); i++) {
+    //         if (data_str[i] == ',' || i == data_str.length()) {
+    //             values[index++] = atoi(data_str.substring(start, i).c_str());
+    //             start = i + 1;
+    //         }
+    //     }
+    //     adc2PinMap.put(values);
         
-        data_str = server.arg("currMap");
-        // Parse comma-separated values
-        values[16] = {0};
-        index = 0;
-        start = 0;
+    //     data_str = server.arg("currMap");
+    //     // Parse comma-separated values
+    //     values[16] = {0};
+    //     index = 0;
+    //     start = 0;
         
-        for (int i = 0; i <= data_str.length(); i++) {
-            if (data_str[i] == ',' || i == data_str.length()) {
-                values[index++] = atoi(data_str.substring(start, i).c_str());
-                start = i + 1;
-            }
-        }
-        currPinMap.put(values);
+    //     for (int i = 0; i <= data_str.length(); i++) {
+    //         if (data_str[i] == ',' || i == data_str.length()) {
+    //             values[index++] = atoi(data_str.substring(start, i).c_str());
+    //             start = i + 1;
+    //         }
+    //     }
+    //     currPinMap.put(values);
 
-        reMapCompleteFLG.put(true);
+    //     reMapCompleteFLG.put(true);
 
-        server.send(200, "text/plain", "Array received");
+    //     server.send(200, "text/plain", "Array received");
 
-    };
+    //     };
 
 }
 
@@ -211,16 +211,27 @@ void handle_data (void)
 {
     // Page will consist of one line of comma separated voltage values
     String csv_str = "Voltage Readings,";
+    double data[208];
 
-    // Create some fake data and put it into a String object.
-    //PLACEHOLDER FOR PULLING FROM QUEUE
-    for (uint8_t index = 0; index < 208; index++)
-    {
-        csv_str += index;
-        csv_str += ",";
-        csv_str += String (sin (index / 5.4321), 3); // 3 decimal places
+    DeltaVMutex.take();
+    for (uint8_t n = 0;n<208;n++) {
+        data[n] = publishDeltaV[n];
+    }
+    DeltaVMutex.give();
+
+    for (uint8_t n = 0;n<208;n++){
+        csv_str += String(data[n],8);
     }
     csv_str += "\n";
+    // // Create some fake data and put it into a String object.
+    // //PLACEHOLDER FOR PULLING FROM QUEUE
+    // for (uint8_t index = 0; index < 208; index++)
+    // {
+    //     csv_str += index;
+    //     csv_str += ",";
+    //     csv_str += String (sin (index / 5.4321), 3); // 3 decimal places
+    // }
+    // csv_str += "\n";
 
     // Page will also consist of lines of comma separated flag labels and bool values
     csv_str += "initializeFLG,";

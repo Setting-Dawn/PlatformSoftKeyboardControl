@@ -23,6 +23,11 @@ from pyeit.mesh.wrapper import PyEITAnomaly_Circle
 import time
 import requests
 
+# Specify which electrodes i = 0:15 are hooked up to which clip
+ADC1Map = [] # List of clips in order from electrode 1 to 16
+ADC2Map = []
+currCtrlMap = []
+
 # Replace with the ESP32's IP address from Serial Monitor
 ESP32_IP = "192.168.5.1"
 
@@ -254,11 +259,8 @@ def send_values(xbar, ybar):
     except requests.exceptions.RequestException as e:
         print("Error talking to ESP32:", e)
 
-def send_flg(flagName,value):
+def send_flg(params: dict):
     url = f"http://{ESP32_IP}/flag"
-    params = {
-        flagName: value,
-    }
 
     try:
         response = requests.get(url, params=params, timeout=0.5)
@@ -351,7 +353,7 @@ while True:
         V0 = readValues
         oldV = V0
         print(f"Gathered {len(V0)} baseline data points")
-        send_flg("initializeFLG",False)
+        send_flg({"initializeFLG":False})
         continue
 
     elif flags["readFLG"]:
@@ -368,6 +370,13 @@ while True:
 
         figure1, figure2 = plotEITGraphs(mesh_obj, tri, x, y, ds_n,figure1,figure2)
         continue
+    elif flags["reMapFLG"]:
+        param = {
+            "adc1Map": ",".join(map(str,ADC1Map)),
+            "adc2Map": ",".join(map(str,ADC2Map)),
+            "currMap": ",".join(map(str,currCtrlMap))
+        }
+        send_flg(params=param)
 
     else:
         time.sleep(0.1)
