@@ -1,40 +1,11 @@
 
-#include <Arduino.h>
+#include <Wire.h>
+#include <utility>
 #include "ADC128D818.h"
 #include "CD74HC4067SM.h"
 #include "PCA9956.h"
-
-// Multiplexer control pins
-const uint8_t s0_PIN = 26;
-const uint8_t s1_PIN = 25;
-const uint8_t s2_PIN = 33;
-const uint8_t s3_PIN = 32;
-const uint8_t MultiEnable_PIN = 35;
-
-// ADC I2C Addresses
-const uint8_t ADC_1ADDRESS = 0x1D;
-const uint8_t ADC_2ADDRESS = 0x1F;
-
-// PCA9956BTWY Addresses
-const uint8_t PCA9956_ADDRESS = 0x01;
-
-// Motor control pins
-
-const uint8_t FAULT_PIN = 4;
-const uint8_t NSLEEP_PIN = 2;
-const uint8_t MOTOR_X_1 = 31;
-const uint8_t MOTOR_X_2 = 30;
-const uint8_t MOTOR_Y_1 = 28;
-const uint8_t MOTOR_Y_2 = 27;
-
-void task_ReadMaterial(void* p_params) {
-    ADC128D818 ADC_1 (ADC_1ADDRESS);
-    ADC128D818 ADC_2 (ADC_2ADDRESS);
-    CD74HC4067SM Multiplex (s0_PIN,s1_PIN,s2_PIN,s3_PIN,MultiEnable_PIN);
-    PCA9956 CurrCtrl (&Wire);
-    CurrCtrl.init(PCA9956_ADDRESS,0xFF); // Initialize current control address and max brightnes
-}
-
+#include <ESP32Encoder.h>
+#include <IMU.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BNO055.h>
 #include <utility/imumaths.h>
@@ -42,6 +13,50 @@ void task_ReadMaterial(void* p_params) {
 extern "C" {
   #include "freertos/FreeRTOS.h"
   #include "freertos/task.h"
+
+// Multiplexer control pins
+const uint8_t s0_PIN          = 26;
+const uint8_t s1_PIN          = 25;
+const uint8_t s2_PIN          = 33;
+const uint8_t s3_PIN          = 32;
+// WARNING: 35 is input-only on most ESP32s – change if this needs to be an output
+const uint8_t MultiEnable_PIN = 35;
+
+// ADC I2C Addresses
+const uint8_t ADC_1ADDRESS    = 0x1D;
+const uint8_t ADC_2ADDRESS    = 0x1F;
+
+// PCA9956BTWY Address
+const uint8_t PCA9956_ADDRESS = 0x01;
+
+// Motor control pins (double-check your board's pinout)
+const uint8_t FAULT_PIN  = 4;
+const uint8_t NSLEEP_PIN = 2;
+const uint8_t MOTOR_X_1  = 31;
+const uint8_t MOTOR_X_2  = 30;
+const uint8_t MOTOR_Y_1  = 28;
+const uint8_t MOTOR_Y_2  = 27;
+
+// Global hardware objects
+ADC128D818   ADC_1(ADC_1ADDRESS);
+ADC128D818   ADC_2(ADC_2ADDRESS);
+CD74HC4067SM Multiplex(s0_PIN, s1_PIN, s2_PIN, s3_PIN, MultiEnable_PIN);
+PCA9956      CurrCtrl(&Wire);
+ESP32Encoder encoderX;
+ESP32Encoder encoderY;
+
+void task_ReadMaterial(void* p_params) {
+    CurrCtrl.init(PCA9956_ADDRESS, 0xFF); // Initialize current control address and max brightness
+    
+    // TODO: ADC_1 / ADC_2 init, Multiplex setup, etc.
+    
+    while (true) {
+        // TODO: read sensors, print, etc.
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+}
+
+
 }
 
 // ---------- Configuration constants -------------------------------------------------
@@ -353,7 +368,7 @@ void setup() {
 }
 
 void loop() {
-    // put your main code here, to run repeatedly:
-    vTaskDelay(300000);
+    // Empty. Tasks are running independently.
 }
 
+}

@@ -8,6 +8,7 @@
  */
 
 #ifndef MOTORCONTROL_H
+#endif
 #define MOTORCONTROL_H
 #include <Arduino.h>
 /* MOTOR CONTROL CLASS */

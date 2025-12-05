@@ -9,6 +9,9 @@
 
 #include "MotorControl.h"
 #include <Arduino.h>
+#include <IMU.h>
+
+
 /* MOTOR CONTROL CLASS IMPLEMENTATION */
 
 MotorControl::MotorControl(float p, float i, float d) 
@@ -18,7 +21,6 @@ MotorControl::MotorControl(float p, float i, float d)
     Error = target - current;
     Esum += Error * deltaTime;
     float dError = (Error - previousError) / deltaTime;
-
     float output = (kp * Error) + (ki * Esum) + (kd * dError);
     return output;
 }
