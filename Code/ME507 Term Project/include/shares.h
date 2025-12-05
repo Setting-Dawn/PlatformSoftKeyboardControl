@@ -13,6 +13,7 @@
 
 #include "taskqueue.h"
 #include "taskshare.h"
+#include <Mutex.h>
 
 // A share which holds whether the external program needs to initialize
 extern Share<bool> initializeVFLG;
@@ -20,13 +21,9 @@ extern Share<bool> initializeVFLG;
 extern Share<bool> readVFLG;
 // A share which holds whether the external program has communicated how the connections are defined
 extern Share<bool> reMapCompleteFLG;
-// A share which holds how the connections are defined for adc1
-extern Share<uint8_t> adc1PinMap[8];
-// A share which holds how the connections are defined for adc2
-extern Share<uint8_t> adc2PinMap[8];
-// A share which holds how the current connections are defined
-extern Share<uint8_t> currPinMap[16];
-// A share which holds whether the external program has communicated how the connections are defined
-extern Share<double> publishDeltaV[208];
+// A global variable which holds all measured values
+extern double publishDeltaV[208];
+// Create mutex to lock measured values during modification
+extern Mutex DeltaVMutex;
 
 #endif // _SHARES_H_
