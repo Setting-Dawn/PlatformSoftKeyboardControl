@@ -1,7 +1,7 @@
 /*! @file main.cpp
 *   This project was created to run the soft-sensor activated balancing platform
 *   as the final project of Cal Poly SLO Fall ME 507 class.
-*   @author Jake
+*   @author Jake Rowen
 *   @author Setting-Dawn
 *   @author Ethan Siahpush
 *   @version 2.0.0

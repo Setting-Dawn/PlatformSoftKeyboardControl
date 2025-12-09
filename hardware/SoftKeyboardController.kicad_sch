@@ -6097,6 +6097,12 @@
 		(uuid "dbb5bc2c-0499-4809-bf58-7bb788a9d8e1")
 	)
 	(junction
+		(at 326.39 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dbc355e4-3c81-4d1a-ad9e-7cd73d813d0f")
+	)
+	(junction
 		(at 143.51 142.24)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -8358,6 +8364,26 @@
 	)
 	(wire
 		(pts
+			(xy 325.12 59.69) (xy 326.39 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b016c270-3464-4781-985c-4b5d7f2fd965")
+	)
+	(wire
+		(pts
+			(xy 326.39 59.69) (xy 326.39 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b0894de8-c3d1-4534-b3f7-b30b5aa0b792")
+	)
+	(wire
+		(pts
 			(xy 287.02 127) (xy 287.02 128.27)
 		)
 		(stroke
@@ -9400,7 +9426,7 @@
 	)
 	(global_label "SDA"
 		(shape input)
-		(at 223.52 111.76 0)
+		(at 233.68 114.3 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9408,9 +9434,9 @@
 			)
 			(justify left)
 		)
-		(uuid "3c6f0b2a-5bdf-4338-aa61-ae17389d9aa5")
+		(uuid "387d26d3-e227-4ace-a6b9-b6c7b1896f61")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 230.0733 111.76 0)
+			(at 240.2333 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9438,6 +9464,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SCL"
+		(shape input)
+		(at 223.52 111.76 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "48199d14-5ee6-48fd-8fa3-d2788e2cbe5d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 230.0128 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -9504,28 +9552,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "SCL"
-		(shape input)
-		(at 233.68 114.3 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "5f7ae545-1686-4ee6-b566-d3323a4333c2")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 240.1728 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)
