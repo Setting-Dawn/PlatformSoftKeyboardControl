@@ -1,5 +1,5 @@
-#/** \mainpage PlatformSoftKeyboardControl
-@brief Control a 2 Degree of Freedom Platform using a soft sensing sheet.
+# ![](\mainpage) PlatformSoftKeyboardControl
+Control a 2 Degree of Freedom Platform using a soft sensing sheet.
 
 This README is also used as the main page for the Doxygen-generated documentation.
 The remainder of this file contains project details, diagrams, and usage
