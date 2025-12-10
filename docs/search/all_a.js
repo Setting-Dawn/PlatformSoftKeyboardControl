@@ -1,16 +1,11 @@
 var searchData=
 [
-  ['main_2ecpp_0',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['mesh_5fobj_1',['mesh_obj',['../namespace_external_interpret.html#a21036413e1ab1eece3fb7dd402eca4f6',1,'ExternalInterpret']]],
-  ['motor_2ecpp_2',['MOTOR.cpp',['../_m_o_t_o_r_8cpp.html',1,'']]],
-  ['motor_2eh_3',['MOTOR.h',['../_m_o_t_o_r_8h.html',1,'']]],
-  ['motor_5fbrake_4',['MOTOR_brake',['../_m_o_t_o_r_8cpp.html#a95041c1f21a28dc853b0711b6e3be5ae',1,'MOTOR_brake(uint8_t pin1, uint8_t pin2, uint8_t channel1, uint8_t channel2):&#160;MOTOR.cpp'],['../_m_o_t_o_r_8h.html#a95041c1f21a28dc853b0711b6e3be5ae',1,'MOTOR_brake(uint8_t pin1, uint8_t pin2, uint8_t channel1, uint8_t channel2):&#160;MOTOR.cpp']]],
-  ['motor_5fforward_5',['MOTOR_forward',['../_m_o_t_o_r_8cpp.html#a08307efa3b153177c2fec00689934bc3',1,'MOTOR_forward(uint8_t pin1, uint8_t pin2, uint8_t channel1, uint8_t channel2, uint8_t speed):&#160;MOTOR.cpp'],['../_m_o_t_o_r_8h.html#a08307efa3b153177c2fec00689934bc3',1,'MOTOR_forward(uint8_t pin1, uint8_t pin2, uint8_t channel1, uint8_t channel2, uint8_t speed):&#160;MOTOR.cpp']]],
-  ['motor_5finit_6',['MOTOR_init',['../_m_o_t_o_r_8cpp.html#a8ae2aef48b10327526bd7c6eec34756b',1,'MOTOR_init(uint8_t pin1, uint8_t pin2, uint8_t channel1, uint8_t channel2):&#160;MOTOR.cpp'],['../_m_o_t_o_r_8h.html#a8ae2aef48b10327526bd7c6eec34756b',1,'MOTOR_init(uint8_t pin1, uint8_t pin2, uint8_t channel1, uint8_t channel2):&#160;MOTOR.cpp']]],
-  ['motor_5freverse_7',['MOTOR_reverse',['../_m_o_t_o_r_8cpp.html#acac747bb40bee85476036577b97a7712',1,'MOTOR_reverse(uint8_t pin1, uint8_t pin2, uint8_t channel1, uint8_t channel2, uint8_t speed):&#160;MOTOR.cpp'],['../_m_o_t_o_r_8h.html#acac747bb40bee85476036577b97a7712',1,'MOTOR_reverse(uint8_t pin1, uint8_t pin2, uint8_t channel1, uint8_t channel2, uint8_t speed):&#160;MOTOR.cpp']]],
-  ['motorxpin1_8',['motorXPin1',['../main_8cpp.html#ae6c23a418fe55e82bd865a8e28b288b6',1,'main.cpp']]],
-  ['motorxpin2_9',['motorXPin2',['../main_8cpp.html#a503e5959872082ff62252a26bdf3fe99',1,'main.cpp']]],
-  ['motorypin1_10',['motorYPin1',['../main_8cpp.html#ab77cd3b2d61bdea0601f5350abcf71d5',1,'main.cpp']]],
-  ['motorypin2_11',['motorYPin2',['../main_8cpp.html#a8f51ad3c525971da3feea5c823acf32e',1,'main.cpp']]],
-  ['multienable_5fpin_12',['MultiEnable_PIN',['../main_8cpp.html#a3323d05cd41da7f205db662a3e8c0f59',1,'main.cpp']]]
+  ['send_5fflg_0',['send_flg',['../_external_interpret_8py.html#a50ca52e5334027027e2ac53e0a309dd1',1,'ExternalInterpret']]],
+  ['send_5fvalues_1',['send_values',['../_external_interpret_8py.html#afe4ff1a3c46b9e8713e23573d1d44fa0',1,'ExternalInterpret']]],
+  ['server_2',['server',['../_e_i_twebhost_8cpp.html#a48f3f185be3ea2d153c347a157b38d42',1,'EITwebhost.cpp']]],
+  ['setup_3',['setup',['../_external_interpret_8py.html#a1464ff739f97e7d495e65b377a3d6e5c',1,'ExternalInterpret']]],
+  ['setup_5fwifi_4',['setup_wifi',['../_e_i_twebhost_8cpp.html#a2db7e734a3678bd61b7b9556caf2d933',1,'setup_wifi(void):&#160;EITwebhost.cpp'],['../_e_i_twebhost_8h.html#a2db7e734a3678bd61b7b9556caf2d933',1,'setup_wifi(void):&#160;EITwebhost.cpp']]],
+  ['shares_2eh_5',['shares.h',['../shares_8h.html',1,'']]],
+  ['simeit_6',['simEIT',['../_external_interpret_8py.html#abf93d8f23ce3f3d486861c37e83588f5',1,'ExternalInterpret']]],
+  ['switchpin_7',['switchPin',['../class_c_d74_h_c4067_s_m.html#a806eafd77dc5825a43b46c866c35a0a5',1,'CD74HC4067SM']]]
 ];

@@ -1,0 +1,51 @@
+\doxysection{src/shares.h File Reference}
+\hypertarget{shares_8h}{}\label{shares_8h}\index{src/shares.h@{src/shares.h}}
+
+
+Shares and Queues used in Soft Keyboard ME507 Project.  
+
+
+{\ttfamily \#include "{}taskqueue.\+h"{}}\newline
+{\ttfamily \#include "{}taskshare.\+h"{}}\newline
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{shares_8h_a015a121748bfeb795768eb309fca72ab}\label{shares_8h_a015a121748bfeb795768eb309fca72ab} 
+Share$<$ bool $>$ {\bfseries initialize\+VFLG}
+\item 
+\Hypertarget{shares_8h_a65a8bc308ef2bc93456de1ad3b0a7d3e}\label{shares_8h_a65a8bc308ef2bc93456de1ad3b0a7d3e} 
+Share$<$ bool $>$ {\bfseries read\+VFLG}
+\item 
+\Hypertarget{shares_8h_a28823c1bbe49842846233ee6d3c555e2}\label{shares_8h_a28823c1bbe49842846233ee6d3c555e2} 
+Share$<$ float $>$ {\bfseries x\+Bar}
+\item 
+\Hypertarget{shares_8h_a6cc7f10b7d20693a6d63bbf314299bc8}\label{shares_8h_a6cc7f10b7d20693a6d63bbf314299bc8} 
+Share$<$ float $>$ {\bfseries y\+Bar}
+\item 
+\Hypertarget{shares_8h_ae77c28be56bf5e9e5aa6b8ff1a554b20}\label{shares_8h_ae77c28be56bf5e9e5aa6b8ff1a554b20} 
+float {\bfseries publish} \mbox{[}208\mbox{]}
+\item 
+\Hypertarget{shares_8h_afcf5306874d9006284e8eade7b8782eb}\label{shares_8h_afcf5306874d9006284e8eade7b8782eb} 
+Share$<$ bool $>$ {\bfseries data\+Available}
+\item 
+\Hypertarget{shares_8h_a9610be4c840b076d78500f00dcc02f21}\label{shares_8h_a9610be4c840b076d78500f00dcc02f21} 
+Semaphore\+Handle\+\_\+t {\bfseries twi\+Mutex}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Shares and Queues used in Soft Keyboard ME507 Project. 
+
+\begin{DoxyAuthor}{Author}
+Setting-\/\+Dawn 
+
+JR Ridgely 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2021-\/Oct-\/23 Original file by JR Ridgely 
+
+2021-\/Dec-\/04 Setting-\/\+Dawn rewrote example shares and queues to be project specific 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+(c) 2021 by JR Ridgely, released under the LGPL 3.\+0. 
+\end{DoxyCopyright}

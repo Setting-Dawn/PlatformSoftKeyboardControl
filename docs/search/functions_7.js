@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['imu_5fgetangles_0',['IMU_getAngles',['../_i_m_u_8cpp.html#aa1534cd3b490555041923493f60f1258',1,'IMU_getAngles(float &amp;x_angle, float &amp;y_angle):&#160;IMU.cpp'],['../_i_m_u_8h.html#aa1534cd3b490555041923493f60f1258',1,'IMU_getAngles(float &amp;x_angle, float &amp;y_angle):&#160;IMU.cpp']]],
-  ['imu_5finit_1',['IMU_init',['../_i_m_u_8cpp.html#ae62b54be4e9f4b0068e4b05221c37403',1,'IMU_init():&#160;IMU.cpp'],['../_i_m_u_8cpp.html#a5a7ca65a5f18bd7b88930281d2352052',1,'IMU_init(unsigned long calibrationTimeoutMs):&#160;IMU.cpp'],['../_i_m_u_8h.html#ae62b54be4e9f4b0068e4b05221c37403',1,'IMU_init():&#160;IMU.cpp'],['../_i_m_u_8h.html#a5a7ca65a5f18bd7b88930281d2352052',1,'IMU_init(unsigned long calibrationTimeoutMs):&#160;IMU.cpp']]],
-  ['imu_5fiscalibrated_2',['IMU_isCalibrated',['../_i_m_u_8cpp.html#a92f1fa7efcfe0818e7c90722fdfaa796',1,'IMU_isCalibrated():&#160;IMU.cpp'],['../_i_m_u_8h.html#a92f1fa7efcfe0818e7c90722fdfaa796',1,'IMU_isCalibrated():&#160;IMU.cpp']]],
-  ['initializeeit_3',['initializeEIT',['../namespace_external_interpret.html#a952defe325119fb25f27f76e9dd4c25b',1,'ExternalInterpret']]],
-  ['initializevflg_4',['initializeVFLG',['../main_8cpp.html#acb8d9e1ab8f1d0bc2abfa0eab6a7e706',1,'main.cpp']]]
+  ['send_5fflg_0',['send_flg',['../_external_interpret_8py.html#a50ca52e5334027027e2ac53e0a309dd1',1,'ExternalInterpret']]],
+  ['send_5fvalues_1',['send_values',['../_external_interpret_8py.html#afe4ff1a3c46b9e8713e23573d1d44fa0',1,'ExternalInterpret']]],
+  ['server_2',['server',['../_e_i_twebhost_8cpp.html#a48f3f185be3ea2d153c347a157b38d42',1,'EITwebhost.cpp']]],
+  ['setup_3',['setup',['../_external_interpret_8py.html#a1464ff739f97e7d495e65b377a3d6e5c',1,'ExternalInterpret']]],
+  ['setup_5fwifi_4',['setup_wifi',['../_e_i_twebhost_8cpp.html#a2db7e734a3678bd61b7b9556caf2d933',1,'setup_wifi(void):&#160;EITwebhost.cpp'],['../_e_i_twebhost_8h.html#a2db7e734a3678bd61b7b9556caf2d933',1,'setup_wifi(void):&#160;EITwebhost.cpp']]],
+  ['simeit_5',['simEIT',['../_external_interpret_8py.html#abf93d8f23ce3f3d486861c37e83588f5',1,'ExternalInterpret']]],
+  ['switchpin_6',['switchPin',['../class_c_d74_h_c4067_s_m.html#a806eafd77dc5825a43b46c866c35a0a5',1,'CD74HC4067SM']]]
 ];

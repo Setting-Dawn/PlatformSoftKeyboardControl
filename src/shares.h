@@ -1,5 +1,5 @@
 /** @file shares.h
- *  Shares and Queues used in Soft Keyboard ME507 Project
+ *  @brief Shares and Queues used in Soft Keyboard ME507 Project
  *  
  *  @author Setting-Dawn
  *  @author JR Ridgely

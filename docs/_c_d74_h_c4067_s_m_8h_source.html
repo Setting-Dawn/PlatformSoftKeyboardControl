@@ -98,39 +98,38 @@ $(function(){initNavTree('_c_d74_h_c4067_s_m_8h_source.html','',''); });
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define __CD74HC4067SM_H__</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_c_d74_h_c4067_s_m.html">   14</a></span><span class="keyword">class </span><a class="code hl_function" href="class_c_d74_h_c4067_s_m.html#a469e103557d6cc30f8e807497d2ca032">CD74HC4067SM</a> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        uint8_t s0;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        uint8_t s1;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        uint8_t s2;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        uint8_t s3;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        uint8_t nE;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_function" href="class_c_d74_h_c4067_s_m.html#a469e103557d6cc30f8e807497d2ca032">CD74HC4067SM</a>(uint8_t SPin0,</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            uint8_t SPin1,</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            uint8_t SPin2,</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            uint8_t SPin3,</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            uint8_t enablePin);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_d74_h_c4067_s_m.html#a806eafd77dc5825a43b46c866c35a0a5">switchPin</a>(uint8_t pin);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_d74_h_c4067_s_m.html#ae168b240503e0f939cdb9901d7bf8eba">enable</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_d74_h_c4067_s_m.html#a106c16aa566a58359be743f8edac6db2">disable</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_c_d74_h_c4067_s_m.html">   27</a></span><span class="keyword">class </span>CD74HC4067SM {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        uint8_t s0;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        uint8_t s1;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        uint8_t s2;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        uint8_t s3;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        uint8_t nE;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        CD74HC4067SM(uint8_t SPin0,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            uint8_t SPin1,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            uint8_t SPin2,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            uint8_t SPin3,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            uint8_t enablePin);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_d74_h_c4067_s_m.html#a806eafd77dc5825a43b46c866c35a0a5">switchPin</a>(uint8_t pin);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_d74_h_c4067_s_m.html#ae168b240503e0f939cdb9901d7bf8eba">enable</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_d74_h_c4067_s_m.html#a106c16aa566a58359be743f8edac6db2">disable</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>};</div>
 </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif </span><span class="comment">//__CD74HC4067SM_H__</span></div>
-<div class="ttc" id="aclass_c_d74_h_c4067_s_m_html_a106c16aa566a58359be743f8edac6db2"><div class="ttname"><a href="class_c_d74_h_c4067_s_m.html#a106c16aa566a58359be743f8edac6db2">CD74HC4067SM::disable</a></div><div class="ttdeci">void disable(void)</div><div class="ttdoc">Turns off pass-through.</div><div class="ttdef"><b>Definition</b> CD74HC4067SM.cpp:80</div></div>
-<div class="ttc" id="aclass_c_d74_h_c4067_s_m_html_a469e103557d6cc30f8e807497d2ca032"><div class="ttname"><a href="class_c_d74_h_c4067_s_m.html#a469e103557d6cc30f8e807497d2ca032">CD74HC4067SM::CD74HC4067SM</a></div><div class="ttdeci">CD74HC4067SM(uint8_t SPin0, uint8_t SPin1, uint8_t SPin2, uint8_t SPin3, uint8_t enablePin)</div><div class="ttdoc">Initializes a CD74HC4067SM multiplexer object.</div><div class="ttdef"><b>Definition</b> CD74HC4067SM.cpp:20</div></div>
-<div class="ttc" id="aclass_c_d74_h_c4067_s_m_html_a806eafd77dc5825a43b46c866c35a0a5"><div class="ttname"><a href="class_c_d74_h_c4067_s_m.html#a806eafd77dc5825a43b46c866c35a0a5">CD74HC4067SM::switchPin</a></div><div class="ttdeci">void switchPin(uint8_t pin)</div><div class="ttdoc">switches connection to chosen pin value</div><div class="ttdef"><b>Definition</b> CD74HC4067SM.cpp:46</div></div>
-<div class="ttc" id="aclass_c_d74_h_c4067_s_m_html_ae168b240503e0f939cdb9901d7bf8eba"><div class="ttname"><a href="class_c_d74_h_c4067_s_m.html#ae168b240503e0f939cdb9901d7bf8eba">CD74HC4067SM::enable</a></div><div class="ttdeci">void enable(void)</div><div class="ttdoc">Turns on pass-through.</div><div class="ttdef"><b>Definition</b> CD74HC4067SM.cpp:74</div></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#endif </span><span class="comment">//__CD74HC4067SM_H__</span></div>
+<div class="ttc" id="aclass_c_d74_h_c4067_s_m_html_a106c16aa566a58359be743f8edac6db2"><div class="ttname"><a href="class_c_d74_h_c4067_s_m.html#a106c16aa566a58359be743f8edac6db2">CD74HC4067SM::disable</a></div><div class="ttdeci">void disable(void)</div><div class="ttdoc">Turns off pass-through.</div><div class="ttdef"><b>Definition</b> CD74HC4067SM.cpp:92</div></div>
+<div class="ttc" id="aclass_c_d74_h_c4067_s_m_html_a806eafd77dc5825a43b46c866c35a0a5"><div class="ttname"><a href="class_c_d74_h_c4067_s_m.html#a806eafd77dc5825a43b46c866c35a0a5">CD74HC4067SM::switchPin</a></div><div class="ttdeci">void switchPin(uint8_t pin)</div><div class="ttdoc">switches connection to chosen pin value</div><div class="ttdef"><b>Definition</b> CD74HC4067SM.cpp:58</div></div>
+<div class="ttc" id="aclass_c_d74_h_c4067_s_m_html_ae168b240503e0f939cdb9901d7bf8eba"><div class="ttname"><a href="class_c_d74_h_c4067_s_m.html#ae168b240503e0f939cdb9901d7bf8eba">CD74HC4067SM::enable</a></div><div class="ttdeci">void enable(void)</div><div class="ttdoc">Turns on pass-through.</div><div class="ttdef"><b>Definition</b> CD74HC4067SM.cpp:86</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="_c_d74_h_c4067_s_m_8h.html">CD74HC4067SM.h</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a href="_c_d74_h_c4067_s_m_8h.html">CD74HC4067SM.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

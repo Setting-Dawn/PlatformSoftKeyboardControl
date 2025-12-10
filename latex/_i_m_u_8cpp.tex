@@ -1,0 +1,126 @@
+\doxysection{src/\+IMU.cpp File Reference}
+\hypertarget{_i_m_u_8cpp}{}\label{_i_m_u_8cpp}\index{src/IMU.cpp@{src/IMU.cpp}}
+
+
+Implementation of IMU helper functions for the BNO055 sensor.  
+
+
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include "{}IMU.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{_i_m_u_8cpp_ae62b54be4e9f4b0068e4b05221c37403}{IMU\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the IMU sensor with default calibration timeout. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_i_m_u_8cpp_a5a7ca65a5f18bd7b88930281d2352052}{IMU\+\_\+init}} (unsigned long calibration\+Timeout\+Ms)
+\begin{DoxyCompactList}\small\item\em Initialize the IMU sensor with a specific calibration timeout. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_i_m_u_8cpp_aa1534cd3b490555041923493f60f1258}{IMU\+\_\+get\+Angles}} (float \&x\+\_\+angle, float \&y\+\_\+angle)
+\begin{DoxyCompactList}\small\item\em Retrieve the current roll and pitch angles from the IMU. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_i_m_u_8cpp_a92f1fa7efcfe0818e7c90722fdfaa796}{IMU\+\_\+is\+Calibrated}} ()
+\begin{DoxyCompactList}\small\item\em Check if the BNO055A IMU is fully calibrated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of IMU helper functions for the BNO055 sensor. 
+
+Implements initialization, calibration helper, angle reading, and calibration status checks for the Adafruit BNO055 IMU used by the platform. Add {\ttfamily EXTRACT\+\_\+\+STATIC = YES} to your Doxygen configuration if you want static/internal functions to be included in the generated documentation (e.\+g. IMU\+\_\+run\+Auto\+Calibration). 
+
+\label{doc-func-members}
+\Hypertarget{_i_m_u_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_i_m_u_8cpp_aa1534cd3b490555041923493f60f1258}\index{IMU.cpp@{IMU.cpp}!IMU\_getAngles@{IMU\_getAngles}}
+\index{IMU\_getAngles@{IMU\_getAngles}!IMU.cpp@{IMU.cpp}}
+\doxysubsubsection{\texorpdfstring{IMU\_getAngles()}{IMU\_getAngles()}}
+{\footnotesize\ttfamily \label{_i_m_u_8cpp_aa1534cd3b490555041923493f60f1258} 
+void IMU\+\_\+get\+Angles (\begin{DoxyParamCaption}\item[{float \&}]{x\+\_\+angle}{, }\item[{float \&}]{y\+\_\+angle}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the current roll and pitch angles from the IMU. 
+
+Reads the Euler angles from the BNO055 sensor and extracts the roll (X) and pitch (Y) components, ignoring the heading/yaw value.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{out}}  & {\em x\+\_\+angle} & Reference to a float that will be filled with the roll angle in degrees. \\
+\hline
+\mbox{\texttt{out}}  & {\em y\+\_\+angle} & Reference to a float that will be filled with the pitch angle in degrees.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+The BNO055 Euler vector components are mapped as follows\+:
+\begin{DoxyItemize}
+\item euler.\+x = heading/yaw (not returned)
+\item euler.\+y = roll (output as x\+\_\+angle)
+\item euler.\+z = pitch (output as y\+\_\+angle)
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Ensure \doxylink{_i_m_u_8cpp_ae62b54be4e9f4b0068e4b05221c37403}{IMU\+\_\+init()} has been called before using this function. 
+\end{DoxyNote}
+\Hypertarget{_i_m_u_8cpp_ae62b54be4e9f4b0068e4b05221c37403}\index{IMU.cpp@{IMU.cpp}!IMU\_init@{IMU\_init}}
+\index{IMU\_init@{IMU\_init}!IMU.cpp@{IMU.cpp}}
+\doxysubsubsection{\texorpdfstring{IMU\_init()}{IMU\_init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{_i_m_u_8cpp_ae62b54be4e9f4b0068e4b05221c37403} 
+bool IMU\+\_\+init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize the IMU sensor with default calibration timeout. 
+
+This is a convenience overload that initializes the BNO055A IMU sensor with a default calibration timeout of 30 seconds.
+
+\begin{DoxyReturn}{Returns}
+bool True if the sensor is found and successfully initialized (even if not fully calibrated yet), false if sensor initialization fails.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_i_m_u_8cpp_a5a7ca65a5f18bd7b88930281d2352052}{IMU\+\_\+init(unsigned long calibration\+Timeout\+Ms)} 
+\end{DoxySeeAlso}
+\Hypertarget{_i_m_u_8cpp_a5a7ca65a5f18bd7b88930281d2352052}\index{IMU.cpp@{IMU.cpp}!IMU\_init@{IMU\_init}}
+\index{IMU\_init@{IMU\_init}!IMU.cpp@{IMU.cpp}}
+\doxysubsubsection{\texorpdfstring{IMU\_init()}{IMU\_init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{_i_m_u_8cpp_a5a7ca65a5f18bd7b88930281d2352052} 
+bool IMU\+\_\+init (\begin{DoxyParamCaption}\item[{unsigned long}]{calibration\+Timeout\+Ms}{}\end{DoxyParamCaption})}
+
+
+
+Initialize the IMU sensor with a specific calibration timeout. 
+
+Initializes the BNO055 IMU sensor in NDOF (Nine Degrees of Freedom) operation mode, configures the external crystal, and runs auto-\/calibration with the specified timeout duration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em calibration\+Timeout\+Ms} & Timeout duration for calibration in milliseconds. Pass 0 to skip blocking for calibration.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the sensor is found and successfully initialized (even if not fully calibrated yet), false if sensor initialization fails.
+\end{DoxyReturn}
+The function performs the following steps\+:
+\begin{DoxyEnumerate}
+\item Initializes the BNO055 in NDOF mode with I2C address 0x28
+\item Waits 100ms for stabilization
+\item Enables external crystal use for better accuracy
+\item Runs auto-\/calibration with the specified timeout 
+\end{DoxyEnumerate}\Hypertarget{_i_m_u_8cpp_a92f1fa7efcfe0818e7c90722fdfaa796}\index{IMU.cpp@{IMU.cpp}!IMU\_isCalibrated@{IMU\_isCalibrated}}
+\index{IMU\_isCalibrated@{IMU\_isCalibrated}!IMU.cpp@{IMU.cpp}}
+\doxysubsubsection{\texorpdfstring{IMU\_isCalibrated()}{IMU\_isCalibrated()}}
+{\footnotesize\ttfamily \label{_i_m_u_8cpp_a92f1fa7efcfe0818e7c90722fdfaa796} 
+bool IMU\+\_\+is\+Calibrated (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Check if the BNO055A IMU is fully calibrated. 
+
+Queries the sensor to determine if it has achieved full calibration status for all nine degrees of freedom (system, gyroscope, accelerometer, and magnetometer). Updates the internal calibration cache before returning.
+
+\begin{DoxyReturn}{Returns}
+bool True if the sensor reports full calibration, false otherwise.
+\end{DoxyReturn}
+The function updates the global imu\+Calibrated cache variable with the current sensor status to keep it synchronized with the actual hardware state.
+
+\begin{DoxyNote}{Note}
+Full calibration typically requires the sensor to be in motion, exposed to the Earth\textquotesingle{}s magnetic field, and given sufficient time to converge. 
+\end{DoxyNote}

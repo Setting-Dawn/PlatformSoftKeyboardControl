@@ -1,0 +1,27 @@
+\doxysection{shares.\+h}
+\hypertarget{shares_8h_source}{}\label{shares_8h_source}\index{src/shares.h@{src/shares.h}}
+\mbox{\hyperlink{shares_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ \_SHARES\_H\_}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ \_SHARES\_H\_}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}taskqueue.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}taskshare.h"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ A\ share\ which\ holds\ whether\ the\ external\ program\ needs\ to\ initialize\ V0}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{extern}\ Share<bool>\ initializeVFLG;}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ A\ share\ which\ holds\ whether\ the\ external\ program\ should\ read\ current\ voltages}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{extern}\ Share<bool>\ readVFLG;}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ Shares\ to\ communicate\ target\ position\ between\ webpage\ and\ motor\ control\ tasks}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{extern}\ Share<float>\ xBar;}
+\DoxyCodeLine{00023\ \textcolor{keyword}{extern}\ Share<float>\ yBar;}
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ A\ rudimentary\ share\ to\ publish\ data\ from}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{float}\ publish[208];}
+\DoxyCodeLine{00026\ \textcolor{keyword}{extern}\ Share<bool>\ dataAvailable;}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ Mutexes\ to\ thread\ protect\ the\ twi\ process}}
+\DoxyCodeLine{00028\ \textcolor{keyword}{extern}\ SemaphoreHandle\_t\ twiMutex;}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_SHARES\_H\_}}
+
+\end{DoxyCode}

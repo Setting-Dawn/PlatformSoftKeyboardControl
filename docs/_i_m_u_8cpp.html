@@ -92,17 +92,27 @@ $(function(){initNavTree('_i_m_u_8cpp.html','',''); });
   <div class="headertitle"><div class="title">IMU.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of IMU helper functions for the BNO055 sensor.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="_i_m_u_8h_source.html">IMU.h</a>&quot;</code><br />
+<code>#include &quot;IMU.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae62b54be4e9f4b0068e4b05221c37403" id="r_ae62b54be4e9f4b0068e4b05221c37403"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae62b54be4e9f4b0068e4b05221c37403">IMU_init</a> ()</td></tr>
+<tr class="memdesc:ae62b54be4e9f4b0068e4b05221c37403"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the IMU sensor with default calibration timeout.  <br /></td></tr>
 <tr class="memitem:a5a7ca65a5f18bd7b88930281d2352052" id="r_a5a7ca65a5f18bd7b88930281d2352052"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a7ca65a5f18bd7b88930281d2352052">IMU_init</a> (unsigned long calibrationTimeoutMs)</td></tr>
+<tr class="memdesc:a5a7ca65a5f18bd7b88930281d2352052"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the IMU sensor with a specific calibration timeout.  <br /></td></tr>
 <tr class="memitem:aa1534cd3b490555041923493f60f1258" id="r_aa1534cd3b490555041923493f60f1258"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1534cd3b490555041923493f60f1258">IMU_getAngles</a> (float &amp;x_angle, float &amp;y_angle)</td></tr>
+<tr class="memdesc:aa1534cd3b490555041923493f60f1258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current roll and pitch angles from the IMU.  <br /></td></tr>
 <tr class="memitem:a92f1fa7efcfe0818e7c90722fdfaa796" id="r_a92f1fa7efcfe0818e7c90722fdfaa796"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92f1fa7efcfe0818e7c90722fdfaa796">IMU_isCalibrated</a> ()</td></tr>
+<tr class="memdesc:a92f1fa7efcfe0818e7c90722fdfaa796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the BNO055A IMU is fully calibrated.  <br /></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of IMU helper functions for the BNO055 sensor. </p>
+<p>Implements initialization, calibration helper, angle reading, and calibration status checks for the Adafruit BNO055 IMU used by the platform. Add <span class="tt">EXTRACT_STATIC = YES</span> to your Doxygen configuration if you want static/internal functions to be included in the generated documentation (e.g. IMU_runAutoCalibration). </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="aa1534cd3b490555041923493f60f1258" name="aa1534cd3b490555041923493f60f1258"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa1534cd3b490555041923493f60f1258">&#9670;&#160;</a></span>IMU_getAngles()</h2>
 
@@ -122,6 +132,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Retrieve the current roll and pitch angles from the IMU. </p>
+<p>Reads the Euler angles from the BNO055 sensor and extracts the roll (X) and pitch (Y) components, ignoring the heading/yaw value.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">x_angle</td><td>Reference to a float that will be filled with the roll angle in degrees. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">y_angle</td><td>Reference to a float that will be filled with the pitch angle in degrees.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
+<p>The BNO055 Euler vector components are mapped as follows:</p><ul>
+<li>euler.x = heading/yaw (not returned)</li>
+<li>euler.y = roll (output as x_angle)</li>
+<li>euler.z = pitch (output as y_angle)</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>Ensure <a class="el" href="#ae62b54be4e9f4b0068e4b05221c37403" title="Initialize the IMU sensor with default calibration timeout.">IMU_init()</a> has been called before using this function. </dd></dl>
+
 </div>
 </div>
 <a id="ae62b54be4e9f4b0068e4b05221c37403" name="ae62b54be4e9f4b0068e4b05221c37403"></a>
@@ -138,6 +165,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initialize the IMU sensor with default calibration timeout. </p>
+<p>This is a convenience overload that initializes the BNO055A IMU sensor with a default calibration timeout of 30 seconds.</p>
+<dl class="section return"><dt>Returns</dt><dd>bool True if the sensor is found and successfully initialized (even if not fully calibrated yet), false if sensor initialization fails.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a5a7ca65a5f18bd7b88930281d2352052" title="Initialize the IMU sensor with a specific calibration timeout.">IMU_init(unsigned long calibrationTimeoutMs)</a> </dd></dl>
 
 </div>
 </div>
@@ -156,6 +188,22 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Initialize the IMU sensor with a specific calibration timeout. </p>
+<p>Initializes the BNO055 IMU sensor in NDOF (Nine Degrees of Freedom) operation mode, configures the external crystal, and runs auto-calibration with the specified timeout duration.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">calibrationTimeoutMs</td><td>Timeout duration for calibration in milliseconds. Pass 0 to skip blocking for calibration.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool True if the sensor is found and successfully initialized (even if not fully calibrated yet), false if sensor initialization fails.</dd></dl>
+<p>The function performs the following steps:</p><ol type="1">
+<li>Initializes the BNO055 in NDOF mode with I2C address 0x28</li>
+<li>Waits 100ms for stabilization</li>
+<li>Enables external crystal use for better accuracy</li>
+<li>Runs auto-calibration with the specified timeout </li>
+</ol>
+
 </div>
 </div>
 <a id="a92f1fa7efcfe0818e7c90722fdfaa796" name="a92f1fa7efcfe0818e7c90722fdfaa796"></a>
@@ -173,6 +221,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Check if the BNO055A IMU is fully calibrated. </p>
+<p>Queries the sensor to determine if it has achieved full calibration status for all nine degrees of freedom (system, gyroscope, accelerometer, and magnetometer). Updates the internal calibration cache before returning.</p>
+<dl class="section return"><dt>Returns</dt><dd>bool True if the sensor reports full calibration, false otherwise.</dd></dl>
+<p>The function updates the global imuCalibrated cache variable with the current sensor status to keep it synchronized with the actual hardware state.</p>
+<dl class="section note"><dt>Note</dt><dd>Full calibration typically requires the sensor to be in motion, exposed to the Earth's magnetic field, and given sufficient time to converge. </dd></dl>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -188,7 +242,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="_i_m_u_8cpp.html">IMU.cpp</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a href="_i_m_u_8cpp.html">IMU.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

@@ -1,31 +1,6 @@
 var main_8cpp =
 [
-    [ "dataAvailable", "main_8cpp.html#a6e84d191593b8e526ada135e8e26edf5", null ],
-    [ "initializeVFLG", "main_8cpp.html#acb8d9e1ab8f1d0bc2abfa0eab6a7e706", null ],
-    [ "loop", "main_8cpp.html#afe461d27b9c48d5921c00d521181f12f", null ],
-    [ "readVFLG", "main_8cpp.html#adb3985c4e0dc89bde6f73ad5152e78e4", null ],
-    [ "setup", "main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d", null ],
     [ "task_controlMotors", "main_8cpp.html#a0600249a0fd5d92a5fed83010c329fe3", null ],
     [ "task_ReadMaterial", "main_8cpp.html#af65c7f4495d4dc7c29d355d2d3871be4", null ],
-    [ "task_webserver", "main_8cpp.html#a577f28c6d870b5b9f1c4510d8195094a", null ],
-    [ "xBar", "main_8cpp.html#a04161a0333e46749f1310cdaf6c4ff1c", null ],
-    [ "yBar", "main_8cpp.html#ac737158b9185276c9ce848c453128b84", null ],
-    [ "ADC_1ADDRESS", "main_8cpp.html#a9eb336ce22cd3b5df6e7b5c7df0460a3", null ],
-    [ "ADC_2ADDRESS", "main_8cpp.html#a41a404f2f5b85d9ddfc16560b818ec46", null ],
-    [ "encoderX", "main_8cpp.html#a725fa6b340030a320096ff043a24a283", null ],
-    [ "encoderY", "main_8cpp.html#ad2f255b53647f679fe6141a5914fa40c", null ],
-    [ "motorXPin1", "main_8cpp.html#ae6c23a418fe55e82bd865a8e28b288b6", null ],
-    [ "motorXPin2", "main_8cpp.html#a503e5959872082ff62252a26bdf3fe99", null ],
-    [ "motorYPin1", "main_8cpp.html#ab77cd3b2d61bdea0601f5350abcf71d5", null ],
-    [ "motorYPin2", "main_8cpp.html#a8f51ad3c525971da3feea5c823acf32e", null ],
-    [ "MultiEnable_PIN", "main_8cpp.html#a3323d05cd41da7f205db662a3e8c0f59", null ],
-    [ "nSleepPin", "main_8cpp.html#ae127ca0dd941de03bd8996e475e56b6c", null ],
-    [ "PCA9956_ADDRESS", "main_8cpp.html#a24dd1f95a4290b15c52e8bc664bc7902", null ],
-    [ "publish", "main_8cpp.html#ae77c28be56bf5e9e5aa6b8ff1a554b20", null ],
-    [ "s0_PIN", "main_8cpp.html#a9e384041fab2b2e8797505c609b8d99c", null ],
-    [ "s1_PIN", "main_8cpp.html#aee5c3166ce3fa80f79805587f049c8c4", null ],
-    [ "s2_PIN", "main_8cpp.html#a02c801e8ca7815dec62bf55ca86512bc", null ],
-    [ "s3_PIN", "main_8cpp.html#a33f0388f0631792d35e717cc687e6051", null ],
-    [ "twiMutex", "main_8cpp.html#a9610be4c840b076d78500f00dcc02f21", null ],
-    [ "Wire", "main_8cpp.html#af7a1a90c51a823bdd750d7dfd4418853", null ]
+    [ "task_webserver", "main_8cpp.html#a577f28c6d870b5b9f1c4510d8195094a", null ]
 ];
