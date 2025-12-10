@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "ME 507 Soft Keyboard", "index.html", [
+    [ "PlatformSoftKeyboardControl", "index.html", "index" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

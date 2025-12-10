@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['parameters_0',['Parameters',['../_external_interpret_8py.html#autotoc_md0',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md2',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md4',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md6',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md8',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md10',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md12',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md14',1,'Parameters']]]
+  ['code_20used_0',['Other Code Used',['../index.html#autotoc_md24',1,'']]],
+  ['considerations_1',['Mechanical Considerations',['../index.html#autotoc_md17',1,'']]],
+  ['control_20task_2',['Motor Control Task',['../index.html#autotoc_md21',1,'']]]
 ];
