@@ -124,7 +124,7 @@ void task_ReadMaterial(void* p_params) {
             }
         }
 
-        else if (state == 1) // Read Material
+        else if (state == 1) // Change Energization State
         {
             // cycleIndex initializes to n=0, which is also the grounded electrode.
             currPinIndex = (cycleIndex + 1) % 16; // The electrode with current applied is always n+1
@@ -185,6 +185,10 @@ void task_ReadMaterial(void* p_params) {
                     cycleIndex = 0; // Resets energization marker to ground pin n=0
                     state = 3; // Change to publish value state
                 }
+                else
+                {
+                    state = 1;
+                }
             }
         }
 
@@ -210,6 +214,16 @@ void task_ReadMaterial(void* p_params) {
                     #endif
                 }
                 dataAvailable.put(true); // data is no longer being used, raise the allow flag
+                if (readVFLG.get() == false) {
+                    if (initializeVFLG.get() == false)
+                    {
+                        initializeVFLG.put(true);
+                    }
+                    else
+                    {
+                        readVFLG.put(true);
+                    }
+                }
                 #ifdef DEBUG_READMATERIAL
                 Serial << "Gave dataMutex" << endl;
                 #endif

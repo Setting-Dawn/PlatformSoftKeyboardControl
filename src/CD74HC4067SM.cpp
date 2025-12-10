@@ -45,22 +45,22 @@ CD74HC4067SM::CD74HC4067SM(uint8_t SPin0,
 */
 void CD74HC4067SM::switchPin(uint8_t pin) 
 {
-    // s0 Controls bit 1, check if the requested pin
+    // s0 Controls bit 0, check if the requested pin
     // needs s0 to be HIGH, otherwise set it LOW
     if (pin & 0001) {digitalWrite(s0,HIGH);}
     else {digitalWrite(s0,LOW);}
 
-    // s1 Controls bit 2, check if the requested pin
+    // s1 Controls bit 1, check if the requested pin
     // needs s1 to be HIGH, otherwise set it LOW
     if (pin & 0010) {digitalWrite(s1,HIGH);}
     else { digitalWrite(s1,LOW);}
 
-    // s2 Controls bit 3, check if the requested pin
+    // s2 Controls bit 2, check if the requested pin
     // needs s2 to be HIGH, otherwise set it LOW
     if (pin & 0100) {digitalWrite(s2,HIGH);}
     else {digitalWrite(s2,LOW);}
 
-    // s3 Controls bit 3, check if the requested pin
+    // s3 Controls bit 3, check if the requested pin 
     // needs s3 to be HIGH, otherwise set it LOW
     if (pin & 1000) {digitalWrite(s3,HIGH);}
     else {digitalWrite(s3,LOW);}

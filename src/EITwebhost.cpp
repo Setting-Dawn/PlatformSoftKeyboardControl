@@ -1,6 +1,8 @@
+#include "EITwebhost.h"
+#include "shares.h"
 /*!
 * @file EITwebhost.cpp
-* This library allows the Softkeyboard project to host values and communicate
+* @brief This library allows the Softkeyboard project to host values and communicate
 * with an external program to determine tilt position.
 * 
 * @author Setting-Dawn
@@ -15,9 +17,6 @@
 * @date 2025-Dec-03 Modified for Softkeyboard project by Setting-Dawn
 * @copyright 2022 by the authors, released under the MIT License.
 */
-
-#include "EITwebhost.h"
-#include "shares.h"
 
 // Assign Wifi access
 const char* ssid = "Soft Keyboard";   // SSID, network name seen on LAN lists
@@ -194,10 +193,10 @@ void handle_data (void)
 
         // Page will also consist of lines of comma separated flag labels and bool values
         csv_str += "initializeFLG,";
-        csv_str += "True"; // PLACEHOLDER FOR PULLING FROM SHARE
+        csv_str += String(initializeVFLG.get()); // PLACEHOLDER FOR PULLING FROM SHARE
         csv_str += "\n";
         csv_str += "readFLG,";
-        csv_str += "False"; // PLACEHOLDER FOR PULLING FROM SHARE
+        csv_str += String(readVFLG.get()); // PLACEHOLDER FOR PULLING FROM SHARE
         csv_str += "\n";
 
         // Send the CSV file as plain text so it can be easily interpretted

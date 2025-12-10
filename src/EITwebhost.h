@@ -1,6 +1,8 @@
+#ifndef __EITWEBHOST_H__
+#define __EITWEBHOST_H__
 /*!
 * @file EITwebhost.h
-* This library allows the Softkeyboard project to host values and communicate
+* @brief This library allows the Softkeyboard project to host values and communicate
 * with an external program to determine tilt position.
 * 
 * @author Setting-Dawn
@@ -15,8 +17,6 @@
 * @date 2025-Dec-03 Modified for Softkeyboard project by Setting-Dawn
 * @copyright 2022 by the authors, released under the MIT License.
 */
-#ifndef __EITWEBHOST_H__
-#define __EITWEBHOST_H__
 
 #include <Arduino.h>
 #include <WiFi.h>
