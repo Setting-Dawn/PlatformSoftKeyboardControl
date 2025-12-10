@@ -10,6 +10,7 @@ var dir_e112db09990c5815e7ab43d0ad2b035c =
     [ "IMU.cpp", "_i_m_u_8cpp.html", "_i_m_u_8cpp" ],
     [ "IMU.h", "_i_m_u_8h_source.html", null ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
+    [ "MOTOR.cpp", "_m_o_t_o_r_8cpp.html", "_m_o_t_o_r_8cpp" ],
     [ "MOTOR.h", "_m_o_t_o_r_8h_source.html", null ],
     [ "shares.h", "shares_8h.html", null ]
 ];

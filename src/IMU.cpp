@@ -3,9 +3,7 @@
  * @brief Implementation of IMU helper functions for the BNO055 sensor.
  * @details Implements initialization, calibration helper, angle reading,
  *          and calibration status checks for the Adafruit BNO055 IMU used
- *          by the platform. Add `EXTRACT_STATIC = YES` to your Doxygen
- *          configuration if you want static/internal functions to be
- *          included in the generated documentation (e.g. IMU_runAutoCalibration).
+ *          by the platform.
  */
 #include <Arduino.h>
 #include "IMU.h"

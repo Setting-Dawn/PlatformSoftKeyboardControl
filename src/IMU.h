@@ -1,6 +1,9 @@
+/**
+ * @file IMU.cpp
+ * @brief IMU header files for the BNO055A sensor.
+ */
 #ifndef IMU_H
 #define IMU_H
-#endif
 
 #include <Adafruit_BNO055.h>
 #include <utility/imumaths.h>
@@ -19,3 +22,4 @@ void IMU_getAngles(float &x_angle, float &y_angle);
 // Check if the BNO055 reports "fully calibrated".
 bool IMU_isCalibrated();
 
+#endif

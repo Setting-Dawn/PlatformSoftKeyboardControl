@@ -4,6 +4,7 @@
 #include <Arduino.h>
 
 /**
+ * @file MOTOR.cpp
  * @brief Initialize motor control pins and PWM channels.
  * 
  * Configures the specified GPIO pins for motor output and sets up

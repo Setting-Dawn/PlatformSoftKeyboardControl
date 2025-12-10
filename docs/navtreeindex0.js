@@ -33,7 +33,12 @@ var NAVTREEINDEX0 =
 "_i_m_u_8cpp.html#aa1534cd3b490555041923493f60f1258":[2,0,0,0,7,0],
 "_i_m_u_8cpp.html#ae62b54be4e9f4b0068e4b05221c37403":[2,0,0,0,7,1],
 "_i_m_u_8h_source.html":[2,0,0,0,8],
-"_m_o_t_o_r_8h_source.html":[2,0,0,0,10],
+"_m_o_t_o_r_8cpp.html":[2,0,0,0,10],
+"_m_o_t_o_r_8cpp.html#a08307efa3b153177c2fec00689934bc3":[2,0,0,0,10,1],
+"_m_o_t_o_r_8cpp.html#a8ae2aef48b10327526bd7c6eec34756b":[2,0,0,0,10,2],
+"_m_o_t_o_r_8cpp.html#a95041c1f21a28dc853b0711b6e3be5ae":[2,0,0,0,10,0],
+"_m_o_t_o_r_8cpp.html#acac747bb40bee85476036577b97a7712":[2,0,0,0,10,3],
+"_m_o_t_o_r_8h_source.html":[2,0,0,0,11],
 "annotated.html":[1,0],
 "class_c_d74_h_c4067_s_m.html":[1,0,0],
 "class_c_d74_h_c4067_s_m.html#a106c16aa566a58359be743f8edac6db2":[1,0,0,0],
@@ -63,6 +68,6 @@ var NAVTREEINDEX0 =
 "main_8cpp.html#a577f28c6d870b5b9f1c4510d8195094a":[2,0,0,0,9,2],
 "main_8cpp.html#af65c7f4495d4dc7c29d355d2d3871be4":[2,0,0,0,9,1],
 "pages.html":[],
-"shares_8h.html":[2,0,0,0,11],
-"shares_8h_source.html":[2,0,0,0,11]
+"shares_8h.html":[2,0,0,0,12],
+"shares_8h_source.html":[2,0,0,0,12]
 };
