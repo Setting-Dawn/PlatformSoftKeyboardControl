@@ -1,6 +1,0 @@
-var main_8cpp =
-[
-    [ "task_controlMotors", "main_8cpp.html#a0600249a0fd5d92a5fed83010c329fe3", null ],
-    [ "task_ReadMaterial", "main_8cpp.html#af65c7f4495d4dc7c29d355d2d3871be4", null ],
-    [ "task_webserver", "main_8cpp.html#a577f28c6d870b5b9f1c4510d8195094a", null ]
-];
