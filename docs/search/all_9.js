@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['local_5fip_0',['local_ip',['../_e_i_twebhost_8cpp.html#a4bb2f6790489d53e1530b1f3bfdb043f',1,'EITwebhost.cpp']]],
-  ['loop_1',['loop',['../main_8cpp.html#afe461d27b9c48d5921c00d521181f12f',1,'main.cpp']]]
+  ['parameters_0',['Parameters',['../_external_interpret_8py.html#autotoc_md10',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md12',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md14',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md16',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md18',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md20',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md22',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md24',1,'Parameters']]],
+  ['platformsoftkeyboardcontrol_1',['PlatformSoftKeyboardControl',['../index.html',1,'&lt;img src=&quot;\\mainpage&quot; alt=&quot;&quot;/&gt; PlatformSoftKeyboardControl'],['../index.html#autotoc_md1',1,'PlatformSoftKeyboardControl']]],
+  ['pyeit_20interpretation_2',['PyEIT interpretation',['../index.html#autotoc_md8',1,'']]]
 ];

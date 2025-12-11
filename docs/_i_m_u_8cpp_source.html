@@ -100,11 +100,11 @@ $(function(){initNavTree('_i_m_u_8cpp_source.html','',''); });
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *          by the platform.</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="_i_m_u_8h.html">IMU.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;IMU.h&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// Global/static BNO055 instance</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="_i_m_u_8cpp.html#a3365697089795e31b8ff89e70ff042ca">   12</a></span><span class="keyword">static</span> Adafruit_BNO055 <a class="code hl_variable" href="_i_m_u_8cpp.html#a3365697089795e31b8ff89e70ff042ca">bno</a> = Adafruit_BNO055(55, 0x28);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="_i_m_u_8cpp.html#a23f76185735e691ead3b3469299e6751">   13</a></span><span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="_i_m_u_8cpp.html#a23f76185735e691ead3b3469299e6751">imuCalibrated</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">static</span> Adafruit_BNO055 bno = Adafruit_BNO055(55, 0x28);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">static</span> <span class="keywordtype">bool</span> imuCalibrated = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"></span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/**</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * @brief Internal helper function that performs blocking auto-calibration with timeout.</span></div>
@@ -119,12 +119,11 @@ $(function(){initNavTree('_i_m_u_8cpp_source.html','',''); });
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * returns immediately without waiting. Otherwise, it blocks and polls every 100ms</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * until the sensor is fully calibrated or the timeout is reached.</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> */</span></div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="_i_m_u_8cpp.html#a3558298ad3c8191d9930cc6028545248">   28</a></span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="_i_m_u_8cpp.html#a3558298ad3c8191d9930cc6028545248">IMU_runAutoCalibration</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> timeoutMs) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">static</span> <span class="keywordtype">void</span> IMU_runAutoCalibration(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> timeoutMs) {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> start = millis();</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">// Poll calibration until fully calibrated or timeout</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">while</span> (!<a class="code hl_variable" href="_i_m_u_8cpp.html#a3365697089795e31b8ff89e70ff042ca">bno</a>.isFullyCalibrated()) {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">while</span> (!bno.isFullyCalibrated()) {</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="comment">// If timeoutMs == 0, don&#39;t block at all</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">if</span> (timeoutMs &gt; 0 &amp;&amp; (millis() - start &gt;= timeoutMs)) {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keywordflow">break</span>;</div>
@@ -145,9 +144,8 @@ $(function(){initNavTree('_i_m_u_8cpp_source.html','',''); });
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        delay(100);</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_variable" href="_i_m_u_8cpp.html#a23f76185735e691ead3b3469299e6751">imuCalibrated</a> = <a class="code hl_variable" href="_i_m_u_8cpp.html#a3365697089795e31b8ff89e70ff042ca">bno</a>.isFullyCalibrated();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    imuCalibrated = bno.isFullyCalibrated();</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
-</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"></span> </div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">/**</span></div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment"> * @brief Initialize the IMU sensor with default calibration timeout.</span></div>
@@ -189,17 +187,17 @@ $(function(){initNavTree('_i_m_u_8cpp_source.html','',''); });
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment"> */</span></div>
 <div class="foldopen" id="foldopen00092" data-start="{" data-end="}">
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="_i_m_u_8cpp.html#a5a7ca65a5f18bd7b88930281d2352052">   92</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_i_m_u_8cpp.html#ae62b54be4e9f4b0068e4b05221c37403">IMU_init</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> calibrationTimeoutMs) {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="_i_m_u_8cpp.html#a3365697089795e31b8ff89e70ff042ca">bno</a>.begin(OPERATION_MODE_NDOF)) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">if</span> (!bno.begin(OPERATION_MODE_NDOF)) {</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="comment">// Sensor not found</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <a class="code hl_variable" href="_i_m_u_8cpp.html#a23f76185735e691ead3b3469299e6751">imuCalibrated</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        imuCalibrated = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    delay(100);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <a class="code hl_variable" href="_i_m_u_8cpp.html#a3365697089795e31b8ff89e70ff042ca">bno</a>.setExtCrystalUse(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    bno.setExtCrystalUse(<span class="keyword">true</span>);</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="comment">// Run auto calibration (blocking until calibrated or timeout)</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <a class="code hl_function" href="_i_m_u_8cpp.html#a3558298ad3c8191d9930cc6028545248">IMU_runAutoCalibration</a>(calibrationTimeoutMs);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    IMU_runAutoCalibration(calibrationTimeoutMs);</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;  <span class="comment">// Sensor initialized, even if not fully calibrated yet</span></div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
@@ -227,7 +225,7 @@ $(function(){initNavTree('_i_m_u_8cpp_source.html','',''); });
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="comment"> */</span></div>
 <div class="foldopen" id="foldopen00128" data-start="{" data-end="}">
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="_i_m_u_8cpp.html#aa1534cd3b490555041923493f60f1258">  128</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_i_m_u_8cpp.html#aa1534cd3b490555041923493f60f1258">IMU_getAngles</a>(<span class="keywordtype">float</span> &amp;x_angle, <span class="keywordtype">float</span> &amp;y_angle) {</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    imu::Vector&lt;3&gt; euler = <a class="code hl_variable" href="_i_m_u_8cpp.html#a3365697089795e31b8ff89e70ff042ca">bno</a>.getVector(Adafruit_BNO055::VECTOR_EULER);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    imu::Vector&lt;3&gt; euler = bno.getVector(Adafruit_BNO055::VECTOR_EULER);</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="comment">// BNO055 Euler format:</span></div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="comment">//   euler.x = heading (yaw)</span></div>
@@ -257,25 +255,21 @@ $(function(){initNavTree('_i_m_u_8cpp_source.html','',''); });
 <div class="foldopen" id="foldopen00155" data-start="{" data-end="}">
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="_i_m_u_8cpp.html#a92f1fa7efcfe0818e7c90722fdfaa796">  155</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_i_m_u_8cpp.html#a92f1fa7efcfe0818e7c90722fdfaa796">IMU_isCalibrated</a>() {</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="comment">// Keep our cached value in sync with sensor status</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <a class="code hl_variable" href="_i_m_u_8cpp.html#a23f76185735e691ead3b3469299e6751">imuCalibrated</a> = <a class="code hl_variable" href="_i_m_u_8cpp.html#a3365697089795e31b8ff89e70ff042ca">bno</a>.isFullyCalibrated();</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="_i_m_u_8cpp.html#a23f76185735e691ead3b3469299e6751">imuCalibrated</a>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    imuCalibrated = bno.isFullyCalibrated();</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordflow">return</span> imuCalibrated;</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>}</div>
 </div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
-<div class="ttc" id="a_i_m_u_8cpp_html_a23f76185735e691ead3b3469299e6751"><div class="ttname"><a href="_i_m_u_8cpp.html#a23f76185735e691ead3b3469299e6751">imuCalibrated</a></div><div class="ttdeci">static bool imuCalibrated</div><div class="ttdef"><b>Definition</b> <a href="#l00013">IMU.cpp:13</a></div></div>
-<div class="ttc" id="a_i_m_u_8cpp_html_a3365697089795e31b8ff89e70ff042ca"><div class="ttname"><a href="_i_m_u_8cpp.html#a3365697089795e31b8ff89e70ff042ca">bno</a></div><div class="ttdeci">static Adafruit_BNO055 bno</div><div class="ttdef"><b>Definition</b> <a href="#l00012">IMU.cpp:12</a></div></div>
-<div class="ttc" id="a_i_m_u_8cpp_html_a3558298ad3c8191d9930cc6028545248"><div class="ttname"><a href="_i_m_u_8cpp.html#a3558298ad3c8191d9930cc6028545248">IMU_runAutoCalibration</a></div><div class="ttdeci">static void IMU_runAutoCalibration(unsigned long timeoutMs)</div><div class="ttdoc">Internal helper function that performs blocking auto-calibration with timeout.</div><div class="ttdef"><b>Definition</b> <a href="#l00028">IMU.cpp:28</a></div></div>
 <div class="ttc" id="a_i_m_u_8cpp_html_a92f1fa7efcfe0818e7c90722fdfaa796"><div class="ttname"><a href="_i_m_u_8cpp.html#a92f1fa7efcfe0818e7c90722fdfaa796">IMU_isCalibrated</a></div><div class="ttdeci">bool IMU_isCalibrated()</div><div class="ttdoc">Check if the BNO055A IMU is fully calibrated.</div><div class="ttdef"><b>Definition</b> <a href="#l00155">IMU.cpp:155</a></div></div>
 <div class="ttc" id="a_i_m_u_8cpp_html_aa1534cd3b490555041923493f60f1258"><div class="ttname"><a href="_i_m_u_8cpp.html#aa1534cd3b490555041923493f60f1258">IMU_getAngles</a></div><div class="ttdeci">void IMU_getAngles(float &amp;x_angle, float &amp;y_angle)</div><div class="ttdoc">Retrieve the current roll and pitch angles from the IMU.</div><div class="ttdef"><b>Definition</b> <a href="#l00128">IMU.cpp:128</a></div></div>
 <div class="ttc" id="a_i_m_u_8cpp_html_ae62b54be4e9f4b0068e4b05221c37403"><div class="ttname"><a href="_i_m_u_8cpp.html#ae62b54be4e9f4b0068e4b05221c37403">IMU_init</a></div><div class="ttdeci">bool IMU_init()</div><div class="ttdoc">Initialize the IMU sensor with default calibration timeout.</div><div class="ttdef"><b>Definition</b> <a href="#l00067">IMU.cpp:67</a></div></div>
-<div class="ttc" id="a_i_m_u_8h_html"><div class="ttname"><a href="_i_m_u_8h.html">IMU.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="_i_m_u_8cpp.html">IMU.cpp</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a href="_i_m_u_8cpp.html">IMU.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
