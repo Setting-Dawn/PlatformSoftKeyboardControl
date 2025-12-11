@@ -7,6 +7,6 @@ var searchData=
   ['setup_5fwifi_4',['setup_wifi',['../EITwebhost_8cpp.html#a2db7e734a3678bd61b7b9556caf2d933',1,'setup_wifi(void):&#160;EITwebhost.cpp'],['../EITwebhost_8h.html#a2db7e734a3678bd61b7b9556caf2d933',1,'setup_wifi(void):&#160;EITwebhost.cpp']]],
   ['shares_2eh_5',['shares.h',['../shares_8h.html',1,'']]],
   ['simeit_6',['simEIT',['../ExternalInterpret_8py.html#abf93d8f23ce3f3d486861c37e83588f5',1,'ExternalInterpret']]],
-  ['software_20design_7',['Software Design',['../md_README.html#autotoc_md19',1,'']]],
+  ['software_20design_7',['Software Design',['../index.html#autotoc_md19',1,'']]],
   ['switchpin_8',['switchPin',['../classCD74HC4067SM.html#a806eafd77dc5825a43b46c866c35a0a5',1,'CD74HC4067SM']]]
 ];
