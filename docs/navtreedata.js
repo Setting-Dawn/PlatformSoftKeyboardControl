@@ -26,16 +26,16 @@ var NAVTREE =
 [
   [ "PlatformSoftKeyboardControl", "index.html", [
     [ "<img src=\"\\mainpage\" alt=\"\" class=\"inline\"/> PlatformSoftKeyboardControl", "md__r_e_a_d_m_e.html", [
-      [ "PlatformSoftKeyboardControl", "md__r_e_a_d_m_e.html#autotoc_md1", [
-        [ "Mechanical Considerations", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
-        [ "Software Design", "md__r_e_a_d_m_e.html#autotoc_md3", [
-          [ "Task Diagram", "md__r_e_a_d_m_e.html#autotoc_md4", null ],
-          [ "Webserver Task", "md__r_e_a_d_m_e.html#autotoc_md5", null ],
-          [ "Motor Control Task", "md__r_e_a_d_m_e.html#autotoc_md6", null ],
-          [ "Material Reading Task", "md__r_e_a_d_m_e.html#autotoc_md7", null ],
-          [ "PyEIT interpretation", "md__r_e_a_d_m_e.html#autotoc_md8", null ]
+      [ "PlatformSoftKeyboardControl", "md__r_e_a_d_m_e.html#autotoc_md17", [
+        [ "Mechanical Considerations", "md__r_e_a_d_m_e.html#autotoc_md18", null ],
+        [ "Software Design", "md__r_e_a_d_m_e.html#autotoc_md19", [
+          [ "Task Diagram", "md__r_e_a_d_m_e.html#autotoc_md20", null ],
+          [ "Webserver Task", "md__r_e_a_d_m_e.html#autotoc_md21", null ],
+          [ "Motor Control Task", "md__r_e_a_d_m_e.html#autotoc_md22", null ],
+          [ "Material Reading Task", "md__r_e_a_d_m_e.html#autotoc_md23", null ],
+          [ "PyEIT interpretation", "md__r_e_a_d_m_e.html#autotoc_md24", null ]
         ] ],
-        [ "Other Code Used", "md__r_e_a_d_m_e.html#autotoc_md9", null ]
+        [ "Other Code Used", "md__r_e_a_d_m_e.html#autotoc_md25", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [

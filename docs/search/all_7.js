@@ -1,9 +1,9 @@
 var searchData=
 [
   ['main_2ecpp_0',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['material_20reading_20task_1',['Material Reading Task',['../md__r_e_a_d_m_e.html#autotoc_md7',1,'']]],
-  ['mechanical_20considerations_2',['Mechanical Considerations',['../md__r_e_a_d_m_e.html#autotoc_md2',1,'']]],
-  ['motor_20control_20task_3',['Motor Control Task',['../md__r_e_a_d_m_e.html#autotoc_md6',1,'']]],
+  ['material_20reading_20task_1',['Material Reading Task',['../md__r_e_a_d_m_e.html#autotoc_md23',1,'']]],
+  ['mechanical_20considerations_2',['Mechanical Considerations',['../md__r_e_a_d_m_e.html#autotoc_md18',1,'']]],
+  ['motor_20control_20task_3',['Motor Control Task',['../md__r_e_a_d_m_e.html#autotoc_md22',1,'']]],
   ['motor_2ecpp_4',['MOTOR.cpp',['../_m_o_t_o_r_8cpp.html',1,'']]],
   ['motor_5fbrake_5',['MOTOR_brake',['../_m_o_t_o_r_8cpp.html#a95041c1f21a28dc853b0711b6e3be5ae',1,'MOTOR.cpp']]],
   ['motor_5fforward_6',['MOTOR_forward',['../_m_o_t_o_r_8cpp.html#a08307efa3b153177c2fec00689934bc3',1,'MOTOR.cpp']]],
