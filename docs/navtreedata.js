@@ -25,17 +25,17 @@
 var NAVTREE =
 [
   [ "PlatformSoftKeyboardControl", "index.html", [
-    [ "<img src=\"\\mainpage\" alt=\"\" class=\"inline\"/> PlatformSoftKeyboardControl", "md__r_e_a_d_m_e.html", [
-      [ "PlatformSoftKeyboardControl", "md__r_e_a_d_m_e.html#autotoc_md17", [
-        [ "Mechanical Considerations", "md__r_e_a_d_m_e.html#autotoc_md18", null ],
-        [ "Software Design", "md__r_e_a_d_m_e.html#autotoc_md19", [
-          [ "Task Diagram", "md__r_e_a_d_m_e.html#autotoc_md20", null ],
-          [ "Webserver Task", "md__r_e_a_d_m_e.html#autotoc_md21", null ],
-          [ "Motor Control Task", "md__r_e_a_d_m_e.html#autotoc_md22", null ],
-          [ "Material Reading Task", "md__r_e_a_d_m_e.html#autotoc_md23", null ],
-          [ "PyEIT interpretation", "md__r_e_a_d_m_e.html#autotoc_md24", null ]
+    [ "<img src=\"\\mainpage\" alt=\"\" class=\"inline\"/> PlatformSoftKeyboardControl", "md_README.html", [
+      [ "PlatformSoftKeyboardControl", "md_README.html#autotoc_md17", [
+        [ "Mechanical Considerations", "md_README.html#autotoc_md18", null ],
+        [ "Software Design", "md_README.html#autotoc_md19", [
+          [ "Task Diagram", "md_README.html#autotoc_md20", null ],
+          [ "Webserver Task", "md_README.html#autotoc_md21", null ],
+          [ "Motor Control Task", "md_README.html#autotoc_md22", null ],
+          [ "Material Reading Task", "md_README.html#autotoc_md23", null ],
+          [ "PyEIT interpretation", "md_README.html#autotoc_md24", null ]
         ] ],
-        [ "Other Code Used", "md__r_e_a_d_m_e.html#autotoc_md25", null ]
+        [ "Other Code Used", "md_README.html#autotoc_md25", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -58,7 +58,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_c_d74_h_c4067_s_m_8cpp.html"
+"CD74HC4067SM_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
