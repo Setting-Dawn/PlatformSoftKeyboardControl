@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['reading_20task_0',['Material Reading Task',['../md__r_e_a_d_m_e.html#autotoc_md7',1,'']]],
+  ['returns_1',['Returns',['../_external_interpret_8py.html#autotoc_md11',1,'Returns'],['../_external_interpret_8py.html#autotoc_md13',1,'Returns'],['../_external_interpret_8py.html#autotoc_md15',1,'Returns'],['../_external_interpret_8py.html#autotoc_md17',1,'Returns'],['../_external_interpret_8py.html#autotoc_md19',1,'Returns'],['../_external_interpret_8py.html#autotoc_md21',1,'Returns'],['../_external_interpret_8py.html#autotoc_md23',1,'Returns'],['../_external_interpret_8py.html#autotoc_md25',1,'Returns']]]
+];
