@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ME 507 Soft Keyboard: PlatformSoftKeyboardControl/src/shares.h Source File</title>
+<title>PlatformSoftKeyboardControl: src/shares.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ME 507 Soft Keyboard<span id="projectnumber">&#160;2.0.0</span>
+   <div id="projectname">PlatformSoftKeyboardControl<span id="projectnumber">&#160;2.0.0</span>
    </div>
-   <div id="projectbrief">Uses a piezoresistive metamaterial to control a 2DOF table</div>
+   <div id="projectbrief">Control a 2 DOF platform using a piezoresistive sensing sheet</div>
   </td>
  </tr>
  </tbody>
@@ -92,7 +92,15 @@ $(function(){initNavTree('shares_8h_source.html','',''); });
   <div class="headertitle"><div class="title">shares.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="shares_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<a href="shares_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/** @file shares.h</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> *  @brief Shares and Queues used in Soft Keyboard ME507 Project</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *  </span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *  @author Setting-Dawn</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *  @author JR Ridgely</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *  @date   2021-Oct-23 Original file by JR Ridgely</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *  @date   2021-Dec-04 Setting-Dawn rewrote example shares and queues to be project specific</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *  @copyright (c) 2021 by JR Ridgely, released under the LGPL 3.0. </span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifndef _SHARES_H_</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define _SHARES_H_</span></div>
@@ -101,25 +109,32 @@ $(function(){initNavTree('shares_8h_source.html','',''); });
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;taskshare.h&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">// A share which holds whether the external program needs to initialize V0</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">extern</span> Share&lt;bool&gt; initializeVFLG;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">extern</span> Share&lt;bool&gt; <a class="code hl_variable" href="shares_8h.html#a015a121748bfeb795768eb309fca72ab">initializeVFLG</a>;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// A share which holds whether the external program should read current voltages</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">extern</span> Share&lt;bool&gt; readVFLG;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">extern</span> Share&lt;bool&gt; <a class="code hl_variable" href="shares_8h.html#a65a8bc308ef2bc93456de1ad3b0a7d3e">readVFLG</a>;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">// Shares to communicate target position between webpage and motor control tasks</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">extern</span> Share&lt;float&gt; xBar;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">extern</span> Share&lt;float&gt; yBar;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">extern</span> Share&lt;float&gt; <a class="code hl_variable" href="shares_8h.html#a28823c1bbe49842846233ee6d3c555e2">xBar</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">extern</span> Share&lt;float&gt; <a class="code hl_variable" href="shares_8h.html#a6cc7f10b7d20693a6d63bbf314299bc8">yBar</a>;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// A rudimentary share to publish data from</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">extern</span> <span class="keywordtype">float</span> publish[208];</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">extern</span> Share&lt;bool&gt; dataAvailable;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="main_8cpp.html#ae77c28be56bf5e9e5aa6b8ff1a554b20">publish</a>[208];</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">extern</span> Share&lt;bool&gt; <a class="code hl_variable" href="shares_8h.html#afcf5306874d9006284e8eade7b8782eb">dataAvailable</a>;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">// Mutexes to thread protect the twi process</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">extern</span> SemaphoreHandle_t twiMutex;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">extern</span> SemaphoreHandle_t <a class="code hl_variable" href="main_8cpp.html#a9610be4c840b076d78500f00dcc02f21">twiMutex</a>;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif </span><span class="comment">// _SHARES_H_</span></div>
+<div class="ttc" id="amain_8cpp_html_a9610be4c840b076d78500f00dcc02f21"><div class="ttname"><a href="main_8cpp.html#a9610be4c840b076d78500f00dcc02f21">twiMutex</a></div><div class="ttdeci">SemaphoreHandle_t twiMutex</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00079">main.cpp:79</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ae77c28be56bf5e9e5aa6b8ff1a554b20"><div class="ttname"><a href="main_8cpp.html#ae77c28be56bf5e9e5aa6b8ff1a554b20">publish</a></div><div class="ttdeci">float publish[208]</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00076">main.cpp:76</a></div></div>
+<div class="ttc" id="ashares_8h_html_a015a121748bfeb795768eb309fca72ab"><div class="ttname"><a href="shares_8h.html#a015a121748bfeb795768eb309fca72ab">initializeVFLG</a></div><div class="ttdeci">Share&lt; bool &gt; initializeVFLG</div></div>
+<div class="ttc" id="ashares_8h_html_a28823c1bbe49842846233ee6d3c555e2"><div class="ttname"><a href="shares_8h.html#a28823c1bbe49842846233ee6d3c555e2">xBar</a></div><div class="ttdeci">Share&lt; float &gt; xBar</div></div>
+<div class="ttc" id="ashares_8h_html_a65a8bc308ef2bc93456de1ad3b0a7d3e"><div class="ttname"><a href="shares_8h.html#a65a8bc308ef2bc93456de1ad3b0a7d3e">readVFLG</a></div><div class="ttdeci">Share&lt; bool &gt; readVFLG</div></div>
+<div class="ttc" id="ashares_8h_html_a6cc7f10b7d20693a6d63bbf314299bc8"><div class="ttname"><a href="shares_8h.html#a6cc7f10b7d20693a6d63bbf314299bc8">yBar</a></div><div class="ttdeci">Share&lt; float &gt; yBar</div></div>
+<div class="ttc" id="ashares_8h_html_afcf5306874d9006284e8eade7b8782eb"><div class="ttname"><a href="shares_8h.html#afcf5306874d9006284e8eade7b8782eb">dataAvailable</a></div><div class="ttdeci">Share&lt; bool &gt; dataAvailable</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d13532948e496c057305109c9170e06c.html">PlatformSoftKeyboardControl</a></li><li class="navelem"><b>src</b></li><li class="navelem"><a href="shares_8h.html">shares.h</a></li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="shares_8h.html">shares.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

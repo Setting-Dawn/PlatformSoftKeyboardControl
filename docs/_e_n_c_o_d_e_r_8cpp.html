@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ME 507 Soft Keyboard: PlatformSoftKeyboardControl/src/ENCODER.cpp File Reference</title>
+<title>PlatformSoftKeyboardControl: src/ENCODER.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ME 507 Soft Keyboard<span id="projectnumber">&#160;2.0.0</span>
+   <div id="projectname">PlatformSoftKeyboardControl<span id="projectnumber">&#160;2.0.0</span>
    </div>
-   <div id="projectbrief">Uses a piezoresistive metamaterial to control a 2DOF table</div>
+   <div id="projectbrief">Control a 2 DOF platform using a piezoresistive sensing sheet</div>
   </td>
  </tr>
  </tbody>
@@ -95,8 +95,10 @@ $(function(){initNavTree('_e_n_c_o_d_e_r_8cpp.html','',''); });
 
 <p>Implementation file for encoder helper functions.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;ENCODER.h&quot;</code><br />
-</div><table class="memberdecls">
+<div class="textblock"><code>#include &quot;<a class="el" href="_e_n_c_o_d_e_r_8h_source.html">ENCODER.h</a>&quot;</code><br />
+</div>
+<p><a href="_e_n_c_o_d_e_r_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a747b0ec2630676d735c651a9e26360d5" id="r_a747b0ec2630676d735c651a9e26360d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a747b0ec2630676d735c651a9e26360d5">ENCODER_init</a> (ESP32Encoder &amp;encoder, uint8_t pinA, uint8_t pinB, bool inverted)</td></tr>
@@ -109,6 +111,8 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation file for encoder helper functions. </p>
 <p>Provides initialization and simple helper wrappers for the ESP32Encoder objects used by the project. </p>
+
+<p class="definition">Definition in file <a class="el" href="_e_n_c_o_d_e_r_8cpp_source.html">ENCODER.cpp</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="ab830241bbb29bce671238ca044ddb485" name="ab830241bbb29bce671238ca044ddb485"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab830241bbb29bce671238ca044ddb485">&#9670;&#160;</a></span>ENCODER_getCount()</h2>
@@ -136,6 +140,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>int64_t The current encoder count value</dd></dl>
 <p>This function reads the counter without modifying its state. For full quadrature decoding, each mechanical detent may count as multiple counts depending on the encoder type (typically 4 counts per detent).</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="#a747b0ec2630676d735c651a9e26360d5" title="Initialize an encoder with full quadrature decoding.">ENCODER_init()</a>, <a class="el" href="#ae09a2acab1ec2f539a3cbca302468a5a" title="Reset the encoder count to zero.">ENCODER_zero()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_e_n_c_o_d_e_r_8cpp_source.html#l00055">55</a> of file <a class="el" href="_e_n_c_o_d_e_r_8cpp_source.html">ENCODER.cpp</a>.</p>
 
 </div>
 </div>
@@ -183,6 +189,8 @@ Functions</h2></td></tr>
 <p>Enables ESP32Encoder internal weak pull-up resistors and uses full quadrature decoding for 4x count resolution.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="#ab830241bbb29bce671238ca044ddb485" title="Retrieve the current encoder count value.">ENCODER_getCount()</a>, <a class="el" href="#ae09a2acab1ec2f539a3cbca302468a5a" title="Reset the encoder count to zero.">ENCODER_zero()</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_e_n_c_o_d_e_r_8cpp_source.html#l00030">30</a> of file <a class="el" href="_e_n_c_o_d_e_r_8cpp_source.html">ENCODER.cpp</a>.</p>
+
 </div>
 </div>
 <a id="ae09a2acab1ec2f539a3cbca302468a5a" name="ae09a2acab1ec2f539a3cbca302468a5a"></a>
@@ -211,6 +219,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="#a747b0ec2630676d735c651a9e26360d5" title="Initialize an encoder with full quadrature decoding.">ENCODER_init()</a>, <a class="el" href="#ab830241bbb29bce671238ca044ddb485" title="Retrieve the current encoder count value.">ENCODER_getCount()</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_e_n_c_o_d_e_r_8cpp_source.html#l00072">72</a> of file <a class="el" href="_e_n_c_o_d_e_r_8cpp_source.html">ENCODER.cpp</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -226,7 +236,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d13532948e496c057305109c9170e06c.html">PlatformSoftKeyboardControl</a></li><li class="navelem"><b>src</b></li><li class="navelem"><a href="_e_n_c_o_d_e_r_8cpp.html">ENCODER.cpp</a></li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="_e_n_c_o_d_e_r_8cpp.html">ENCODER.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

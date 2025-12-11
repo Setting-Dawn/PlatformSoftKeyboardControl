@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ME 507 Soft Keyboard: PlatformSoftKeyboardControl/src/IMU.cpp File Reference</title>
+<title>PlatformSoftKeyboardControl: src/IMU.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ME 507 Soft Keyboard<span id="projectnumber">&#160;2.0.0</span>
+   <div id="projectname">PlatformSoftKeyboardControl<span id="projectnumber">&#160;2.0.0</span>
    </div>
-   <div id="projectbrief">Uses a piezoresistive metamaterial to control a 2DOF table</div>
+   <div id="projectbrief">Control a 2 DOF platform using a piezoresistive sensing sheet</div>
   </td>
  </tr>
  </tbody>
@@ -96,10 +96,14 @@ $(function(){initNavTree('_i_m_u_8cpp.html','',''); });
 <p>Implementation of IMU helper functions for the BNO055 sensor.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
-<code>#include &quot;IMU.h&quot;</code><br />
-</div><table class="memberdecls">
+<code>#include &quot;<a class="el" href="_i_m_u_8h_source.html">IMU.h</a>&quot;</code><br />
+</div>
+<p><a href="_i_m_u_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a3558298ad3c8191d9930cc6028545248" id="r_a3558298ad3c8191d9930cc6028545248"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3558298ad3c8191d9930cc6028545248">IMU_runAutoCalibration</a> (unsigned long timeoutMs)</td></tr>
+<tr class="memdesc:a3558298ad3c8191d9930cc6028545248"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal helper function that performs blocking auto-calibration with timeout.  <br /></td></tr>
 <tr class="memitem:ae62b54be4e9f4b0068e4b05221c37403" id="r_ae62b54be4e9f4b0068e4b05221c37403"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae62b54be4e9f4b0068e4b05221c37403">IMU_init</a> ()</td></tr>
 <tr class="memdesc:ae62b54be4e9f4b0068e4b05221c37403"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the IMU sensor with default calibration timeout.  <br /></td></tr>
 <tr class="memitem:a5a7ca65a5f18bd7b88930281d2352052" id="r_a5a7ca65a5f18bd7b88930281d2352052"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a7ca65a5f18bd7b88930281d2352052">IMU_init</a> (unsigned long calibrationTimeoutMs)</td></tr>
@@ -108,11 +112,18 @@ Functions</h2></td></tr>
 <tr class="memdesc:aa1534cd3b490555041923493f60f1258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current roll and pitch angles from the IMU.  <br /></td></tr>
 <tr class="memitem:a92f1fa7efcfe0818e7c90722fdfaa796" id="r_a92f1fa7efcfe0818e7c90722fdfaa796"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92f1fa7efcfe0818e7c90722fdfaa796">IMU_isCalibrated</a> ()</td></tr>
 <tr class="memdesc:a92f1fa7efcfe0818e7c90722fdfaa796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the BNO055A IMU is fully calibrated.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a3365697089795e31b8ff89e70ff042ca" id="r_a3365697089795e31b8ff89e70ff042ca"><td class="memItemLeft" align="right" valign="top">static Adafruit_BNO055&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3365697089795e31b8ff89e70ff042ca">bno</a> = Adafruit_BNO055(55, 0x28)</td></tr>
+<tr class="memitem:a23f76185735e691ead3b3469299e6751" id="r_a23f76185735e691ead3b3469299e6751"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23f76185735e691ead3b3469299e6751">imuCalibrated</a> = false</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation of IMU helper functions for the BNO055 sensor. </p>
 <p>IMU header files for the BNO055A sensor.</p>
 <p>Implements initialization, calibration helper, angle reading, and calibration status checks for the Adafruit BNO055 IMU used by the platform.</p>
+
+<p class="definition">Definition in file <a class="el" href="_i_m_u_8cpp_source.html">IMU.cpp</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="aa1534cd3b490555041923493f60f1258" name="aa1534cd3b490555041923493f60f1258"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa1534cd3b490555041923493f60f1258">&#9670;&#160;</a></span>IMU_getAngles()</h2>
@@ -150,6 +161,8 @@ Functions</h2></td></tr>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>Ensure <a class="el" href="#ae62b54be4e9f4b0068e4b05221c37403" title="Initialize the IMU sensor with default calibration timeout.">IMU_init()</a> has been called before using this function. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_i_m_u_8cpp_source.html#l00128">128</a> of file <a class="el" href="_i_m_u_8cpp_source.html">IMU.cpp</a>.</p>
+
 </div>
 </div>
 <a id="ae62b54be4e9f4b0068e4b05221c37403" name="ae62b54be4e9f4b0068e4b05221c37403"></a>
@@ -171,6 +184,8 @@ Functions</h2></td></tr>
 <p>This is a convenience overload that initializes the BNO055A IMU sensor with a default calibration timeout of 30 seconds.</p>
 <dl class="section return"><dt>Returns</dt><dd>bool True if the sensor is found and successfully initialized (even if not fully calibrated yet), false if sensor initialization fails.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="#a5a7ca65a5f18bd7b88930281d2352052" title="Initialize the IMU sensor with a specific calibration timeout.">IMU_init(unsigned long calibrationTimeoutMs)</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_i_m_u_8cpp_source.html#l00067">67</a> of file <a class="el" href="_i_m_u_8cpp_source.html">IMU.cpp</a>.</p>
 
 </div>
 </div>
@@ -205,6 +220,8 @@ Functions</h2></td></tr>
 <li>Runs auto-calibration with the specified timeout </li>
 </ol>
 
+<p class="definition">Definition at line <a class="el" href="_i_m_u_8cpp_source.html#l00092">92</a> of file <a class="el" href="_i_m_u_8cpp_source.html">IMU.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a92f1fa7efcfe0818e7c90722fdfaa796" name="a92f1fa7efcfe0818e7c90722fdfaa796"></a>
@@ -228,6 +245,95 @@ Functions</h2></td></tr>
 <p>The function updates the global imuCalibrated cache variable with the current sensor status to keep it synchronized with the actual hardware state.</p>
 <dl class="section note"><dt>Note</dt><dd>Full calibration typically requires the sensor to be in motion, exposed to the Earth's magnetic field, and given sufficient time to converge. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_i_m_u_8cpp_source.html#l00155">155</a> of file <a class="el" href="_i_m_u_8cpp_source.html">IMU.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3558298ad3c8191d9930cc6028545248" name="a3558298ad3c8191d9930cc6028545248"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3558298ad3c8191d9930cc6028545248">&#9670;&#160;</a></span>IMU_runAutoCalibration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IMU_runAutoCalibration </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long</td>          <td class="paramname"><span class="paramname"><em>timeoutMs</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Internal helper function that performs blocking auto-calibration with timeout. </p>
+<p>Continuously polls the BNO055 sensor until it reports fully calibrated or the timeout period expires. Updates the global imuCalibrated flag based on the result.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeoutMs</td><td>Timeout duration in milliseconds. If 0, skips blocking entirely. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
+<p>This is an internal helper function. If timeoutMs is 0, the function returns immediately without waiting. Otherwise, it blocks and polls every 100ms until the sensor is fully calibrated or the timeout is reached. </p>
+
+<p class="definition">Definition at line <a class="el" href="_i_m_u_8cpp_source.html#l00028">28</a> of file <a class="el" href="_i_m_u_8cpp_source.html">IMU.cpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
+<a id="a3365697089795e31b8ff89e70ff042ca" name="a3365697089795e31b8ff89e70ff042ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3365697089795e31b8ff89e70ff042ca">&#9670;&#160;</a></span>bno</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Adafruit_BNO055 bno = Adafruit_BNO055(55, 0x28)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_i_m_u_8cpp_source.html#l00012">12</a> of file <a class="el" href="_i_m_u_8cpp_source.html">IMU.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a23f76185735e691ead3b3469299e6751" name="a23f76185735e691ead3b3469299e6751"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23f76185735e691ead3b3469299e6751">&#9670;&#160;</a></span>imuCalibrated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool imuCalibrated = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_i_m_u_8cpp_source.html#l00013">13</a> of file <a class="el" href="_i_m_u_8cpp_source.html">IMU.cpp</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -243,7 +349,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d13532948e496c057305109c9170e06c.html">PlatformSoftKeyboardControl</a></li><li class="navelem"><b>src</b></li><li class="navelem"><a href="_i_m_u_8cpp.html">IMU.cpp</a></li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="_i_m_u_8cpp.html">IMU.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

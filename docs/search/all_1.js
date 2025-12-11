@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['cd74hc4067sm_0',['CD74HC4067SM',['../class_c_d74_h_c4067_s_m.html',1,'']]],
-  ['cd74hc4067sm_2ecpp_1',['CD74HC4067SM.cpp',['../_c_d74_h_c4067_s_m_8cpp.html',1,'']]],
-  ['cd74hc4067sm_2eh_2',['CD74HC4067SM.h',['../_c_d74_h_c4067_s_m_8h.html',1,'']]],
-  ['code_20used_3',['Other Code Used',['../index.html#autotoc_md24',1,'']]],
-  ['considerations_4',['Mechanical Considerations',['../index.html#autotoc_md17',1,'']]],
-  ['control_20task_5',['Motor Control Task',['../index.html#autotoc_md21',1,'']]]
+  ['b0_0',['b0',['../namespace_external_interpret.html#ae94bbc1668117faa95fb75340b1ff48d',1,'ExternalInterpret']]],
+  ['b1_1',['b1',['../namespace_external_interpret.html#a58858fcb5976f90730e920826522c137',1,'ExternalInterpret']]],
+  ['bno_2',['bno',['../_i_m_u_8cpp.html#a3365697089795e31b8ff89e70ff042ca',1,'IMU.cpp']]]
 ];

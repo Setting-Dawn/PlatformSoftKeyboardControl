@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['parameters_0',['Parameters',['../_external_interpret_8py.html#autotoc_md0',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md2',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md4',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md6',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md8',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md10',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md12',1,'Parameters'],['../_external_interpret_8py.html#autotoc_md14',1,'Parameters']]],
-  ['platformsoftkeyboardcontrol_1',['PlatformSoftKeyboardControl',['../index.html',1,'PlatformSoftKeyboardControl'],['../index.html#autotoc_md16',1,'PlatformSoftKeyboardControl']]],
-  ['pyeit_20interpretation_2',['PyEIT interpretation',['../index.html#autotoc_md23',1,'']]]
+  ['local_5fip_0',['local_ip',['../_e_i_twebhost_8cpp.html#a4bb2f6790489d53e1530b1f3bfdb043f',1,'EITwebhost.cpp']]],
+  ['loop_1',['loop',['../main_8cpp.html#afe461d27b9c48d5921c00d521181f12f',1,'main.cpp']]]
 ];
